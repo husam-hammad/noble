@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nodle/Constants/colors.dart';
-import 'package:nodle/Constants/font_styles.dart';
-import 'package:nodle/PresentationLayer/Widgets/login_widgets.dart';
+import 'package:noble/Constants/colors.dart';
+import 'package:noble/Constants/font_styles.dart';
+import 'package:noble/Constants/routes.dart';
+import 'package:noble/PresentationLayer/Widgets/login_widgets.dart';
 
 import '../../Widgets/otp_widgets.dart';
 import '../Public/on_boarding.dart';
 
 class Otp_Check_Page extends StatelessWidget {
-  const Otp_Check_Page({super.key});
+  const Otp_Check_Page({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +32,7 @@ class Otp_Check_Page extends StatelessWidget {
                     SizedBox(height: 5),
                     Center(
                       child: Text(
-                        "قمنا بإرسال رمز إلى هاتفك لتتمكن من تأكيد حسابك\nقم بإدخاله في الخانات في الأسفل حال وصوله",
+                        "we_send_code".tr,
                         style: TextStyle(
                             color: Color(0XFF292929),
                             fontSize: 15,
@@ -49,7 +52,8 @@ class Otp_Check_Page extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(
                             vertical: 8.0, horizontal: 20),
-                        child: Text("قم بإدخال الرمز", style: SmallTextArabic),
+                        child:
+                            Text("enter_the_code".tr, style: SmallTextArabic),
                       ),
                       Center(child: Verify()),
                       Padding(
@@ -58,14 +62,14 @@ class Otp_Check_Page extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text(
-                              "إعادة إرسال الرمز",
-                              style: SmallTextArabic,
-                            ),
-                            SizedBox(width: 5),
                             Icon(
                               Icons.message,
                               color: Color(0XFF707070),
+                            ),
+                            SizedBox(width: 5),
+                            Text(
+                              "re_sent_code".tr,
+                              style: SmallTextArabic,
                             ),
                           ],
                         ),
@@ -74,10 +78,10 @@ class Otp_Check_Page extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 20.0),
                         child: InkWell(
                           onTap: () {
-                            Get.to(OnBoarding());
+                            Get.toNamed(AppRoutes.onBoardingScreen);
                           },
                           child: button(
-                              text1: 'تأكيد',
+                              text1: 'confirm'.tr,
                               button_color: AppColors.orange,
                               text_color: Colors.white),
                         ),
@@ -86,7 +90,7 @@ class Otp_Check_Page extends StatelessWidget {
               ),
               Expanded(
                   child: bottom_circle(
-                text: 'التحقق',
+                text: 'verification'.tr,
                 circle_color: AppColors.blue,
                 text_color: Colors.white,
                 font_size: 25,

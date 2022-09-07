@@ -1,6 +1,9 @@
 class AppRoutes {
   static const notConnected = "/notconnected";
   static const splashScreen = "/";
+  static const loginPage = "/login";
+  static const otpPage = "/otp";
+
   static const homepage = "/homepage";
   static const property = "/homepage/property";
   static const userprofile = "/homepage/profile";

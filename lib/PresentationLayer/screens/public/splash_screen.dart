@@ -1,32 +1,24 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nodle/PresentationLayer/Screens/Auth/login_page.dart';
+import 'package:noble/BusinessLayer/Controllers/home_controller.dart';
+import 'package:noble/Constants/languages.dart';
+import 'package:noble/Constants/routes.dart';
+import 'package:noble/PresentationLayer/Screens/Auth/login_page.dart';
 import 'package:progress_indicators/progress_indicators.dart';
 import '../../../Constants/colors.dart';
+import 'package:noble/BusinessLayer/Controllers/home_controller.dart';
 
-class SplashScreen extends StatefulWidget {
-  SplashScreen({super.key});
-
-  @override
-  State<SplashScreen> createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
+class SplashScreen extends StatelessWidget {
   double progress = 0.0;
-  int _delaySecond = 2;
-
-  @override
-  void initState() {
-    super.initState();
-    Future.delayed(Duration(seconds: _delaySecond)).then((value) {
-      Get.off(() => Login_Page());
-    });
-  }
+  SplashScreen({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    HomeController().changePage;
+
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
@@ -41,15 +33,17 @@ class _SplashScreenState extends State<SplashScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset("assets/images/nobleLogo.png"),
-                  Text('Noble',
+                  Text("noble".tr,
                       style: TextStyle(
                           fontSize: 25,
+                          fontFamily: "Cairo",
                           color: Colors.white,
                           fontWeight: FontWeight.bold)),
                   Text(
-                    "Real Estate Service",
+                    "real_estate_service".tr,
                     style: TextStyle(
                         color: Colors.white,
+                        fontFamily: "Cairo",
                         fontWeight: FontWeight.bold,
                         fontSize: 20),
                   ),

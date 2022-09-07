@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nodle/BusinessLayer/Controller/HomeController.dart';
-import 'package:nodle/Constants/colors.dart';
-import 'package:nodle/PresentationLayer/Screens/Public/favorite_page.dart';
-import 'package:nodle/PresentationLayer/Screens/Public/home_page.dart';
-import 'package:nodle/PresentationLayer/Screens/Public/more_page.dart';
-import 'package:nodle/PresentationLayer/Screens/Public/notification_page.dart';
+import 'package:noble/Constants/colors.dart';
+import 'package:noble/PresentationLayer/Screens/Public/favorite_page.dart';
+import 'package:noble/PresentationLayer/Screens/Public/home_page.dart';
+import 'package:noble/PresentationLayer/Screens/Public/more_page.dart';
+import 'package:noble/PresentationLayer/Screens/Public/notification_page.dart';
 
 class OnBoarding extends StatefulWidget {
-  const OnBoarding({super.key});
+  const OnBoarding({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<OnBoarding> createState() => _HomeState();
