@@ -6,6 +6,7 @@ import 'package:noble/PresentationLayer/Screens/Auth/otp_check_page.dart';
 import 'package:noble/PresentationLayer/Screens/Public/office_page.dart';
 import 'package:noble/PresentationLayer/Screens/Public/on_boarding.dart';
 
+import '../PresentationLayer/Screens/Public/property_screen.dart';
 import '../PresentationLayer/Screens/Public/splash_screen.dart';
 
 List<GetPage<dynamic>> routes = [
@@ -26,7 +27,11 @@ List<GetPage<dynamic>> routes = [
       page: () => OnBoarding(),
       transition: Transition.downToUp),
   GetPage(
-      name: AppRoutes.office,
-      page: () => Office_Page(),
-      transition: Transition.zoom),
+    name: AppRoutes.office,
+    page: () => Office_Page(),
+  ),
+  GetPage(
+    name: AppRoutes.propertyScreen,
+    page: () => Property_Screen(),
+  ),
 ];

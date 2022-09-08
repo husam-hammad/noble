@@ -10,6 +10,8 @@ import '../../../Constants/colors.dart';
 import 'package:noble/BusinessLayer/Controllers/home_controller.dart';
 
 class SplashScreen extends StatelessWidget {
+  HomeController controller = Get.put(HomeController());
+
   double progress = 0.0;
   SplashScreen({
     Key? key,
@@ -17,8 +19,7 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    HomeController().changePage;
-
+    controller.onInit();
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(

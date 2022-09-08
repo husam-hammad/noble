@@ -9,4 +9,5 @@ class AppRoutes {
   static const userprofile = "/homepage/profile";
   static const office = "/homepage/office";
   static const onBoardingScreen = "/onboarding";
+  static const propertyScreen = "/homepage/property";
 }

@@ -46,7 +46,16 @@ class Languages extends Translations {
           "language": "اللغة",
           "theme": "المظهر",
           "about": "حول",
-          "logout": "تسجيل الخروج"
+          "logout": "تسجيل الخروج",
+
+          /////////////                   Notifications
+          "search_in_notification": "ابحث في الإشعارات",
+          "notifications": "الإشعارات",
+          "new_watch": "حاز إعلانك على مشاهدة جديدة",
+          "now": "الآن",
+          "ten_min": "منذ 10 دقائق",
+          "one_hour": "منذ ساعة",
+          "tow_hour": "منذ ساعتين"
         },
         ////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////
@@ -95,7 +104,16 @@ class Languages extends Translations {
           "language": "Language",
           "theme": "Theme",
           "about": "About",
-          "logout": "Logout"
+          "logout": "Logout",
+
+          /////////////                   Notifications
+          "search_in_notification": "Search in notifications",
+          "notifications": "Notifications",
+          "new_watch": "your proclaim has a new watch",
+          "now": "Now",
+          "ten_min": "10 minute ago",
+          "one_hour": "1 Hour ago",
+          "tow_hour": "2 Hours ago"
         }
       };
 }

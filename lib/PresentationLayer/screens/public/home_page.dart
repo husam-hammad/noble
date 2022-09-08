@@ -6,6 +6,7 @@ import 'package:noble/Constants/font_styles.dart';
 import '../../Widgets/homepage_widgets.dart';
 import 'package:noble/Constants/languages.dart';
 
+import '../../Widgets/on_boarding_widget.dart';
 import 'office_page.dart';
 
 class Home_Page extends StatelessWidget {
@@ -68,10 +69,10 @@ class Home_Page extends StatelessWidget {
                         color: Color(0XFFBEBEBE),
                         fontFamily: "Cairo"),
                     enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(20),
                         borderSide: BorderSide(color: Color(0XFFD2D2D2))),
                     focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(20),
                         borderSide: BorderSide(color: Color(0XFFD2D2D2)))),
               ),
             ),
@@ -140,11 +141,14 @@ class Home_Page extends StatelessWidget {
                         ),
                       ),
                       Expanded(
-                          child: Houses_Office(
-                        element_w: 100,
-                        content: content1(),
-                        item_count: 11,
-                        back_color: Color(0XFF487CC7),
+                          child: Hero(
+                        tag: 'office_hero',
+                        child: Houses_Office(
+                          element_w: 100,
+                          content: content1(),
+                          item_count: 11,
+                          back_color: Color(0XFF487CC7),
+                        ),
                       ))
                     ],
                   ),
@@ -178,14 +182,16 @@ class Home_Page extends StatelessWidget {
                       ),
                     ),
                     Expanded(
-                        child: House_Office(
-                      element_w: 175,
-                      content: content2(
-                        imageUrl: '',
+                        child: Hero(
+                      tag: 'property_hero',
+                      child: House_Office(
+                        element_w: 175,
+                        content: content2(
+                          imageUrl: '',
+                        ),
+                        item_count: 4,
+                        back_color: Colors.transparent,
                       ),
-                      item_count: 4,
-                      back_color: Colors.transparent,
-                      showHouses: () {},
                     ))
                   ],
                 ),
@@ -196,93 +202,6 @@ class Home_Page extends StatelessWidget {
             )
           ],
         ),
-      ),
-    );
-  }
-}
-
-class MyDrawer extends StatelessWidget {
-  const MyDrawer({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    MyLocaleController controllerLang = Get.find();
-    return Drawer(
-      child: Column(
-        children: [
-          UserAccountsDrawerHeader(
-            decoration: BoxDecoration(color: AppColors.blue),
-            accountName: Text("Yamen"),
-            accountEmail: Text("Yamen@gmail.com"),
-            currentAccountPicture:
-                CircleAvatar(backgroundColor: AppColors.orange),
-          ),
-          ListTile(
-            title: Text(
-              "home".tr,
-              style: SmallTextArabic,
-            ),
-            leading: Icon(
-              Icons.home,
-              color: AppColors.lightgrey,
-            ),
-          ),
-          ListTile(
-            onTap: () {
-              Get.defaultDialog(
-                  title: 'Choose Language',
-                  titleStyle: TextStyle(
-                      color: AppColors.blue, fontWeight: FontWeight.bold),
-                  content: Column(
-                    children: [
-                      ListTile(
-                        title: Text("Arabic"),
-                        onTap: () {
-                          controllerLang.changeLanguage("ar");
-                        },
-                      ),
-                      ListTile(
-                        title: Text("English"),
-                        onTap: () {
-                          controllerLang.changeLanguage("en");
-                        },
-                      )
-                    ],
-                  ));
-            },
-            title: Text("language".tr, style: SmallTextArabic),
-            leading: Icon(
-              Icons.language,
-              color: AppColors.lightgrey,
-            ),
-          ),
-          ListTile(
-            title: Text('theme'.tr, style: SmallTextArabic),
-            leading: Icon(Icons.sunny, color: AppColors.lightgrey),
-          ),
-          ListTile(
-            title: Text(
-              "about".tr,
-              style: SmallTextArabic,
-            ),
-            leading: Icon(
-              Icons.help,
-              color: AppColors.lightgrey,
-            ),
-          ),
-          ListTile(
-            title: Text(
-              "logout".tr,
-              style: SmallTextArabic,
-            ),
-            leading: Icon(
-              Icons.logout,
-              color: AppColors.lightgrey,
-            ),
-          ),
-        ],
       ),
     );
   }
