@@ -22,15 +22,10 @@ class Property_Screen extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: AppColors.blue,
                     borderRadius: BorderRadius.circular(10)),
-                child: Center(
+                child: const Center(
                     child: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: Text("شراء العقار",
-                      style: TextStyle(
-                        fontSize: 17,
-                        fontFamily: "Cairo",
-                        color: AppColors.lightwhite,
-                      )),
+                  padding: EdgeInsets.all(12.0),
+                  child: Text("شراء العقار", style: white18NoBold),
                 )),
               ),
             ),
@@ -61,7 +56,7 @@ class Property_Screen extends StatelessWidget {
                   expandedHeight: 250,
                   actions: [
                     Icon(Icons.chevron_right,
-                        size: 40, color: AppColors.lightwhite),
+                        size: 30, color: AppColors.lightwhite),
                     SizedBox(
                       width: 12,
                     )
@@ -69,7 +64,7 @@ class Property_Screen extends StatelessWidget {
                   leading: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 12.0),
                     child: Icon(Icons.favorite_border,
-                        size: 40, color: AppColors.lightwhite),
+                        size: 30, color: AppColors.lightwhite),
                   ),
                 ),
                 buildBody()
@@ -79,6 +74,8 @@ class Property_Screen extends StatelessWidget {
     );
   }
 }
+
+int whatch_number = 100;
 
 Widget buildBody() => SliverToBoxAdapter(
       child: Container(
@@ -92,12 +89,7 @@ Widget buildBody() => SliverToBoxAdapter(
               SizedBox(height: 25),
               Row(
                 children: [
-                  Text("مواصفات العقار",
-                      style: TextStyle(
-                          color: AppColors.blue,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: "Cairo",
-                          fontSize: 20)),
+                  Text("مواصفات العقار", style: MediumeBlueArabic),
                   Spacer(),
                   Row(
                     children: [
@@ -110,8 +102,8 @@ Widget buildBody() => SliverToBoxAdapter(
                         width: 5,
                       ),
                       Text(
-                        "100",
-                        style: TextStyle(color: Color(0XFFB3B3B3)),
+                        "$whatch_number",
+                        style: SmallGreyTextArabicNoBold,
                       )
                     ],
                   )
@@ -130,7 +122,7 @@ Widget buildBody() => SliverToBoxAdapter(
                   ),
                   Text(
                     "130.000.000",
-                    style: TextStyle(fontSize: 30, color: Color(0XFFBEBEBE)),
+                    style: TitleGreyArabic,
                   )
                 ],
               ),
@@ -147,7 +139,7 @@ Widget buildBody() => SliverToBoxAdapter(
                       SizedBox(
                         width: 3,
                       ),
-                      Text("700", style: SmallTextArabic)
+                      Text("700", style: SmallBlueTextArabic)
                     ],
                   ),
                   Row(
@@ -159,7 +151,7 @@ Widget buildBody() => SliverToBoxAdapter(
                       SizedBox(
                         width: 3,
                       ),
-                      Text("شرقي", style: SmallTextArabic)
+                      Text("شرقي", style: SmallBlueTextArabic)
                     ],
                   ),
                   Row(
@@ -171,7 +163,7 @@ Widget buildBody() => SliverToBoxAdapter(
                       SizedBox(
                         width: 3,
                       ),
-                      Text("5 غرف", style: SmallTextArabic)
+                      Text("5 غرف", style: SmallBlueTextArabic)
                     ],
                   ),
                   Row(
@@ -183,7 +175,7 @@ Widget buildBody() => SliverToBoxAdapter(
                       SizedBox(
                         width: 3,
                       ),
-                      Text("حمام 2", style: SmallTextArabic)
+                      Text("حمام 2", style: SmallBlueTextArabic)
                     ],
                   ),
                 ],
@@ -219,15 +211,8 @@ Widget buildBody() => SliverToBoxAdapter(
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("مكتب الشام",
-                            style: TextStyle(
-                              color: AppColors.blue,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: "Cairo",
-                            )),
-                        Text("عارض الإعلان",
-                            style: TextStyle(color: AppColors.grey))
+                        Text("مكتب الشام", style: blue18NoBold),
+                        Text("عارض الإعلان", style: SmallGreyTextArabicNoBold)
                       ],
                     ),
                     Spacer(),
@@ -242,24 +227,18 @@ Widget buildBody() => SliverToBoxAdapter(
               SizedBox(height: 15),
               Text(
                 "وصف العقار",
-                style: TextStyle(
-                    color: AppColors.blue,
-                    fontSize: 18,
-                    fontFamily: "Cairo",
-                    fontWeight: FontWeight.bold),
+                style: MediumeBlueArabic,
               ),
               SizedBox(height: 15),
               TextFormField(
                 minLines: 1,
                 maxLines: 10,
-                style: SmallTextArabic,
+                style: SmallBlueTextArabic,
                 decoration: InputDecoration(
                     border: UnderlineInputBorder(borderSide: BorderSide.none),
                     hintText:
                         "هنا نكتب مواصفات العقار أو نبذة تعريفيه عنه\nوعن مكوناته وموقعه",
-                    hintStyle: TextStyle(
-                      color: AppColors.grey,
-                    )),
+                    hintStyle: SmallGreyTextArabicNoBold),
               ),
               SizedBox(height: 200)
             ]),

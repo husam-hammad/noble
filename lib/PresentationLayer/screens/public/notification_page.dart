@@ -55,8 +55,7 @@ class Notification_Page extends StatelessWidget {
                 const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
             child: Text(
               "notifications".tr,
-              style: TextStyle(
-                  color: AppColors.blue, fontFamily: "Cairo", fontSize: 20),
+              style: MediumeBlueArabic,
             ),
           ),
           Notification_Body(notificationNumber: notificationNumber)

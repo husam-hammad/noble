@@ -3,10 +3,10 @@ import 'package:get/get.dart';
 import 'package:noble/BusinessLayer/Controllers/locale_controller.dart';
 import 'package:noble/Constants/colors.dart';
 import 'package:noble/Constants/font_styles.dart';
-import '../../Widgets/homepage_widgets.dart';
 import 'package:noble/Constants/languages.dart';
 
 import '../../Widgets/on_boarding_widget.dart';
+import '../../widgets/homepage_widgets.dart';
 import 'office_page.dart';
 
 class Home_Page extends StatelessWidget {
@@ -37,8 +37,7 @@ class Home_Page extends StatelessWidget {
           }),
           title: Text(
             'noble_realstate'.tr,
-            style: TextStyle(
-                color: Color(0XFF0C3877), fontSize: 20, fontFamily: "Cairo"),
+            style: MediumeBlueArabic,
           ),
           centerTitle: true,
           actions: [
@@ -56,25 +55,7 @@ class Home_Page extends StatelessWidget {
             Padding(
               padding:
                   const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
-              child: TextFormField(
-                textDirection: TextDirection.rtl,
-                style: SmallTextArabic,
-                decoration: InputDecoration(
-                    hintTextDirection: TextDirection.rtl,
-                    fillColor: Color(0XFFF8F8F8),
-                    prefixIcon: Icon(Icons.search, color: Color(0XFF0C3877)),
-                    hintText: "search_hint".tr,
-                    hintStyle: TextStyle(
-                        fontSize: 15,
-                        color: Color(0XFFBEBEBE),
-                        fontFamily: "Cairo"),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
-                        borderSide: BorderSide(color: Color(0XFFD2D2D2))),
-                    focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
-                        borderSide: BorderSide(color: Color(0XFFD2D2D2)))),
-              ),
+              child: HomeTextField(),
             ),
             Expanded(
               flex: 3,
@@ -89,15 +70,12 @@ class Home_Page extends StatelessWidget {
                         children: [
                           Text(
                             "last_story".tr,
-                            style: SmallTextArabic,
+                            style: SmallBlueTextArabic,
                           ),
                           Spacer(),
                           Text(
                             "show_all".tr,
-                            style: TextStyle(
-                                color: Color(0XFFBEBEBE),
-                                fontSize: 13,
-                                fontFamily: "Cairo"),
+                            style: SmallGreyTextArabicNoBold,
                           ),
                         ],
                       ),
@@ -128,14 +106,11 @@ class Home_Page extends StatelessWidget {
                         child: Row(
                           children: [
                             Text("real_estate_ofices".tr,
-                                style: SmallTextArabic),
+                                style: SmallBlueTextArabic),
                             Spacer(),
                             Text(
                               "show_all".tr,
-                              style: TextStyle(
-                                  fontFamily: "Cairo",
-                                  color: Color(0XFFBEBEBE),
-                                  fontSize: 13),
+                              style: SmallGreyTextArabicNoBold,
                             ),
                           ],
                         ),
@@ -168,15 +143,12 @@ class Home_Page extends StatelessWidget {
                         children: [
                           Text(
                             "top_real_estate_announcements".tr,
-                            style: SmallTextArabic,
+                            style: SmallBlueTextArabic,
                           ),
                           Spacer(),
                           Text(
                             "show_all".tr,
-                            style: TextStyle(
-                                color: Color(0XFFBEBEBE),
-                                fontSize: 13,
-                                fontFamily: "Cairo"),
+                            style: SmallGreyTextArabicNoBold,
                           ),
                         ],
                       ),

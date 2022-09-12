@@ -33,10 +33,7 @@ class Otp_Check_Page extends StatelessWidget {
                     Center(
                       child: Text(
                         "we_send_code".tr,
-                        style: TextStyle(
-                            color: Color(0XFF292929),
-                            fontSize: 15,
-                            fontFamily: "Cairo"),
+                        style: sendCodeStyle,
                         textAlign: TextAlign.center,
                       ),
                     )
@@ -52,8 +49,8 @@ class Otp_Check_Page extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(
                             vertical: 8.0, horizontal: 20),
-                        child:
-                            Text("enter_the_code".tr, style: SmallTextArabic),
+                        child: Text("enter_the_code".tr,
+                            style: SmallBlueTextArabic),
                       ),
                       Center(child: Verify()),
                       Padding(
@@ -69,7 +66,7 @@ class Otp_Check_Page extends StatelessWidget {
                             SizedBox(width: 5),
                             Text(
                               "re_sent_code".tr,
-                              style: SmallTextArabic,
+                              style: SmallBlueTextArabic,
                             ),
                           ],
                         ),

@@ -19,15 +19,18 @@ class MyDrawer extends StatelessWidget {
         children: [
           UserAccountsDrawerHeader(
             decoration: BoxDecoration(color: AppColors.blue),
-            accountName: Text("Yamen"),
-            accountEmail: Text("Yamen@gmail.com"),
+            accountName: Text("Yamen", style: SmallWhiteTextArabic),
+            accountEmail: Text(
+              "Yamen@gmail.com",
+              style: SmallWhiteTextArabic,
+            ),
             currentAccountPicture:
                 CircleAvatar(backgroundColor: AppColors.orange),
           ),
           ListTile(
             title: Text(
               "home".tr,
-              style: SmallTextArabic,
+              style: SmallBlueTextArabic,
             ),
             leading: Icon(
               Icons.home,
@@ -38,8 +41,7 @@ class MyDrawer extends StatelessWidget {
             onTap: () {
               Get.defaultDialog(
                   title: 'Choose Language',
-                  titleStyle: TextStyle(
-                      color: AppColors.blue, fontWeight: FontWeight.bold),
+                  titleStyle: SmallBlueTextArabic,
                   content: Column(
                     children: [
                       ListTile(
@@ -57,20 +59,20 @@ class MyDrawer extends StatelessWidget {
                     ],
                   ));
             },
-            title: Text("language".tr, style: SmallTextArabic),
+            title: Text("language".tr, style: SmallBlueTextArabic),
             leading: Icon(
               Icons.language,
               color: AppColors.lightgrey,
             ),
           ),
           ListTile(
-            title: Text('theme'.tr, style: SmallTextArabic),
+            title: Text('theme'.tr, style: SmallBlueTextArabic),
             leading: Icon(Icons.sunny, color: AppColors.lightgrey),
           ),
           ListTile(
             title: Text(
               "about".tr,
-              style: SmallTextArabic,
+              style: SmallBlueTextArabic,
             ),
             leading: Icon(
               Icons.help,
@@ -80,7 +82,7 @@ class MyDrawer extends StatelessWidget {
           ListTile(
             title: Text(
               "logout".tr,
-              style: SmallTextArabic,
+              style: SmallBlueTextArabic,
             ),
             leading: Icon(
               Icons.logout,

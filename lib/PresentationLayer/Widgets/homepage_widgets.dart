@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:noble/Constants/routes.dart';
 import 'package:story_view/story_view.dart';
 import '../../Constants/colors.dart';
+import '../../Constants/font_styles.dart';
 import '../Screens/Public/home_page.dart';
 import '../Screens/Public/office_page.dart';
 
@@ -70,12 +71,9 @@ class content1 extends StatelessWidget {
         ),
         Text(
           "مكتب الشام العقاري",
-          style:
-              TextStyle(fontSize: 10, color: Colors.white, fontFamily: "Cairo"),
+          style: white10NoBold,
         ),
-        Text("دمشق",
-            style: TextStyle(
-                fontSize: 10, color: Colors.white, fontFamily: "Cairo")),
+        Text("دمشق", style: white10NoBold),
       ]),
     );
   }
@@ -121,10 +119,7 @@ class content2 extends StatelessWidget {
                     child: Center(
                         child: Text(
                       "بيع",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 10,
-                          fontFamily: "Cairo"),
+                      style: white10NoBold,
                     )),
                     decoration: BoxDecoration(
                         color: AppColors.blue,
@@ -136,15 +131,11 @@ class content2 extends StatelessWidget {
                     children: [
                       Text(
                         "منزل للبيع",
-                        style:
-                            TextStyle(color: Colors.white, fontFamily: "Cairo"),
+                        style: SmallWhiteTextArabic,
                       ),
                       Text(
                         "دمشق",
-                        style: TextStyle(
-                            color: Color(0XFFBEBEBE),
-                            fontSize: 11,
-                            fontFamily: "Cairo"),
+                        style: grey10NoBold,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -292,6 +283,33 @@ class content3 extends StatelessWidget {
                   image: AssetImage("assets/images/house1.png"),
                   fit: BoxFit.fill),
               borderRadius: BorderRadius.circular(20))),
+    );
+  }
+}
+
+class HomeTextField extends StatelessWidget {
+  const HomeTextField({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      textDirection: TextDirection.rtl,
+      style: SmallBlueTextArabic,
+      decoration: InputDecoration(
+          hintTextDirection: TextDirection.rtl,
+          fillColor: Color(0XFFF8F8F8),
+          prefixIcon: Icon(Icons.search, color: Color(0XFF0C3877)),
+          hintText: "search_hint".tr,
+          hintStyle: TextStyle(
+              fontSize: 15, color: Color(0XFFBEBEBE), fontFamily: "Cairo"),
+          enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(20),
+              borderSide: BorderSide(color: Color(0XFFD2D2D2))),
+          focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(20),
+              borderSide: BorderSide(color: Color(0XFFD2D2D2)))),
     );
   }
 }

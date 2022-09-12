@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:noble/Constants/font_styles.dart';
 import 'package:noble/Constants/languages.dart';
 
 import '../../Constants/colors.dart';
 
 class Office_Info extends StatelessWidget {
-  const Office_Info({
+  int followers_number = 200;
+  Office_Info({
     Key? key,
   }) : super(key: key);
 
@@ -55,12 +57,12 @@ class Office_Info extends StatelessWidget {
           SizedBox(height: 5),
           Text(
             "Alsham Realestate",
-            style: TextStyle(color: AppColors.lightwhite, fontSize: 17),
+            style: white18NoBold,
           ),
           SizedBox(height: 5),
           Text(
             "Damascus",
-            style: TextStyle(color: AppColors.lightwhite),
+            style: SmallWhiteTextArabic,
           ),
         ])),
         Row(
@@ -68,26 +70,14 @@ class Office_Info extends StatelessWidget {
           children: [
             Column(
               children: [
-                Text("1K",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.lightwhite,
-                        fontSize: 30)),
-                Text("followers".tr,
-                    style: TextStyle(
-                        color: AppColors.lightwhite, fontFamily: "Cairo")),
+                Text("1K", style: TitleWhiteArabic),
+                Text("followers".tr, style: SmallWhiteTextArabic),
               ],
             ),
             Column(
               children: [
-                Text("200",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.lightwhite,
-                        fontSize: 30)),
-                Text("real_state".tr,
-                    style: TextStyle(
-                        color: AppColors.lightwhite, fontFamily: "Cairo")),
+                Text("$followers_number", style: TitleWhiteArabic),
+                Text("real_state".tr, style: SmallWhiteTextArabic),
               ],
             ),
           ],
@@ -126,13 +116,10 @@ class office_body extends StatelessWidget {
                         children: [
                           Text(
                             "address".tr,
-                            style: TextStyle(
-                                color: AppColors.blue, fontFamily: "Cairo"),
+                            style: SmallBlueTextArabicNoBold,
                           ),
                           Text("damascus_salhiya".tr,
-                              style: TextStyle(
-                                  color: Color(0XFF8B8B8B),
-                                  fontFamily: "Cairo")),
+                              style: SmallGreyTextArabicNoBold),
                         ]),
                     Spacer(),
                     Icon(
@@ -148,12 +135,7 @@ class office_body extends StatelessWidget {
         ),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.0),
-          child: Text("last_properties".tr,
-              style: TextStyle(
-                  fontSize: 20,
-                  fontFamily: "Cairo",
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.blue)),
+          child: Text("last_properties".tr, style: MediumeBlueArabic),
         ),
         Container(
           height: 200,
@@ -168,12 +150,11 @@ class office_body extends StatelessWidget {
                 ),
                 title: Text(
                   "villa_for_sale".tr,
-                  style: TextStyle(
-                      color: AppColors.blue, fontSize: 18, fontFamily: "Cairo"),
+                  style: blue18NoBold,
                 ),
                 subtitle: Text(
                   "1,300,000",
-                  style: TextStyle(color: Color(0XFFD2D2D2), fontSize: 14),
+                  style: SmallGreyTextArabicNoBold,
                 ),
               ),
               ListTile(
@@ -183,25 +164,21 @@ class office_body extends StatelessWidget {
                 ),
                 title: Text(
                   "villa_for_sale".tr,
-                  style: TextStyle(
-                      color: AppColors.blue, fontSize: 18, fontFamily: "Cairo"),
+                  style: blue18NoBold,
                 ),
                 subtitle: Text("1,300,000",
                     style: TextStyle(color: Color(0XFFD2D2D2), fontSize: 14)),
               ),
               ListTile(
-                
                 leading: CircleAvatar(
                   backgroundImage: AssetImage("assets/images/house2.png"),
                   radius: 25,
                 ),
                 title: Text(
                   "villa_for_sale".tr,
-                  style: TextStyle(
-                      color: AppColors.blue, fontSize: 18, fontFamily: "Cairo"),
+                  style: blue18NoBold,
                 ),
-                subtitle: Text("1,300,000",
-                    style: TextStyle(color: Color(0XFFD2D2D2), fontSize: 14)),
+                subtitle: Text("1,300,000", style: SmallGreyTextArabicNoBold),
               ),
               ListTile(
                 leading: CircleAvatar(
@@ -210,8 +187,7 @@ class office_body extends StatelessWidget {
                 ),
                 title: Text(
                   "فيلا للبيع",
-                  style: TextStyle(
-                      color: AppColors.blue, fontSize: 18, fontFamily: "Cairo"),
+                  style: blue18NoBold,
                 ),
                 subtitle: Text("1,300,000"),
               ),

@@ -34,7 +34,7 @@ class Login_Page extends StatelessWidget {
             Expanded(
               child: Container(
                 child: Center(
-                  child: Text("login".tr, style: TitleArabic),
+                  child: Text("login".tr, style: TitleWhiteArabic),
                 ),
                 width: double.infinity,
                 decoration: BoxDecoration(
@@ -54,7 +54,7 @@ class Login_Page extends StatelessWidget {
                     children: [
                       Text(
                         "enter_your_phone_number".tr,
-                        style: SmallTextArabic,
+                        style: SmallBlueTextArabic,
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -67,10 +67,7 @@ class Login_Page extends StatelessWidget {
                                     "Please enter your phone number",
                                     titleText: Text(
                                       "Cannot be empty",
-                                      style: TextStyle(
-                                          color: AppColors.blue,
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold),
+                                      style: MediumeBlueArabic,
                                     ),
                                     backgroundColor: Colors.grey,
                                     messageText: Text(
@@ -95,10 +92,7 @@ class Login_Page extends StatelessWidget {
                                     "Please enter your phone number correctly",
                                     titleText: Text(
                                       "Should be 10 number",
-                                      style: TextStyle(
-                                          color: AppColors.blue,
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold),
+                                      style: MediumeBlueArabic,
                                     ),
                                     backgroundColor: Colors.grey,
                                     messageText: Text(
@@ -122,10 +116,7 @@ class Login_Page extends StatelessWidget {
                                     "Please enter your phone number correctly",
                                     titleText: Text(
                                       "Should be start with 09",
-                                      style: TextStyle(
-                                          color: AppColors.blue,
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold),
+                                      style: MediumeBlueArabic,
                                     ),
                                     backgroundColor: Colors.grey,
                                     messageText: Text(

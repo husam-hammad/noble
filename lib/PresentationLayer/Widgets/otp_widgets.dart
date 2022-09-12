@@ -20,7 +20,7 @@ class Verify extends StatelessWidget {
       textDirection: TextDirection.ltr,
       child: VerificationCode(
         autofocus: true,
-        textStyle: SmallTextArabic,
+        textStyle: SmallBlueTextArabic,
         onCompleted: (String value) {},
         onEditing: (bool value) {
           FocusScope.of(context).unfocus();

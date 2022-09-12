@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:noble/Constants/colors.dart';
+import 'package:noble/Constants/font_styles.dart';
 import 'package:noble/PresentationLayer/Screens/Public/favorite_page.dart';
 import 'package:noble/PresentationLayer/Screens/Public/home_page.dart';
 import 'package:noble/PresentationLayer/Screens/Public/more_page.dart';
@@ -28,8 +29,8 @@ class _HomeState extends State<OnBoarding> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-          selectedLabelStyle: TextStyle(fontFamily: "Cairo"),
-          unselectedLabelStyle: TextStyle(fontFamily: "Cairo"),
+          selectedLabelStyle: SmallWhiteTextArabic,
+          unselectedLabelStyle: SmallWhiteTextArabic,
           backgroundColor: AppColors.blue,
           currentIndex: selected_item,
           onTap: (index) {

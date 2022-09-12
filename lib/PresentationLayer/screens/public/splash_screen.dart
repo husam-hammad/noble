@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:noble/BusinessLayer/Controllers/home_controller.dart';
+import 'package:noble/Constants/font_styles.dart';
 import 'package:noble/Constants/languages.dart';
 import 'package:noble/Constants/routes.dart';
 import 'package:noble/PresentationLayer/Screens/Auth/login_page.dart';
@@ -34,20 +35,8 @@ class SplashScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset("assets/images/nobleLogo.png"),
-                  Text("noble".tr,
-                      style: TextStyle(
-                          fontSize: 25,
-                          fontFamily: "Cairo",
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold)),
-                  Text(
-                    "real_estate_service".tr,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: "Cairo",
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20),
-                  ),
+                  Text("noble".tr, style: TitleWhiteArabic),
+                  Text("real_estate_service".tr, style: MediumeWhiteArabic),
                 ],
               ),
             ),

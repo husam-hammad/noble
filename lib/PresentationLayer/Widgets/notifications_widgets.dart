@@ -22,11 +22,11 @@ class Notification_Body extends StatelessWidget {
                 onTap: () {},
                 title: Text(
                   notification_content[i],
-                  style: SmallTextArabic,
+                  style: SmallBlueTextArabic,
                 ),
                 subtitle: Text(
                   notification_time[i],
-                  style: TextStyle(color: Color(0XFFBEBEBE)),
+                  style: SmallGreyTextArabicNoBold,
                 ),
                 leading: CircleAvatar(
                   backgroundImage: AssetImage(photo[0]),
@@ -80,14 +80,13 @@ class Notification_Textfield extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
       child: TextFormField(
         textDirection: TextDirection.rtl,
-        style: SmallTextArabic,
+        style: SmallBlueTextArabic,
         decoration: InputDecoration(
             hintTextDirection: TextDirection.rtl,
             fillColor: Color(0XFFF8F8F8),
             prefixIcon: Icon(Icons.search, color: Color(0XFF0C3877)),
             hintText: "search_in_notification".tr,
-            hintStyle: TextStyle(
-                fontSize: 15, color: Color(0XFFBEBEBE), fontFamily: "Cairo"),
+            hintStyle: SmallGreyTextArabicNoBold,
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
                 borderSide: BorderSide(color: Color(0XFFD2D2D2))),
