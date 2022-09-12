@@ -29,7 +29,7 @@ class SplashScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SizedBox(),
+            const SizedBox(),
             Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -46,7 +46,7 @@ class SplashScreen extends StatelessWidget {
               child: LinearProgressIndicator(
                   value: progress,
                   minHeight: 5,
-                  valueColor: AlwaysStoppedAnimation(AppColors.blue),
+                  valueColor: const AlwaysStoppedAnimation(AppColors.blue),
                   backgroundColor: AppColors.orange,
                   color: AppColors.orange),
             ),

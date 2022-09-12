@@ -15,7 +15,7 @@ class Notification_Page extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -24,7 +24,7 @@ class Notification_Page extends StatelessWidget {
               onPressed: () {
                 Scaffold.of(context).openDrawer();
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.dashboard_outlined,
                 size: 30,
                 color: AppColors.blue,
@@ -32,13 +32,13 @@ class Notification_Page extends StatelessWidget {
         }),
         title: Text(
           'noble_realstate'.tr,
-          style: TextStyle(
+          style: const TextStyle(
               color: Color(0XFF0C3877), fontSize: 20, fontFamily: "Cairo"),
         ),
         centerTitle: true,
         actions: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
             child: CircleAvatar(
               backgroundImage: AssetImage("assets/images/person.jpg"),
               radius: 15,
@@ -49,7 +49,7 @@ class Notification_Page extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Notification_Textfield(),
+          const Notification_Textfield(),
           Padding(
             padding:
                 const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),

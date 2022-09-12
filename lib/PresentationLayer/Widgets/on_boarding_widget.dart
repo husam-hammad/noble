@@ -17,10 +17,10 @@ class MyDrawer extends StatelessWidget {
     return Drawer(
       child: Column(
         children: [
-          UserAccountsDrawerHeader(
+          const UserAccountsDrawerHeader(
             decoration: BoxDecoration(color: AppColors.blue),
             accountName: Text("Yamen", style: SmallWhiteTextArabic),
-            accountEmail: Text(
+            accountEmail: const Text(
               "Yamen@gmail.com",
               style: SmallWhiteTextArabic,
             ),
@@ -32,7 +32,7 @@ class MyDrawer extends StatelessWidget {
               "home".tr,
               style: SmallBlueTextArabic,
             ),
-            leading: Icon(
+            leading: const Icon(
               Icons.home,
               color: AppColors.lightgrey,
             ),
@@ -45,13 +45,13 @@ class MyDrawer extends StatelessWidget {
                   content: Column(
                     children: [
                       ListTile(
-                        title: Text("Arabic"),
+                        title: const Text("Arabic"),
                         onTap: () {
                           controllerLang.changeLanguage("ar");
                         },
                       ),
                       ListTile(
-                        title: Text("English"),
+                        title: const Text("English"),
                         onTap: () {
                           controllerLang.changeLanguage("en");
                         },
@@ -60,21 +60,21 @@ class MyDrawer extends StatelessWidget {
                   ));
             },
             title: Text("language".tr, style: SmallBlueTextArabic),
-            leading: Icon(
+            leading: const Icon(
               Icons.language,
               color: AppColors.lightgrey,
             ),
           ),
           ListTile(
             title: Text('theme'.tr, style: SmallBlueTextArabic),
-            leading: Icon(Icons.sunny, color: AppColors.lightgrey),
+            leading: const Icon(Icons.sunny, color: AppColors.lightgrey),
           ),
           ListTile(
             title: Text(
               "about".tr,
               style: SmallBlueTextArabic,
             ),
-            leading: Icon(
+            leading: const Icon(
               Icons.help,
               color: AppColors.lightgrey,
             ),
@@ -84,7 +84,7 @@ class MyDrawer extends StatelessWidget {
               "logout".tr,
               style: SmallBlueTextArabic,
             ),
-            leading: Icon(
+            leading: const Icon(
               Icons.logout,
               color: AppColors.lightgrey,
             ),

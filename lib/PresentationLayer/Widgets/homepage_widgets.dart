@@ -64,16 +64,16 @@ class content1 extends StatelessWidget {
       },
       child:
           Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-        CircleAvatar(
-          backgroundImage: AssetImage("assets/images/office.png"),
+        const CircleAvatar(
+          backgroundImage: const AssetImage("assets/images/office.png"),
           radius: 20,
           backgroundColor: Colors.white,
         ),
-        Text(
+        const Text(
           "مكتب الشام العقاري",
           style: white10NoBold,
         ),
-        Text("دمشق", style: white10NoBold),
+        const Text("دمشق", style: white10NoBold),
       ]),
     );
   }
@@ -103,7 +103,7 @@ class content2 extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                  color: Color(0XFF0F2E62).withAlpha(75),
+                  color: const Color(0XFF0F2E62).withAlpha(75),
                   borderRadius: BorderRadius.circular(20)),
             ),
             Padding(
@@ -116,7 +116,7 @@ class content2 extends StatelessWidget {
                   Container(
                     width: 50,
                     height: 30,
-                    child: Center(
+                    child: const Center(
                         child: Text(
                       "بيع",
                       style: white10NoBold,
@@ -129,65 +129,65 @@ class content2 extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         "منزل للبيع",
                         style: SmallWhiteTextArabic,
                       ),
-                      Text(
+                      const Text(
                         "دمشق",
                         style: grey10NoBold,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          Text("حمام 2",
-                              style: TextStyle(
+                          const Text("حمام 2",
+                              style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 8,
                                   fontFamily: "Cairo")),
-                          SizedBox(
+                          const SizedBox(
                             width: 3,
                           ),
-                          Icon(Icons.ac_unit_sharp,
+                          const Icon(Icons.ac_unit_sharp,
                               size: 8, color: Colors.white),
-                          SizedBox(
+                          const SizedBox(
                             width: 5,
                           ),
-                          Text("غرف 5",
+                          const Text("غرف 5",
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 8,
                                   fontFamily: "Cairo")),
-                          SizedBox(
+                          const SizedBox(
                             width: 3,
                           ),
-                          Icon(Icons.abc_outlined,
+                          const Icon(Icons.abc_outlined,
                               size: 8, color: Colors.white),
-                          SizedBox(
+                          const SizedBox(
                             width: 5,
                           ),
-                          Text("شرقي",
-                              style: TextStyle(
+                          const Text("شرقي",
+                              style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 8,
                                   fontFamily: "Cairo")),
-                          SizedBox(
+                          const SizedBox(
                             width: 3,
                           ),
-                          Icon(Icons.ac_unit_sharp,
+                          const Icon(Icons.ac_unit_sharp,
                               size: 8, color: Colors.white),
-                          SizedBox(
+                          const SizedBox(
                             width: 5,
                           ),
-                          Text("700",
-                              style: TextStyle(
+                          const Text("700",
+                              style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 8,
                                   fontFamily: "Cairo")),
-                          SizedBox(
+                          const SizedBox(
                             width: 3,
                           ),
-                          Icon(Icons.ac_unit_sharp,
+                          const Icon(Icons.ac_unit_sharp,
                               size: 8, color: Colors.white),
                         ],
                       )
@@ -266,7 +266,7 @@ class content3 extends StatelessWidget {
             StoryItem.inlineImage(
                 url: 'assets/images/person.jpg',
                 controller: controller,
-                caption: Text("")),
+                caption: const Text("")),
           ],
           controller: controller,
           onStoryShow: (s) {
@@ -279,7 +279,7 @@ class content3 extends StatelessWidget {
       },
       child: Container(
           decoration: BoxDecoration(
-              image: DecorationImage(
+              image: const DecorationImage(
                   image: AssetImage("assets/images/house1.png"),
                   fit: BoxFit.fill),
               borderRadius: BorderRadius.circular(20))),
@@ -299,17 +299,19 @@ class HomeTextField extends StatelessWidget {
       style: SmallBlueTextArabic,
       decoration: InputDecoration(
           hintTextDirection: TextDirection.rtl,
-          fillColor: Color(0XFFF8F8F8),
-          prefixIcon: Icon(Icons.search, color: Color(0XFF0C3877)),
+          fillColor: const Color(0XFFF8F8F8),
+          prefixIcon: const Icon(Icons.search, color: const Color(0XFF0C3877)),
           hintText: "search_hint".tr,
-          hintStyle: TextStyle(
-              fontSize: 15, color: Color(0XFFBEBEBE), fontFamily: "Cairo"),
+          hintStyle: const TextStyle(
+              fontSize: 15,
+              color: const Color(0XFFBEBEBE),
+              fontFamily: "Cairo"),
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20),
-              borderSide: BorderSide(color: Color(0XFFD2D2D2))),
+              borderSide: const BorderSide(color: const Color(0XFFD2D2D2))),
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20),
-              borderSide: BorderSide(color: Color(0XFFD2D2D2)))),
+              borderSide: const BorderSide(color: const Color(0XFFD2D2D2)))),
     );
   }
 }

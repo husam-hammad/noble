@@ -20,7 +20,7 @@ class Home_Page extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         backgroundColor: Colors.white,
-        drawer: MyDrawer(),
+        drawer: const MyDrawer(),
         appBar: AppBar(
           backgroundColor: Colors.white,
           elevation: 0,
@@ -29,7 +29,7 @@ class Home_Page extends StatelessWidget {
                 onPressed: () {
                   Scaffold.of(context).openDrawer();
                 },
-                icon: Icon(
+                icon: const Icon(
                   Icons.dashboard_outlined,
                   size: 30,
                   color: AppColors.blue,
@@ -41,10 +41,10 @@ class Home_Page extends StatelessWidget {
           ),
           centerTitle: true,
           actions: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: CircleAvatar(
-                backgroundImage: AssetImage("assets/images/person.jpg"),
+                backgroundImage: const AssetImage("assets/images/person.jpg"),
                 radius: 15,
               ),
             ),
@@ -52,15 +52,14 @@ class Home_Page extends StatelessWidget {
         ),
         body: Column(
           children: [
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
-              child: HomeTextField(),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
+              child: const HomeTextField(),
             ),
             Expanded(
               flex: 3,
               child: Container(
-                decoration: BoxDecoration(color: Color(0XFFF8F8F8)),
+                decoration: const BoxDecoration(color: Color(0XFFF8F8F8)),
                 child: Column(
                   children: [
                     Padding(
@@ -72,7 +71,7 @@ class Home_Page extends StatelessWidget {
                             "last_story".tr,
                             style: SmallBlueTextArabic,
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Text(
                             "show_all".tr,
                             style: SmallGreyTextArabicNoBold,
@@ -96,7 +95,7 @@ class Home_Page extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
                 child: Container(
-                  decoration: BoxDecoration(color: Color(0XFFF8F8F8)),
+                  decoration: const BoxDecoration(color: Color(0XFFF8F8F8)),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -107,7 +106,7 @@ class Home_Page extends StatelessWidget {
                           children: [
                             Text("real_estate_ofices".tr,
                                 style: SmallBlueTextArabic),
-                            Spacer(),
+                            const Spacer(),
                             Text(
                               "show_all".tr,
                               style: SmallGreyTextArabicNoBold,
@@ -120,9 +119,9 @@ class Home_Page extends StatelessWidget {
                         tag: 'office_hero',
                         child: Houses_Office(
                           element_w: 100,
-                          content: content1(),
+                          content: const content1(),
                           item_count: 11,
-                          back_color: Color(0XFF487CC7),
+                          back_color: const Color(0XFF487CC7),
                         ),
                       ))
                     ],
@@ -133,7 +132,7 @@ class Home_Page extends StatelessWidget {
             Expanded(
               flex: 2,
               child: Container(
-                decoration: BoxDecoration(color: Color(0XFFF8F8F8)),
+                decoration: const BoxDecoration(color: const Color(0XFFF8F8F8)),
                 child: Column(
                   children: [
                     Padding(
@@ -145,7 +144,7 @@ class Home_Page extends StatelessWidget {
                             "top_real_estate_announcements".tr,
                             style: SmallBlueTextArabic,
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Text(
                             "show_all".tr,
                             style: SmallGreyTextArabicNoBold,
@@ -169,7 +168,7 @@ class Home_Page extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             )
           ],

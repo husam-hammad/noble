@@ -19,9 +19,9 @@ class OnBoarding extends StatefulWidget {
 class _HomeState extends State<OnBoarding> {
   int selected_item = 0;
   List<Widget> homeWidget = [
-    More_Page(),
+    const More_Page(),
     Notification_Page(),
-    Favorite_Page(),
+    const Favorite_Page(),
     Home_Page()
   ];
 

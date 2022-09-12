@@ -15,11 +15,11 @@ class Office_Info extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           color: AppColors.blue,
           borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(80),
-              bottomRight: Radius.circular(80))),
+              bottomLeft: const Radius.circular(80),
+              bottomRight: const Radius.circular(80))),
       child:
           Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
         Padding(
@@ -28,14 +28,14 @@ class Office_Info extends StatelessWidget {
           ),
           child: Row(
             children: [
-              Icon(
+              const Icon(
                 Icons.favorite_border,
                 color: AppColors.lightwhite,
                 size: 40,
               ),
-              Spacer(),
+              const Spacer(),
               IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.chevron_right,
                   color: AppColors.lightwhite,
                   size: 40,
@@ -49,18 +49,18 @@ class Office_Info extends StatelessWidget {
         ),
         Center(
             child: Column(children: [
-          CircleAvatar(
-            backgroundImage: AssetImage("assets/images/office.png"),
+          const CircleAvatar(
+            backgroundImage: const AssetImage("assets/images/office.png"),
             radius: 50,
             backgroundColor: Colors.transparent,
           ),
-          SizedBox(height: 5),
-          Text(
+          const SizedBox(height: 5),
+          const Text(
             "Alsham Realestate",
             style: white18NoBold,
           ),
-          SizedBox(height: 5),
-          Text(
+          const SizedBox(height: 5),
+          const Text(
             "Damascus",
             style: SmallWhiteTextArabic,
           ),
@@ -70,7 +70,7 @@ class Office_Info extends StatelessWidget {
           children: [
             Column(
               children: [
-                Text("1K", style: TitleWhiteArabic),
+                const Text("1K", style: TitleWhiteArabic),
                 Text("followers".tr, style: SmallWhiteTextArabic),
               ],
             ),
@@ -106,7 +106,7 @@ class office_body extends StatelessWidget {
                 width: double.infinity,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Color(0XFFEDF1FD)),
+                    color: const Color(0XFFEDF1FD)),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Row(children: [
@@ -121,8 +121,8 @@ class office_body extends StatelessWidget {
                           Text("damascus_salhiya".tr,
                               style: SmallGreyTextArabicNoBold),
                         ]),
-                    Spacer(),
-                    Icon(
+                    const Spacer(),
+                    const Icon(
                       Icons.location_on,
                       color: AppColors.blue,
                       size: 35,
@@ -134,31 +134,31 @@ class office_body extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.0),
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Text("last_properties".tr, style: MediumeBlueArabic),
         ),
         Container(
           height: 200,
           child: ListView(
             scrollDirection: Axis.vertical,
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             children: [
               ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: AssetImage("assets/images/house4.png"),
+                leading: const CircleAvatar(
+                  backgroundImage: const AssetImage("assets/images/house4.png"),
                   radius: 25,
                 ),
                 title: Text(
                   "villa_for_sale".tr,
                   style: blue18NoBold,
                 ),
-                subtitle: Text(
+                subtitle: const Text(
                   "1,300,000",
                   style: SmallGreyTextArabicNoBold,
                 ),
               ),
               ListTile(
-                leading: CircleAvatar(
+                leading: const CircleAvatar(
                   backgroundImage: AssetImage("assets/images/house1.png"),
                   radius: 25,
                 ),
@@ -166,21 +166,23 @@ class office_body extends StatelessWidget {
                   "villa_for_sale".tr,
                   style: blue18NoBold,
                 ),
-                subtitle: Text("1,300,000",
-                    style: TextStyle(color: Color(0XFFD2D2D2), fontSize: 14)),
+                subtitle: const Text("1,300,000",
+                    style: const TextStyle(
+                        color: Color(0XFFD2D2D2), fontSize: 14)),
               ),
               ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: AssetImage("assets/images/house2.png"),
+                leading: const CircleAvatar(
+                  backgroundImage: const AssetImage("assets/images/house2.png"),
                   radius: 25,
                 ),
                 title: Text(
                   "villa_for_sale".tr,
                   style: blue18NoBold,
                 ),
-                subtitle: Text("1,300,000", style: SmallGreyTextArabicNoBold),
+                subtitle:
+                    const Text("1,300,000", style: SmallGreyTextArabicNoBold),
               ),
-              ListTile(
+              const ListTile(
                 leading: CircleAvatar(
                   backgroundImage: AssetImage("assets/images/house3.png"),
                   radius: 25,

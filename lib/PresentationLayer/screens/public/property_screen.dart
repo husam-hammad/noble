@@ -36,8 +36,8 @@ class Property_Screen extends StatelessWidget {
                   floating: true,
                   flexibleSpace: FlexibleSpaceBar(
                     centerTitle: true,
-                    title: Text("فيلا للبيع في دمشق",
-                        style: TextStyle(
+                    title: const Text("فيلا للبيع في دمشق",
+                        style: const TextStyle(
                           fontFamily: "Cairo",
                           fontSize: 12,
                           color: Colors.white,
@@ -48,22 +48,22 @@ class Property_Screen extends StatelessWidget {
                           "assets/images/house1.png",
                           fit: BoxFit.cover,
                         ),
-                        Container(color: Color(0XFF0F2E62).withAlpha(75))
+                        Container(color: const Color(0XFF0F2E62).withAlpha(75))
                       ]),
                     ),
                   ),
                   backgroundColor: AppColors.blue2,
                   expandedHeight: 250,
                   actions: [
-                    Icon(Icons.chevron_right,
+                    const Icon(Icons.chevron_right,
                         size: 30, color: AppColors.lightwhite),
-                    SizedBox(
+                    const SizedBox(
                       width: 12,
                     )
                   ],
-                  leading: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                    child: Icon(Icons.favorite_border,
+                  leading: const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 12.0),
+                    child: const Icon(Icons.favorite_border,
                         size: 30, color: AppColors.lightwhite),
                   ),
                 ),
@@ -79,26 +79,27 @@ int whatch_number = 100;
 
 Widget buildBody() => SliverToBoxAdapter(
       child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20), topRight: Radius.circular(20))),
+                  topLeft: const Radius.circular(20),
+                  topRight: const Radius.circular(20))),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              SizedBox(height: 25),
+              const SizedBox(height: 25),
               Row(
                 children: [
-                  Text("مواصفات العقار", style: MediumeBlueArabic),
-                  Spacer(),
+                  const Text("مواصفات العقار", style: MediumeBlueArabic),
+                  const Spacer(),
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.remove_red_eye,
                         size: 12,
                         color: Color(0XFFBEBEBE),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 5,
                       ),
                       Text(
@@ -109,78 +110,78 @@ Widget buildBody() => SliverToBoxAdapter(
                   )
                 ],
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               Row(
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.sell,
-                    color: Color(0XFFBEBEBE),
+                    color: const Color(0XFFBEBEBE),
                     size: 30,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
-                  Text(
+                  const Text(
                     "130.000.000",
                     style: TitleGreyArabic,
                   )
                 ],
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.ac_unit_outlined,
                         color: AppColors.orange,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 3,
                       ),
-                      Text("700", style: SmallBlueTextArabic)
+                      const Text("700", style: SmallBlueTextArabic)
                     ],
                   ),
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.ac_unit_outlined,
                         color: AppColors.orange,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 3,
                       ),
-                      Text("شرقي", style: SmallBlueTextArabic)
+                      const Text("شرقي", style: SmallBlueTextArabic)
                     ],
                   ),
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.ac_unit_outlined,
                         color: AppColors.orange,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 3,
                       ),
-                      Text("5 غرف", style: SmallBlueTextArabic)
+                      const Text("5 غرف", style: SmallBlueTextArabic)
                     ],
                   ),
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.ac_unit_outlined,
                         color: AppColors.orange,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 3,
                       ),
-                      Text("حمام 2", style: SmallBlueTextArabic)
+                      const Text("حمام 2", style: SmallBlueTextArabic)
                     ],
                   ),
                 ],
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
@@ -205,18 +206,18 @@ Widget buildBody() => SliverToBoxAdapter(
                             border: Border.all(color: AppColors.grey)),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 5,
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                      children: const [
                         Text("مكتب الشام", style: blue18NoBold),
                         Text("عارض الإعلان", style: SmallGreyTextArabicNoBold)
                       ],
                     ),
-                    Spacer(),
-                    Icon(
+                    const Spacer(),
+                    const Icon(
                       Icons.phone,
                       color: AppColors.blue,
                       size: 25,
@@ -224,23 +225,23 @@ Widget buildBody() => SliverToBoxAdapter(
                   ]),
                 ),
               ),
-              SizedBox(height: 15),
-              Text(
+              const SizedBox(height: 15),
+              const Text(
                 "وصف العقار",
                 style: MediumeBlueArabic,
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               TextFormField(
                 minLines: 1,
                 maxLines: 10,
                 style: SmallBlueTextArabic,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: UnderlineInputBorder(borderSide: BorderSide.none),
                     hintText:
                         "هنا نكتب مواصفات العقار أو نبذة تعريفيه عنه\nوعن مكوناته وموقعه",
                     hintStyle: SmallGreyTextArabicNoBold),
               ),
-              SizedBox(height: 200)
+              const SizedBox(height: 200)
             ]),
           )),
     );

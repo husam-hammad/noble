@@ -24,7 +24,7 @@ class Office_Page extends StatelessWidget {
                   child: Office_Info(),
                   flex: 1,
                 ),
-                Expanded(flex: 1, child: office_body())
+                const Expanded(flex: 1, child: const office_body())
               ]),
         ),
       ),

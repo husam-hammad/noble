@@ -7,7 +7,7 @@ class Login_Widgets extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Text(""),
     );
   }
@@ -34,8 +34,9 @@ class bottom_circle extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           color: circle_color,
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(120), topRight: Radius.circular(120))),
+          borderRadius: const BorderRadius.only(
+              topLeft: const Radius.circular(120),
+              topRight: Radius.circular(120))),
       child: Center(
         child: Text(text,
             textAlign: TextAlign.center,
@@ -71,7 +72,7 @@ class button extends StatelessWidget {
         width: double.infinity,
         decoration: BoxDecoration(
           boxShadow: [
-            BoxShadow(
+            const BoxShadow(
                 color: Colors.grey, blurRadius: 2.0, offset: Offset(0.0, 2.0))
           ],
           borderRadius: BorderRadius.circular(10),

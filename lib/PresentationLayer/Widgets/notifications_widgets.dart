@@ -15,7 +15,7 @@ class Notification_Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.builder(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         itemBuilder: (context, i) {
           return Container(
             child: ListTile(
@@ -83,16 +83,16 @@ class Notification_Textfield extends StatelessWidget {
         style: SmallBlueTextArabic,
         decoration: InputDecoration(
             hintTextDirection: TextDirection.rtl,
-            fillColor: Color(0XFFF8F8F8),
-            prefixIcon: Icon(Icons.search, color: Color(0XFF0C3877)),
+            fillColor: const Color(0XFFF8F8F8),
+            prefixIcon: const Icon(Icons.search, color: Color(0XFF0C3877)),
             hintText: "search_in_notification".tr,
             hintStyle: SmallGreyTextArabicNoBold,
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
-                borderSide: BorderSide(color: Color(0XFFD2D2D2))),
+                borderSide: const BorderSide(color: const Color(0XFFD2D2D2))),
             focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
-                borderSide: BorderSide(color: Color(0XFFD2D2D2)))),
+                borderSide: const BorderSide(color: Color(0XFFD2D2D2)))),
       ),
     );
   }
