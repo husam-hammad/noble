@@ -76,9 +76,8 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     Expanded(
-                        child: HousesOffice(
+                        child: StoryOffice(
                       backColor: Colors.transparent,
-                      content: Content3(),
                       elementW: 100,
                       itemCount: 4,
                     ))
@@ -111,14 +110,11 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                       const Expanded(
-                          child: Hero(
-                        tag: 'office_hero',
-                        child: HousesOffice(
-                          elementW: 100,
-                          content: Content1(),
-                          itemCount: 11,
-                          backColor: Color(0XFF487CC7),
-                        ),
+                          child: RealStateOffice(
+                        elementW: 100,
+                        itemCount: 11,
+                        backColor: Color(0XFF487CC7),
+                        content2: Content1(),
                       ))
                     ],
                   ),
@@ -148,15 +144,11 @@ class HomePage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const Expanded(
-                        child: Hero(
-                      tag: 'property_hero',
-                      child: HouseOffice(
-                        elementW: 175,
-                        content2: Content2(),
-                        itemCount: 4,
-                        backColor: Colors.transparent,
-                      ),
+                    Expanded(
+                        child: SupremePoclaimes(
+                      elementW: 175,
+                      itemCount: 4,
+                      backColor: Colors.transparent,
                     ))
                   ],
                 ),
