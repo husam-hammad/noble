@@ -29,7 +29,9 @@ class SplashScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset("assets/images/nobleLogo.png"),
+                  RotatedBox(
+                      quarterTurns: 1,
+                      child: Image.asset("assets/images/nobleLogo.png")),
                   Text("noble".tr, style: white25ArabicBold),
                   Text("real_estate_service".tr, style: white20ArabicBold),
                 ],
