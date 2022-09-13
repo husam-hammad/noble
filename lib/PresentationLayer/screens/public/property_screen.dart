@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:noble/Constants/colors.dart';
 import 'package:noble/Constants/font_styles.dart';
 
@@ -33,16 +34,30 @@ class PropertyScreen extends StatelessWidget {
             body: CustomScrollView(
               slivers: [
                 SliverAppBar(
-                  bottom: PreferredSize(child: Container(child: const Center(child: Padding(
-                    padding:  EdgeInsets.all(8.0),
-                    
-                  )),width: double.infinity,decoration: const BoxDecoration(color:Colors.white,borderRadius: BorderRadius.only(topLeft: Radius.circular(50),topRight: Radius.circular(50))),), preferredSize:const Size.fromHeight(0)),
+                  bottom: PreferredSize(
+                      child: Container(
+                        child: const Center(
+                            child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                        )),
+                        width: double.infinity,
+                        decoration: const BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(50),
+                                topRight: Radius.circular(50))),
+                      ),
+                      preferredSize: const Size.fromHeight(0)),
                   floating: true,
-                  flexibleSpace: FlexibleSpaceBar( title:  const Padding(
-                    padding:  EdgeInsets.only(bottom:5.0),
-                    child: Text("فيلا للبيع في دمشق",style: white18NoBold,),
-                  ),centerTitle: true,
-                    
+                  flexibleSpace: FlexibleSpaceBar(
+                    title: const Padding(
+                      padding: EdgeInsets.only(bottom: 5.0),
+                      child: Text(
+                        "فيلا للبيع في دمشق",
+                        style: white18NoBold,
+                      ),
+                    ),
+                    centerTitle: true,
                     background: Stack(fit: StackFit.expand, children: [
                       Image.asset(
                         "assets/images/house1.png",
@@ -53,16 +68,21 @@ class PropertyScreen extends StatelessWidget {
                   ),
                   backgroundColor: AppColors.blue2,
                   expandedHeight: 250,
-                  actions:const [
-                     Icon(Icons.chevron_right,
-                        size: 30, color: AppColors.lightwhite),
-                     SizedBox(
+                  actions: [
+                    IconButton(
+                      icon: const Icon(Icons.chevron_right,
+                          size: 30, color: AppColors.lightwhite),
+                      onPressed: () {
+                        Get.back();
+                      },
+                    ),
+                    const SizedBox(
                       width: 12,
                     )
                   ],
                   leading: const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 12.0),
-                    child:  Icon(Icons.favorite_border,
+                    child: Icon(Icons.favorite_border,
                         size: 30, color: AppColors.lightwhite),
                   ),
                 ),
@@ -79,8 +99,7 @@ int whatchNumber = 100;
 Widget buildBody() => SliverToBoxAdapter(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child:
-            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           const SizedBox(height: 25),
           Row(
             children: [
@@ -106,16 +125,16 @@ Widget buildBody() => SliverToBoxAdapter(
           ),
           const SizedBox(height: 15),
           Row(
-            children:const [
-               Icon(
+            children: const [
+              Icon(
                 Icons.sell,
-                color:  Color(0XFFBEBEBE),
+                color: Color(0XFFBEBEBE),
                 size: 30,
               ),
-               SizedBox(
+              SizedBox(
                 width: 10,
               ),
-               Text(
+              Text(
                 "130.000.000",
                 style: grey25ArabicBold,
               )
@@ -126,51 +145,51 @@ Widget buildBody() => SliverToBoxAdapter(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Row(
-                children: const[
-                   Icon(
-                    Icons.ac_unit_outlined,
+                children: const [
+                  Icon(
+                    Icons.home,
                     color: AppColors.orange,
                   ),
-                   SizedBox(
+                  SizedBox(
                     width: 3,
                   ),
-                   Text("700", style: blue15TextArabicBold)
+                  Text("700", style: blue15TextArabicBold)
                 ],
               ),
               Row(
-                children: const[
-                   Icon(
-                    Icons.ac_unit_outlined,
+                children: const [
+                  Icon(
+                    Icons.open_with,
                     color: AppColors.orange,
                   ),
-                   SizedBox(
+                  SizedBox(
                     width: 3,
                   ),
-                   Text("شرقي", style: blue15TextArabicBold)
+                  Text("شرقي", style: blue15TextArabicBold)
                 ],
               ),
               Row(
-                children: const[
-                   Icon(
-                    Icons.ac_unit_outlined,
+                children: const [
+                  Icon(
+                    Icons.single_bed,
                     color: AppColors.orange,
                   ),
-                   SizedBox(
+                  SizedBox(
                     width: 3,
                   ),
-                   Text("5 غرف", style: blue15TextArabicBold)
+                  Text("5 غرف", style: blue15TextArabicBold)
                 ],
               ),
               Row(
-                children:const [
-                   Icon(
-                    Icons.ac_unit_outlined,
+                children: const [
+                  Icon(
+                    Icons.bathtub_sharp,
                     color: AppColors.orange,
                   ),
-                   SizedBox(
+                  SizedBox(
                     width: 3,
                   ),
-                   Text("حمام 2", style: blue15TextArabicBold)
+                  Text("حمام 2", style: blue15TextArabicBold)
                 ],
               ),
             ],
