@@ -4,22 +4,19 @@ import 'package:noble/Constants/routes.dart';
 import 'package:story_view/story_view.dart';
 import '../../Constants/colors.dart';
 import '../../Constants/font_styles.dart';
-import '../Screens/Public/home_page.dart';
-import '../Screens/Public/office_page.dart';
 
-class House_Office extends StatelessWidget {
-  @override
-  final double element_w;
-  final Widget content;
-  final int item_count;
-  final Color back_color;
+class HouseOffice extends StatelessWidget {
+  final double elementW;
+  final int itemCount;
+  final Color backColor;
+  final Widget content2;
 
-  House_Office({
+  const HouseOffice({
     Key? key,
-    required this.element_w,
-    required this.content,
-    required this.item_count,
-    required this.back_color,
+    required this.backColor,
+    required this.itemCount,
+    required this.elementW,
+    required this.content2,
   }) : super(key: key);
 
   @override
@@ -32,27 +29,21 @@ class House_Office extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
-              width: element_w,
+              width: elementW,
               decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage(
-                        imagesUrl[i],
-                      ),
-                      fit: BoxFit.fill),
-                  color: back_color,
-                  borderRadius: BorderRadius.circular(20)),
-              child: content,
+                  color: backColor, borderRadius: BorderRadius.circular(20)),
+              child: content2,
             ),
           );
         },
-        itemCount: item_count,
+        itemCount: itemCount,
       ),
     );
   }
 }
 
-class content1 extends StatelessWidget {
-  const content1({
+class Content1 extends StatelessWidget {
+  const Content1({
     Key? key,
   }) : super(key: key);
 
@@ -62,28 +53,29 @@ class content1 extends StatelessWidget {
       onTap: () {
         Get.toNamed(AppRoutes.office);
       },
-      child:
-          Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-        const CircleAvatar(
-          backgroundImage: const AssetImage("assets/images/office.png"),
-          radius: 20,
-          backgroundColor: Colors.white,
-        ),
-        const Text(
-          "مكتب الشام العقاري",
-          style: white10NoBold,
-        ),
-        const Text("دمشق", style: white10NoBold),
-      ]),
+      child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: const [
+            CircleAvatar(
+              backgroundImage: AssetImage("assets/images/office.png"),
+              radius: 20,
+              backgroundColor: Colors.white,
+            ),
+            Text(
+              "مكتب الشام العقاري",
+              style: white10NoBold,
+            ),
+            Text("دمشق", style: white10NoBold),
+          ]),
     );
   }
 }
 
-class content2 extends StatelessWidget {
+class Content2 extends StatelessWidget {
   @override
-  final String imageUrl;
-  @override
-  content2({Key? key, required this.imageUrl}) : super(key: key);
+  const Content2({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -93,10 +85,8 @@ class content2 extends StatelessWidget {
       },
       child: Container(
         decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(
-                  imageUrl,
-                ),
+            image: const DecorationImage(
+                image: AssetImage("assets/images/house3.png"),
                 fit: BoxFit.fill),
             borderRadius: BorderRadius.circular(20)),
         child: Stack(
@@ -131,7 +121,7 @@ class content2 extends StatelessWidget {
                     children: [
                       const Text(
                         "منزل للبيع",
-                        style: SmallWhiteTextArabic,
+                        style: white15ArabicBold,
                       ),
                       const Text(
                         "دمشق",
@@ -139,55 +129,55 @@ class content2 extends StatelessWidget {
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          const Text("حمام 2",
-                              style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 8,
-                                  fontFamily: "Cairo")),
-                          const SizedBox(
-                            width: 3,
-                          ),
-                          const Icon(Icons.ac_unit_sharp,
-                              size: 8, color: Colors.white),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          const Text("غرف 5",
+                        children: const [
+                          Text("حمام 2",
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 8,
                                   fontFamily: "Cairo")),
-                          const SizedBox(
+                          SizedBox(
                             width: 3,
                           ),
-                          const Icon(Icons.abc_outlined,
+                          Icon(Icons.ac_unit_sharp,
                               size: 8, color: Colors.white),
-                          const SizedBox(
+                          SizedBox(
                             width: 5,
                           ),
-                          const Text("شرقي",
-                              style: const TextStyle(
+                          Text("غرف 5",
+                              style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 8,
                                   fontFamily: "Cairo")),
-                          const SizedBox(
+                          SizedBox(
                             width: 3,
                           ),
-                          const Icon(Icons.ac_unit_sharp,
+                          Icon(Icons.abc_outlined,
                               size: 8, color: Colors.white),
-                          const SizedBox(
+                          SizedBox(
                             width: 5,
                           ),
-                          const Text("700",
-                              style: const TextStyle(
+                          Text("شرقي",
+                              style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 8,
                                   fontFamily: "Cairo")),
-                          const SizedBox(
+                          SizedBox(
                             width: 3,
                           ),
-                          const Icon(Icons.ac_unit_sharp,
+                          Icon(Icons.ac_unit_sharp,
+                              size: 8, color: Colors.white),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Text("700",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 8,
+                                  fontFamily: "Cairo")),
+                          SizedBox(
+                            width: 3,
+                          ),
+                          Icon(Icons.ac_unit_sharp,
                               size: 8, color: Colors.white),
                         ],
                       )
@@ -210,19 +200,18 @@ List<String> imagesUrl = [
   "assets/images/house4.png",
 ];
 
-class Houses_Office extends StatelessWidget {
-  @override
-  final double element_w;
+class HousesOffice extends StatelessWidget {
+  final double elementW;
   final Widget content;
-  final int item_count;
-  final Color back_color;
+  final int itemCount;
+  final Color backColor;
 
-  Houses_Office({
+  const HousesOffice({
     Key? key,
-    required this.element_w,
+    required this.elementW,
     required this.content,
-    required this.item_count,
-    required this.back_color,
+    required this.itemCount,
+    required this.backColor,
   }) : super(key: key);
 
   @override
@@ -235,23 +224,23 @@ class Houses_Office extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
-              width: element_w,
+              width: elementW,
               decoration: BoxDecoration(
-                  color: back_color, borderRadius: BorderRadius.circular(20)),
+                  color: backColor, borderRadius: BorderRadius.circular(20)),
               child: content,
             ),
           );
         },
-        itemCount: item_count,
+        itemCount: itemCount,
       ),
     );
   }
 }
 
-class content3 extends StatelessWidget {
+class Content3 extends StatelessWidget {
   final StoryController controller = StoryController();
 
-  content3({
+  Content3({
     Key? key,
   }) : super(key: key);
 
@@ -269,9 +258,7 @@ class content3 extends StatelessWidget {
                 caption: const Text("")),
           ],
           controller: controller,
-          onStoryShow: (s) {
-            print("ss");
-          },
+          onStoryShow: (s) {},
           onComplete: () {
             Get.back();
           },
@@ -296,22 +283,20 @@ class HomeTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       textDirection: TextDirection.rtl,
-      style: SmallBlueTextArabic,
+      style: blue15TextArabicBold,
       decoration: InputDecoration(
           hintTextDirection: TextDirection.rtl,
           fillColor: const Color(0XFFF8F8F8),
-          prefixIcon: const Icon(Icons.search, color: const Color(0XFF0C3877)),
+          prefixIcon: const Icon(Icons.search, color: Color(0XFF0C3877)),
           hintText: "search_hint".tr,
           hintStyle: const TextStyle(
-              fontSize: 15,
-              color: const Color(0XFFBEBEBE),
-              fontFamily: "Cairo"),
+              fontSize: 15, color: Color(0XFFBEBEBE), fontFamily: "Cairo"),
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20),
-              borderSide: const BorderSide(color: const Color(0XFFD2D2D2))),
+              borderSide: const BorderSide(color: Color(0XFFD2D2D2))),
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20),
-              borderSide: const BorderSide(color: const Color(0XFFD2D2D2)))),
+              borderSide: const BorderSide(color: Color(0XFFD2D2D2)))),
     );
   }
 }

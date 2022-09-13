@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:noble/Constants/font_styles.dart';
-import 'package:noble/Constants/languages.dart';
 
 import '../../Constants/colors.dart';
 
-class Office_Info extends StatelessWidget {
-  int followers_number = 200;
-  Office_Info({
+// ignore: must_be_immutable
+class OfficeInfo extends StatelessWidget {
+  int followersNumber = 200;
+  OfficeInfo({
     Key? key,
   }) : super(key: key);
 
@@ -18,8 +18,8 @@ class Office_Info extends StatelessWidget {
       decoration: const BoxDecoration(
           color: AppColors.blue,
           borderRadius: BorderRadius.only(
-              bottomLeft: const Radius.circular(80),
-              bottomRight: const Radius.circular(80))),
+              bottomLeft:  Radius.circular(80),
+              bottomRight:  Radius.circular(80))),
       child:
           Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
         Padding(
@@ -48,21 +48,21 @@ class Office_Info extends StatelessWidget {
           ),
         ),
         Center(
-            child: Column(children: [
-          const CircleAvatar(
-            backgroundImage: const AssetImage("assets/images/office.png"),
+            child: Column(children:const [
+           CircleAvatar(
+            backgroundImage:  AssetImage("assets/images/office.png"),
             radius: 50,
             backgroundColor: Colors.transparent,
           ),
-          const SizedBox(height: 5),
-          const Text(
+           SizedBox(height: 5),
+           Text(
             "Alsham Realestate",
             style: white18NoBold,
           ),
-          const SizedBox(height: 5),
-          const Text(
+           SizedBox(height: 5),
+           Text(
             "Damascus",
-            style: SmallWhiteTextArabic,
+            style: white15ArabicBold,
           ),
         ])),
         Row(
@@ -70,14 +70,14 @@ class Office_Info extends StatelessWidget {
           children: [
             Column(
               children: [
-                const Text("1K", style: TitleWhiteArabic),
-                Text("followers".tr, style: SmallWhiteTextArabic),
+                const Text("1K", style: white25ArabicBold),
+                Text("followers".tr, style: white15ArabicBold),
               ],
             ),
             Column(
               children: [
-                Text("$followers_number", style: TitleWhiteArabic),
-                Text("real_state".tr, style: SmallWhiteTextArabic),
+                Text("$followersNumber", style: white25ArabicBold),
+                Text("real_state".tr, style: white15ArabicBold),
               ],
             ),
           ],
@@ -87,8 +87,8 @@ class Office_Info extends StatelessWidget {
   }
 }
 
-class office_body extends StatelessWidget {
-  const office_body({
+class OfficeBody extends StatelessWidget {
+  const OfficeBody({
     Key? key,
   }) : super(key: key);
 
@@ -99,45 +99,43 @@ class office_body extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
-          child: Container(
-            child: Column(children: [
-              Container(
-                height: 90,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: const Color(0XFFEDF1FD)),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Row(children: [
-                    Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "address".tr,
-                            style: SmallBlueTextArabicNoBold,
-                          ),
-                          Text("damascus_salhiya".tr,
-                              style: SmallGreyTextArabicNoBold),
-                        ]),
-                    const Spacer(),
-                    const Icon(
-                      Icons.location_on,
-                      color: AppColors.blue,
-                      size: 35,
-                    )
-                  ]),
-                ),
-              )
-            ]),
-          ),
+          child: Column(children: [
+            Container(
+              height: 90,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: const Color(0XFFEDF1FD)),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Row(children: [
+                  Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "address".tr,
+                          style: blue15ArabicNoBold,
+                        ),
+                        Text("damascus_salhiya".tr,
+                            style: grey15ArabicNoBold),
+                      ]),
+                  const Spacer(),
+                  const Icon(
+                    Icons.location_on,
+                    color: AppColors.blue,
+                    size: 35,
+                  )
+                ]),
+              ),
+            )
+          ]),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
-          child: Text("last_properties".tr, style: MediumeBlueArabic),
+          child: Text("last_properties".tr, style: blue20ArabicBold),
         ),
-        Container(
+        SizedBox(
           height: 200,
           child: ListView(
             scrollDirection: Axis.vertical,
@@ -145,7 +143,7 @@ class office_body extends StatelessWidget {
             children: [
               ListTile(
                 leading: const CircleAvatar(
-                  backgroundImage: const AssetImage("assets/images/house4.png"),
+                  backgroundImage:  AssetImage("assets/images/house4.png"),
                   radius: 25,
                 ),
                 title: Text(
@@ -154,7 +152,7 @@ class office_body extends StatelessWidget {
                 ),
                 subtitle: const Text(
                   "1,300,000",
-                  style: SmallGreyTextArabicNoBold,
+                  style: grey15ArabicNoBold,
                 ),
               ),
               ListTile(
@@ -167,12 +165,12 @@ class office_body extends StatelessWidget {
                   style: blue18NoBold,
                 ),
                 subtitle: const Text("1,300,000",
-                    style: const TextStyle(
+                    style: TextStyle(
                         color: Color(0XFFD2D2D2), fontSize: 14)),
               ),
               ListTile(
                 leading: const CircleAvatar(
-                  backgroundImage: const AssetImage("assets/images/house2.png"),
+                  backgroundImage:  AssetImage("assets/images/house2.png"),
                   radius: 25,
                 ),
                 title: Text(
@@ -180,7 +178,7 @@ class office_body extends StatelessWidget {
                   style: blue18NoBold,
                 ),
                 subtitle:
-                    const Text("1,300,000", style: SmallGreyTextArabicNoBold),
+                    const Text("1,300,000", style: grey15ArabicNoBold),
               ),
               const ListTile(
                 leading: CircleAvatar(

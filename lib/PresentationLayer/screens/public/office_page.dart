@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:noble/Constants/languages.dart';
-import 'package:get/get.dart';
-import 'package:noble/Constants/colors.dart';
 
 import '../../Widgets/office_widgets.dart';
 
-class Office_Page extends StatelessWidget {
-  const Office_Page({
+class OfficePage extends StatelessWidget {
+  const OfficePage({
     Key? key,
   }) : super(key: key);
 
@@ -21,10 +18,10 @@ class Office_Page extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Expanded(
-                  child: Office_Info(),
+                  child: OfficeInfo(),
                   flex: 1,
                 ),
-                const Expanded(flex: 1, child: const office_body())
+                const Expanded(flex: 1, child:  OfficeBody())
               ]),
         ),
       ),

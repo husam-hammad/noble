@@ -2,19 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:noble/Constants/colors.dart';
 import 'package:noble/Constants/routes.dart';
 import 'package:get/get.dart';
-import 'package:noble/Constants/languages.dart';
-
-import 'package:noble/PresentationLayer/Screens/Auth/otp_check_page.dart';
-import 'package:url_launcher/url_launcher_string.dart';
 import '../../../Constants/font_styles.dart';
 import '../../Widgets/login_widgets.dart';
 
-class Login_Page extends StatelessWidget {
-  Login_Page({
+// ignore: must_be_immutable
+class LoginPage extends StatelessWidget {
+  LoginPage({
     Key? key,
   }) : super(key: key);
 
-  GlobalKey<FormState> formState = new GlobalKey<FormState>();
+  GlobalKey<FormState> formState = GlobalKey<FormState>();
 
   send() {
     var formdata = formState.currentState;
@@ -34,10 +31,10 @@ class Login_Page extends StatelessWidget {
             Expanded(
               child: Container(
                 child: Center(
-                  child: Text("login".tr, style: TitleWhiteArabic),
+                  child: Text("login".tr, style: white25ArabicBold),
                 ),
                 width: double.infinity,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     color: AppColors.blue,
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(120),
@@ -54,7 +51,7 @@ class Login_Page extends StatelessWidget {
                     children: [
                       Text(
                         "enter_your_phone_number".tr,
-                        style: SmallBlueTextArabic,
+                        style: blue15TextArabicBold,
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -65,79 +62,80 @@ class Login_Page extends StatelessWidget {
                               if (text?.isEmpty == true) {
                                 Get.snackbar("Cannot be empty",
                                     "Please enter your phone number",
-                                    titleText: Text(
+                                    titleText: const Text(
                                       "Cannot be empty",
-                                      style: MediumeBlueArabic,
+                                      style: blue20ArabicBold,
                                     ),
                                     backgroundColor: Colors.grey,
-                                    messageText: Text(
+                                    messageText: const Text(
                                       "Please enter your phone number",
                                       style: TextStyle(
                                           color: Color(0XFF707070),
                                           fontWeight: FontWeight.bold,
                                           fontSize: 15),
                                     ),
-                                    duration: Duration(seconds: 2),
+                                    duration: const Duration(seconds: 2),
                                     colorText: AppColors.blue,
                                     boxShadows: [
                                       BoxShadow(
                                           color: Colors.grey.withOpacity(.2),
                                           blurRadius: 10.0,
-                                          offset: Offset(0.0, 10.0))
+                                          offset: const Offset(0.0, 10.0))
                                     ]);
                                 return "";
                               } else if (text!.length <= 9 ||
                                   text.length >= 11) {
                                 Get.snackbar("Should be 10 number",
                                     "Please enter your phone number correctly",
-                                    titleText: Text(
+                                    titleText: const Text(
                                       "Should be 10 number",
-                                      style: MediumeBlueArabic,
+                                      style: blue20ArabicBold,
                                     ),
                                     backgroundColor: Colors.grey,
-                                    messageText: Text(
+                                    messageText: const Text(
                                       "Please enter your phone number correctly",
                                       style: TextStyle(
                                           color: Color(0XFF707070),
                                           fontWeight: FontWeight.bold,
                                           fontSize: 15),
                                     ),
-                                    duration: Duration(seconds: 2),
+                                    duration: const Duration(seconds: 2),
                                     colorText: AppColors.blue,
                                     boxShadows: [
                                       BoxShadow(
                                           color: Colors.grey.withOpacity(.2),
                                           blurRadius: 10.0,
-                                          offset: Offset(0.0, 10.0))
+                                          offset: const Offset(0.0, 10.0))
                                     ]);
                                 return "";
                               } else if (text.startsWith("09") != true) {
                                 Get.snackbar("Should be start with 09",
                                     "Please enter your phone number correctly",
-                                    titleText: Text(
+                                    titleText: const Text(
                                       "Should be start with 09",
-                                      style: MediumeBlueArabic,
+                                      style: blue20ArabicBold,
                                     ),
                                     backgroundColor: Colors.grey,
-                                    messageText: Text(
+                                    messageText: const Text(
                                       "Please enter your phone number correctly",
                                       style: TextStyle(
                                           color: Color(0XFF707070),
                                           fontWeight: FontWeight.bold,
                                           fontSize: 15),
                                     ),
-                                    duration: Duration(seconds: 2),
+                                    duration: const Duration(seconds: 2),
                                     colorText: AppColors.blue,
                                     boxShadows: [
                                       BoxShadow(
                                           color: Colors.grey.withOpacity(.2),
                                           blurRadius: 10.0,
-                                          offset: Offset(0.0, 10.0))
+                                          offset: const Offset(0.0, 10.0))
                                     ]);
                                 return "";
                               }
+                              return null;
                             },
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: AppColors.blue,
                             ),
                             cursorColor: AppColors.blue,
@@ -145,22 +143,22 @@ class Login_Page extends StatelessWidget {
                             decoration: InputDecoration(
                                 hintTextDirection: TextDirection.ltr,
                                 hintText: '09XXXXXXXX',
-                                hintStyle: TextStyle(color: Color(0XFFBEBEBE)),
+                                hintStyle: const TextStyle(color: Color(0XFFBEBEBE)),
                                 focusedErrorBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10),
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                         color: Color(0XFFD5D5D5), width: 1)),
                                 focusedBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10),
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                         color: Color(0XFFD5D5D5), width: 1)),
                                 errorBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10),
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                         color: Color(0XFFD5D5D5), width: 1)),
                                 enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10),
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                         color: Color(0XFFD5D5D5), width: 1))),
                             textAlign: TextAlign.center,
                             textDirection: TextDirection.ltr,
@@ -170,26 +168,26 @@ class Login_Page extends StatelessWidget {
                       ),
                       InkWell(
                         onTap: send,
-                        child: button(
+                        child: Button(
                           text1: 'send_code'.tr,
-                          button_color: AppColors.orange,
-                          text_color: Colors.white,
+                          buttonColor: AppColors.orange,
+                          textColor: Colors.white,
                         ),
                       ),
-                      button(
+                      Button(
                         text1: 'skip'.tr,
-                        button_color: Colors.white,
-                        text_color: Color(0XFF707070),
+                        buttonColor: Colors.white,
+                        textColor: const Color(0XFF707070),
                       )
                     ]),
               ),
             ),
             Expanded(
-                child: bottom_circle(
+                child: BottomCircle(
               text: 'you_can_create_account'.tr,
-              circle_color: Color(0XFF707070).withOpacity(.2),
-              text_color: Color(0XFF707070),
-              font_size: 15,
+              circleColor: const Color(0XFF707070).withOpacity(.2),
+              textColor: const Color(0XFF707070),
+              fontSize: 15,
             ))
           ],
         ),

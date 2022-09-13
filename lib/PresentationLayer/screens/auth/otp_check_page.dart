@@ -4,12 +4,10 @@ import 'package:noble/Constants/colors.dart';
 import 'package:noble/Constants/font_styles.dart';
 import 'package:noble/Constants/routes.dart';
 import 'package:noble/PresentationLayer/Widgets/login_widgets.dart';
-
 import '../../Widgets/otp_widgets.dart';
-import '../Public/on_boarding.dart';
 
-class Otp_Check_Page extends StatelessWidget {
-  const Otp_Check_Page({
+class OtpCheckPage extends StatelessWidget {
+  const OtpCheckPage({
     Key? key,
   }) : super(key: key);
 
@@ -29,7 +27,7 @@ class Otp_Check_Page extends StatelessWidget {
                   children: [
                     Image.asset("assets/images/messageOtp.png",
                         height: 200, width: 200),
-                    SizedBox(height: 5),
+                    const SizedBox(height: 5),
                     Center(
                       child: Text(
                         "we_send_code".tr,
@@ -51,18 +49,18 @@ class Otp_Check_Page extends StatelessWidget {
                             vertical: 8.0, horizontal: 20),
                         child: Text("enter_the_code".tr, style: sendCodeStyle),
                       ),
-                      Center(child: Verify()),
+                      const Center(child: Verify()),
                       Padding(
                         padding: const EdgeInsets.symmetric(
                             vertical: 8.0, horizontal: 20),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Icon(
+                            const Icon(
                               Icons.message,
                               color: Color(0XFF707070),
                             ),
-                            SizedBox(width: 5),
+                            const SizedBox(width: 5),
                             Text(
                               "re_sent_code".tr,
                               style: sendCodeStyle,
@@ -76,20 +74,20 @@ class Otp_Check_Page extends StatelessWidget {
                           onTap: () {
                             Get.toNamed(AppRoutes.onBoardingScreen);
                           },
-                          child: button(
+                          child: Button(
                               text1: 'confirm'.tr,
-                              button_color: AppColors.orange,
-                              text_color: Colors.white),
+                              buttonColor: AppColors.orange,
+                              textColor: Colors.white),
                         ),
                       )
                     ]),
               ),
               Expanded(
-                  child: bottom_circle(
+                  child: BottomCircle(
                 text: 'verification'.tr,
-                circle_color: AppColors.blue,
-                text_color: Colors.white,
-                font_size: 25,
+                circleColor: AppColors.blue,
+                textColor: Colors.white,
+                fontSize: 25,
               ))
             ],
           )),

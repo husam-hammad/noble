@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:noble/Constants/colors.dart';
 import 'package:noble/Constants/font_styles.dart';
 import 'package:noble/PresentationLayer/Screens/Public/favorite_page.dart';
@@ -17,25 +16,25 @@ class OnBoarding extends StatefulWidget {
 }
 
 class _HomeState extends State<OnBoarding> {
-  int selected_item = 0;
+  int selectedItem = 0;
   List<Widget> homeWidget = [
-    const More_Page(),
-    Notification_Page(),
-    const Favorite_Page(),
-    Home_Page()
+    const MorePage(),
+    NotificationPage(),
+    const FavoritePage(),
+    const HomePage()
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-          selectedLabelStyle: SmallWhiteTextArabic,
-          unselectedLabelStyle: SmallWhiteTextArabic,
+          selectedLabelStyle: white15ArabicBold,
+          unselectedLabelStyle: white15ArabicBold,
           backgroundColor: AppColors.blue,
-          currentIndex: selected_item,
+          currentIndex: selectedItem,
           onTap: (index) {
             setState(() {
-              selected_item = index;
+              selectedItem = index;
             });
           },
           selectedItemColor: Colors.white,
@@ -53,7 +52,7 @@ class _HomeState extends State<OnBoarding> {
             ),
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "الرئيسية"),
           ]),
-      body: homeWidget.elementAt(selected_item),
+      body: homeWidget.elementAt(selectedItem),
     );
   }
 }

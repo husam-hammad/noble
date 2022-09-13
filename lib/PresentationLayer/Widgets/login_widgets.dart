@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Login_Widgets extends StatelessWidget {
-  const Login_Widgets({
+class LoginWidgets extends StatelessWidget {
+  const LoginWidgets({
     Key? key,
   }) : super(key: key);
 
@@ -13,36 +13,36 @@ class Login_Widgets extends StatelessWidget {
   }
 }
 
-class bottom_circle extends StatelessWidget {
-  @override
-  final String text;
-  final Color circle_color;
-  final Color text_color;
-  final double font_size;
+class BottomCircle extends StatelessWidget {
 
-  @override
-  bottom_circle({
+  final String text;
+  final Color circleColor;
+  final Color textColor;
+  final double fontSize;
+
+ 
+  const BottomCircle({
     Key? key,
     required this.text,
-    required this.circle_color,
-    required this.text_color,
-    required this.font_size,
+    required this.circleColor,
+    required this.textColor,
+    required this.fontSize,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: circle_color,
+          color: circleColor,
           borderRadius: const BorderRadius.only(
-              topLeft: const Radius.circular(120),
+              topLeft:  Radius.circular(120),
               topRight: Radius.circular(120))),
       child: Center(
         child: Text(text,
             textAlign: TextAlign.center,
             style: TextStyle(
-                color: text_color,
-                fontSize: font_size,
+                color: textColor,
+                fontSize: fontSize,
                 fontFamily: "Cairo",
                 fontWeight: FontWeight.bold)),
       ),
@@ -50,18 +50,17 @@ class bottom_circle extends StatelessWidget {
   }
 }
 
-class button extends StatelessWidget {
-  @override
+class Button extends StatelessWidget {
   final String text1;
-  final Color button_color;
-  final Color text_color;
+  final Color buttonColor;
+  final Color textColor;
 
   @override
-  button(
+  const Button(
       {Key? key,
       required this.text1,
-      required this.button_color,
-      required this.text_color})
+      required this.buttonColor,
+      required this.textColor})
       : super(key: key);
 
   @override
@@ -71,12 +70,12 @@ class button extends StatelessWidget {
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-          boxShadow: [
-            const BoxShadow(
+          boxShadow:const [
+             BoxShadow(
                 color: Colors.grey, blurRadius: 2.0, offset: Offset(0.0, 2.0))
           ],
           borderRadius: BorderRadius.circular(10),
-          color: button_color,
+          color: buttonColor,
         ),
         child: Center(
           child: Padding(
@@ -84,7 +83,7 @@ class button extends StatelessWidget {
             child: Text(
               text1,
               style: TextStyle(
-                  color: text_color, fontSize: 15, fontFamily: "Cairo"),
+                  color: textColor, fontSize: 15, fontFamily: "Cairo"),
             ),
           ),
         ),

@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:flutter/material.dart';
 import 'package:noble/Constants/routes.dart';
 import 'package:noble/PresentationLayer/Screens/Auth/login_page.dart';
 import 'package:noble/PresentationLayer/Screens/Auth/otp_check_page.dart';
@@ -16,22 +15,22 @@ List<GetPage<dynamic>> routes = [
   ),
   GetPage(
       name: AppRoutes.loginPage,
-      page: () => Login_Page(),
+      page: () => LoginPage(),
       transition: Transition.rightToLeft),
   GetPage(
       name: AppRoutes.otpPage,
-      page: () => Otp_Check_Page(),
+      page: () => const OtpCheckPage(),
       transition: Transition.rightToLeft),
   GetPage(
       name: AppRoutes.onBoardingScreen,
-      page: () => OnBoarding(),
+      page: () => const OnBoarding(),
       transition: Transition.downToUp),
   GetPage(
     name: AppRoutes.office,
-    page: () => Office_Page(),
+    page: () => const OfficePage(),
   ),
   GetPage(
     name: AppRoutes.propertyScreen,
-    page: () => Property_Screen(),
+    page: () => const PropertyScreen(),
   ),
 ];

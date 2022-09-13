@@ -5,9 +5,10 @@ import '../../../Constants/colors.dart';
 import '../../../Constants/font_styles.dart';
 import '../../Widgets/notifications_widgets.dart';
 
-class Notification_Page extends StatelessWidget {
+// ignore: must_be_immutable
+class NotificationPage extends StatelessWidget {
   int notificationNumber = 11;
-  Notification_Page({
+  NotificationPage({
     Key? key,
   }) : super(key: key);
 
@@ -36,8 +37,8 @@ class Notification_Page extends StatelessWidget {
               color: Color(0XFF0C3877), fontSize: 20, fontFamily: "Cairo"),
         ),
         centerTitle: true,
-        actions: [
-          const Padding(
+        actions: const[
+           Padding(
             padding: EdgeInsets.all(8.0),
             child: CircleAvatar(
               backgroundImage: AssetImage("assets/images/person.jpg"),
@@ -49,16 +50,16 @@ class Notification_Page extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Notification_Textfield(),
+          const NotificationTextfield(),
           Padding(
             padding:
                 const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
             child: Text(
               "notifications".tr,
-              style: MediumeBlueArabic,
+              style: blue20ArabicBold,
             ),
           ),
-          Notification_Body(notificationNumber: notificationNumber)
+          NotificationBody(notificationNumber: notificationNumber)
         ],
       ),
     );

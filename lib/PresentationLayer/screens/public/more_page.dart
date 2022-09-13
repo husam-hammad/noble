@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class More_Page extends StatelessWidget {
-  const More_Page({
+class MorePage extends StatelessWidget {
+  const MorePage({
     Key? key,
   }) : super(key: key);
 

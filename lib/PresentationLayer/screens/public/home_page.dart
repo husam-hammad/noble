@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:noble/BusinessLayer/Controllers/locale_controller.dart';
 import 'package:noble/Constants/colors.dart';
 import 'package:noble/Constants/font_styles.dart';
-import 'package:noble/Constants/languages.dart';
-
+import '../../Widgets/homepage_widgets.dart';
 import '../../Widgets/on_boarding_widget.dart';
-import '../../widgets/homepage_widgets.dart';
-import 'office_page.dart';
 
-class Home_Page extends StatelessWidget {
-  Home_Page({
+class HomePage extends StatelessWidget {
+  const HomePage({
     Key? key,
   }) : super(key: key);
 
@@ -37,14 +33,14 @@ class Home_Page extends StatelessWidget {
           }),
           title: Text(
             'noble_realstate'.tr,
-            style: MediumeBlueArabic,
+            style: blue20ArabicBold,
           ),
           centerTitle: true,
-          actions: [
-            const Padding(
+          actions: const [
+            Padding(
               padding: EdgeInsets.all(8.0),
               child: CircleAvatar(
-                backgroundImage: const AssetImage("assets/images/person.jpg"),
+                backgroundImage: AssetImage("assets/images/person.jpg"),
                 radius: 15,
               ),
             ),
@@ -54,7 +50,7 @@ class Home_Page extends StatelessWidget {
           children: [
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
-              child: const HomeTextField(),
+              child: HomeTextField(),
             ),
             Expanded(
               flex: 3,
@@ -69,22 +65,22 @@ class Home_Page extends StatelessWidget {
                         children: [
                           Text(
                             "last_story".tr,
-                            style: SmallBlueTextArabic,
+                            style: blue15TextArabicBold,
                           ),
                           const Spacer(),
                           Text(
                             "show_all".tr,
-                            style: SmallGreyTextArabicNoBold,
+                            style: grey15ArabicNoBold,
                           ),
                         ],
                       ),
                     ),
                     Expanded(
-                        child: Houses_Office(
-                      back_color: Colors.transparent,
-                      content: content3(),
-                      element_w: 100,
-                      item_count: 4,
+                        child: HousesOffice(
+                      backColor: Colors.transparent,
+                      content: Content3(),
+                      elementW: 100,
+                      itemCount: 4,
                     ))
                   ],
                 ),
@@ -105,23 +101,23 @@ class Home_Page extends StatelessWidget {
                         child: Row(
                           children: [
                             Text("real_estate_ofices".tr,
-                                style: SmallBlueTextArabic),
+                                style: blue15TextArabicBold),
                             const Spacer(),
                             Text(
                               "show_all".tr,
-                              style: SmallGreyTextArabicNoBold,
+                              style: grey15ArabicNoBold,
                             ),
                           ],
                         ),
                       ),
-                      Expanded(
+                      const Expanded(
                           child: Hero(
                         tag: 'office_hero',
-                        child: Houses_Office(
-                          element_w: 100,
-                          content: const content1(),
-                          item_count: 11,
-                          back_color: const Color(0XFF487CC7),
+                        child: HousesOffice(
+                          elementW: 100,
+                          content: Content1(),
+                          itemCount: 11,
+                          backColor: Color(0XFF487CC7),
                         ),
                       ))
                     ],
@@ -132,7 +128,7 @@ class Home_Page extends StatelessWidget {
             Expanded(
               flex: 2,
               child: Container(
-                decoration: const BoxDecoration(color: const Color(0XFFF8F8F8)),
+                decoration: const BoxDecoration(color: Color(0XFFF8F8F8)),
                 child: Column(
                   children: [
                     Padding(
@@ -142,26 +138,24 @@ class Home_Page extends StatelessWidget {
                         children: [
                           Text(
                             "top_real_estate_announcements".tr,
-                            style: SmallBlueTextArabic,
+                            style: blue15TextArabicBold,
                           ),
                           const Spacer(),
                           Text(
                             "show_all".tr,
-                            style: SmallGreyTextArabicNoBold,
+                            style: grey15ArabicNoBold,
                           ),
                         ],
                       ),
                     ),
-                    Expanded(
+                    const Expanded(
                         child: Hero(
                       tag: 'property_hero',
-                      child: House_Office(
-                        element_w: 175,
-                        content: content2(
-                          imageUrl: '',
-                        ),
-                        item_count: 4,
-                        back_color: Colors.transparent,
+                      child: HouseOffice(
+                        elementW: 175,
+                        content2: Content2(),
+                        itemCount: 4,
+                        backColor: Colors.transparent,
                       ),
                     ))
                   ],

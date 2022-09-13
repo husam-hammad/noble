@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_utils/src/extensions/internacionalization.dart';
 
 import '../../BusinessLayer/Controllers/locale_controller.dart';
 import '../../Constants/colors.dart';
@@ -19,10 +18,10 @@ class MyDrawer extends StatelessWidget {
         children: [
           const UserAccountsDrawerHeader(
             decoration: BoxDecoration(color: AppColors.blue),
-            accountName: Text("Yamen", style: SmallWhiteTextArabic),
-            accountEmail: const Text(
+            accountName: Text("Yamen", style: white15ArabicBold),
+            accountEmail:  Text(
               "Yamen@gmail.com",
-              style: SmallWhiteTextArabic,
+              style: white15ArabicBold,
             ),
             currentAccountPicture:
                 CircleAvatar(backgroundColor: AppColors.orange),
@@ -30,7 +29,7 @@ class MyDrawer extends StatelessWidget {
           ListTile(
             title: Text(
               "home".tr,
-              style: SmallBlueTextArabic,
+              style: blue15TextArabicBold,
             ),
             leading: const Icon(
               Icons.home,
@@ -41,7 +40,7 @@ class MyDrawer extends StatelessWidget {
             onTap: () {
               Get.defaultDialog(
                   title: 'Choose Language',
-                  titleStyle: SmallBlueTextArabic,
+                  titleStyle: blue15TextArabicBold,
                   content: Column(
                     children: [
                       ListTile(
@@ -59,20 +58,20 @@ class MyDrawer extends StatelessWidget {
                     ],
                   ));
             },
-            title: Text("language".tr, style: SmallBlueTextArabic),
+            title: Text("language".tr, style: blue15TextArabicBold),
             leading: const Icon(
               Icons.language,
               color: AppColors.lightgrey,
             ),
           ),
           ListTile(
-            title: Text('theme'.tr, style: SmallBlueTextArabic),
+            title: Text('theme'.tr, style: blue15TextArabicBold),
             leading: const Icon(Icons.sunny, color: AppColors.lightgrey),
           ),
           ListTile(
             title: Text(
               "about".tr,
-              style: SmallBlueTextArabic,
+              style: blue15TextArabicBold,
             ),
             leading: const Icon(
               Icons.help,
@@ -82,7 +81,7 @@ class MyDrawer extends StatelessWidget {
           ListTile(
             title: Text(
               "logout".tr,
-              style: SmallBlueTextArabic,
+              style: blue15TextArabicBold,
             ),
             leading: const Icon(
               Icons.logout,

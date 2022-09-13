@@ -3,8 +3,8 @@ import 'package:get/get_utils/src/extensions/internacionalization.dart';
 
 import '../../Constants/font_styles.dart';
 
-class Notification_Body extends StatelessWidget {
-  const Notification_Body({
+class NotificationBody extends StatelessWidget {
+  const NotificationBody({
     Key? key,
     required this.notificationNumber,
   }) : super(key: key);
@@ -17,21 +17,19 @@ class Notification_Body extends StatelessWidget {
       child: ListView.builder(
         physics: const BouncingScrollPhysics(),
         itemBuilder: (context, i) {
-          return Container(
-            child: ListTile(
-                onTap: () {},
-                title: Text(
-                  notification_content[i],
-                  style: SmallBlueTextArabic,
-                ),
-                subtitle: Text(
-                  notification_time[i],
-                  style: SmallGreyTextArabicNoBold,
-                ),
-                leading: CircleAvatar(
-                  backgroundImage: AssetImage(photo[0]),
-                )),
-          );
+          return ListTile(
+              onTap: () {},
+              title: Text(
+                notificationContent[i],
+                style: blue15TextArabicBold,
+              ),
+              subtitle: Text(
+                notificationTime[i],
+                style: grey15ArabicNoBold,
+              ),
+              leading: CircleAvatar(
+                backgroundImage: AssetImage(photo[0]),
+              ));
         },
         itemCount: notificationNumber,
       ),
@@ -39,7 +37,7 @@ class Notification_Body extends StatelessWidget {
   }
 }
 
-List<String> notification_content = [
+List<String> notificationContent = [
   "new_watch".tr,
   "new_watch".tr,
   "new_watch".tr,
@@ -53,7 +51,7 @@ List<String> notification_content = [
   "new_watch".tr,
 ];
 
-List<String> notification_time = [
+List<String> notificationTime = [
   "now".tr,
   "ten_min".tr,
   "tow_hour".tr,
@@ -69,8 +67,8 @@ List<String> notification_time = [
 
 List<String> photo = ["assets/images/person.jpg"];
 
-class Notification_Textfield extends StatelessWidget {
-  const Notification_Textfield({
+class NotificationTextfield extends StatelessWidget {
+  const NotificationTextfield({
     Key? key,
   }) : super(key: key);
 
@@ -80,16 +78,16 @@ class Notification_Textfield extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
       child: TextFormField(
         textDirection: TextDirection.rtl,
-        style: SmallBlueTextArabic,
+        style: blue15TextArabicBold,
         decoration: InputDecoration(
             hintTextDirection: TextDirection.rtl,
             fillColor: const Color(0XFFF8F8F8),
             prefixIcon: const Icon(Icons.search, color: Color(0XFF0C3877)),
             hintText: "search_in_notification".tr,
-            hintStyle: SmallGreyTextArabicNoBold,
+            hintStyle: grey15ArabicNoBold,
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
-                borderSide: const BorderSide(color: const Color(0XFFD2D2D2))),
+                borderSide: const BorderSide(color:  Color(0XFFD2D2D2))),
             focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
                 borderSide: const BorderSide(color: Color(0XFFD2D2D2)))),

@@ -1,15 +1,10 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:noble/BusinessLayer/Controllers/home_controller.dart';
 import 'package:noble/Constants/font_styles.dart';
-import 'package:noble/Constants/languages.dart';
-import 'package:noble/Constants/routes.dart';
-import 'package:noble/PresentationLayer/Screens/Auth/login_page.dart';
-import 'package:progress_indicators/progress_indicators.dart';
 import '../../../Constants/colors.dart';
-import 'package:noble/BusinessLayer/Controllers/home_controller.dart';
 
+// ignore: must_be_immutable
 class SplashScreen extends StatelessWidget {
   HomeController controller = Get.put(HomeController());
 
@@ -35,12 +30,12 @@ class SplashScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset("assets/images/nobleLogo.png"),
-                  Text("noble".tr, style: TitleWhiteArabic),
-                  Text("real_estate_service".tr, style: MediumeWhiteArabic),
+                  Text("noble".tr, style: white25ArabicBold),
+                  Text("real_estate_service".tr, style: white20ArabicBold),
                 ],
               ),
             ),
-            Container(
+            SizedBox(
               width: double.infinity,
               height: 10,
               child: LinearProgressIndicator(
