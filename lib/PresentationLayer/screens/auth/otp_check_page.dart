@@ -16,6 +16,7 @@ class OtpCheckPage extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
+          resizeToAvoidBottomInset: true,
           backgroundColor: Colors.white,
           body: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

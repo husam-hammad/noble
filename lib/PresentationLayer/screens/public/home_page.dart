@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:noble/Constants/colors.dart';
 import 'package:noble/Constants/font_styles.dart';
-import '../../Widgets/homepage_widgets.dart';
+import '../../Widgets/home_page_folder/realstate_office.dart';
+import '../../Widgets/home_page_folder/story_widget.dart';
+import '../../Widgets/home_page_folder/supreme_poiclame.dart';
 import '../../Widgets/on_boarding_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -13,7 +15,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Directionality(
-      textDirection: TextDirection.rtl,
+      textDirection: Get.locale!.languageCode == "ar"
+          ? TextDirection.rtl
+          : TextDirection.ltr,
       child: Scaffold(
         backgroundColor: Colors.white,
         drawer: const MyDrawer(),
@@ -46,15 +50,16 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
-        body: Column(
-          children: [
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
-              child: HomeTextField(),
-            ),
-            Expanded(
-              flex: 3,
-              child: Container(
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
+                child: HomeTextField(),
+              ),
+              Container(
+                width: double.infinity,
                 decoration: const BoxDecoration(color: Color(0XFFF8F8F8)),
                 child: Column(
                   children: [
@@ -75,21 +80,18 @@ class HomePage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Expanded(
-                        child: StoryOffice(
+                    StoryOffice(
                       backColor: Colors.transparent,
                       elementW: 100,
                       itemCount: 4,
-                    ))
+                    )
                   ],
                 ),
               ),
-            ),
-            Expanded(
-              flex: 2,
-              child: Padding(
+              Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
                 child: Container(
+                  width: double.infinity,
                   decoration: const BoxDecoration(color: Color(0XFFF8F8F8)),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -109,21 +111,12 @@ class HomePage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      const Expanded(
-                          child: RealStateOffice(
-                        elementW: 100,
-                        itemCount: 11,
-                        backColor: Color(0XFF487CC7),
-                        content2: Content1(),
-                      ))
                     ],
                   ),
                 ),
               ),
-            ),
-            Expanded(
-              flex: 2,
-              child: Container(
+              Container(
+                width: double.infinity,
                 decoration: const BoxDecoration(color: Color(0XFFF8F8F8)),
                 child: Column(
                   children: [
@@ -144,20 +137,11 @@ class HomePage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Expanded(
-                        child: SupremePoclaimes(
-                      elementW: 175,
-                      itemCount: 4,
-                      backColor: Colors.transparent,
-                    ))
                   ],
                 ),
               ),
-            ),
-            const SizedBox(
-              height: 20,
-            )
-          ],
+            ],
+          ),
         ),
       ),
     );

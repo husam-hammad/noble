@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:noble/Constants/routes.dart';
-import 'package:story_view/story_view.dart';
-import '../../Constants/colors.dart';
-import '../../Constants/font_styles.dart';
+
+import '../../../Constants/colors.dart';
+import '../../../Constants/font_styles.dart';
+import '../../../Constants/routes.dart';
 
 List<String> imagesUrl = [
   "assets/images/house1.png",
@@ -11,133 +11,6 @@ List<String> imagesUrl = [
   "assets/images/house3.png",
   "assets/images/house4.png",
 ];
-
-class StoryOffice extends StatelessWidget {
-  final StoryController controller = StoryController();
-
-  final double elementW;
-  final int itemCount;
-  final Color backColor;
-
-  StoryOffice({
-    Key? key,
-    required this.elementW,
-    required this.itemCount,
-    required this.backColor,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, i) {
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              width: elementW,
-              decoration: BoxDecoration(
-                  color: backColor, borderRadius: BorderRadius.circular(20)),
-              child: InkWell(
-                onTap: () {
-                  Get.to(StoryView(
-                    storyItems: [
-                      StoryItem.text(
-                          title: "Hello",
-                          backgroundColor: Colors.blue,
-                          roundedTop: true),
-                      StoryItem.inlineImage(
-                          url: 'assets/images/person.jpg',
-                          controller: controller,
-                          caption: const Text("")),
-                    ],
-                    controller: controller,
-                    onStoryShow: (s) {},
-                    onComplete: () {
-                      Get.back();
-                    },
-                  ));
-                },
-                child: Container(
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage(imagesUrl[i]), fit: BoxFit.fill),
-                        borderRadius: BorderRadius.circular(20))),
-              ),
-            ),
-          );
-        },
-        itemCount: itemCount,
-      ),
-    );
-  }
-}
-
-class RealStateOffice extends StatelessWidget {
-  final double elementW;
-  final int itemCount;
-  final Color backColor;
-  final Widget content2;
-
-  const RealStateOffice({
-    Key? key,
-    required this.backColor,
-    required this.itemCount,
-    required this.elementW,
-    required this.content2,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, i) {
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-                width: elementW,
-                decoration: BoxDecoration(
-                    color: backColor, borderRadius: BorderRadius.circular(20)),
-                child: Content1()),
-          );
-        },
-        itemCount: itemCount,
-      ),
-    );
-  }
-}
-
-class Content1 extends StatelessWidget {
-  const Content1({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        Get.toNamed(AppRoutes.office);
-      },
-      child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [
-            CircleAvatar(
-              backgroundImage: AssetImage("assets/images/office.png"),
-              radius: 20,
-              backgroundColor: Colors.white,
-            ),
-            Text(
-              "مكتب الشام العقاري",
-              style: white10NoBold,
-            ),
-            Text("دمشق", style: white10NoBold),
-          ]),
-    );
-  }
-}
 
 class SupremePoclaimes extends StatelessWidget {
   final double elementW;
@@ -154,6 +27,7 @@ class SupremePoclaimes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 120,
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
