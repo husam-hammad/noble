@@ -12,84 +12,81 @@ class PropertyScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.rtl,
-      child: Hero(
-          tag: 'property_hero',
-          child: Scaffold(
-            bottomNavigationBar: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Container(
-                height: 50,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    color: AppColors.blue,
-                    borderRadius: BorderRadius.circular(10)),
-                child: const Center(
-                    child: Padding(
-                  padding: EdgeInsets.all(12.0),
-                  child: Text("شراء العقار", style: white18NoBold),
-                )),
-              ),
-            ),
-            backgroundColor: Colors.white,
-            body: CustomScrollView(
-              slivers: [
-                SliverAppBar(
-                  bottom: PreferredSize(
-                      child: Container(
-                        child: const Center(
-                            child: Padding(
-                          padding: EdgeInsets.all(8.0),
-                        )),
-                        width: double.infinity,
-                        decoration: const BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(50),
-                                topRight: Radius.circular(50))),
-                      ),
-                      preferredSize: const Size.fromHeight(0)),
-                  floating: true,
-                  flexibleSpace: FlexibleSpaceBar(
-                    title: const Padding(
-                      padding: EdgeInsets.only(bottom: 5.0),
-                      child: Text(
-                        "فيلا للبيع في دمشق",
-                        style: white18NoBold,
-                      ),
-                    ),
-                    centerTitle: true,
-                    background: Stack(fit: StackFit.expand, children: [
-                      Image.asset(
-                        "assets/images/house1.png",
-                        fit: BoxFit.cover,
-                      ),
-                      Container(color: const Color(0XFF0F2E62).withAlpha(75))
-                    ]),
+      child: Scaffold(
+        bottomNavigationBar: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Container(
+            height: 50,
+            width: double.infinity,
+            decoration: BoxDecoration(
+                color: AppColors.blue, borderRadius: BorderRadius.circular(10)),
+            child: const Center(
+                child: Padding(
+              padding: EdgeInsets.all(12.0),
+              child: Text("شراء العقار", style: white18NoBold),
+            )),
+          ),
+        ),
+        backgroundColor: Colors.white,
+        body: CustomScrollView(
+          slivers: [
+            SliverAppBar(
+              bottom: PreferredSize(
+                  child: Container(
+                    child: const Center(
+                        child: Padding(
+                      padding: EdgeInsets.all(8.0),
+                    )),
+                    width: double.infinity,
+                    decoration: const BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(50),
+                            topRight: Radius.circular(50))),
                   ),
-                  backgroundColor: AppColors.blue2,
-                  expandedHeight: 250,
-                  actions: [
-                    IconButton(
-                      icon: const Icon(Icons.chevron_right,
-                          size: 30, color: AppColors.lightwhite),
-                      onPressed: () {
-                        Get.back();
-                      },
-                    ),
-                    const SizedBox(
-                      width: 12,
-                    )
-                  ],
-                  leading: const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 12.0),
-                    child: Icon(Icons.favorite_border,
-                        size: 30, color: AppColors.lightwhite),
+                  preferredSize: const Size.fromHeight(0)),
+              floating: true,
+              flexibleSpace: FlexibleSpaceBar(
+                title: const Padding(
+                  padding: EdgeInsets.only(bottom: 5.0),
+                  child: Text(
+                    "فيلا للبيع في دمشق",
+                    style: white18NoBold,
                   ),
                 ),
-                buildBody()
+                centerTitle: true,
+                background: Stack(fit: StackFit.expand, children: [
+                  Image.asset(
+                    "assets/images/house1.png",
+                    fit: BoxFit.cover,
+                  ),
+                  Container(color: const Color(0XFF0F2E62).withAlpha(75))
+                ]),
+              ),
+              backgroundColor: AppColors.blue2,
+              expandedHeight: 250,
+              actions: [
+                IconButton(
+                  icon: const Icon(Icons.chevron_right,
+                      size: 30, color: AppColors.lightwhite),
+                  onPressed: () {
+                    Get.back();
+                  },
+                ),
+                const SizedBox(
+                  width: 12,
+                )
               ],
+              leading: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 12.0),
+                child: Icon(Icons.favorite_border,
+                    size: 30, color: AppColors.lightwhite),
+              ),
             ),
-          )),
+            buildBody()
+          ],
+        ),
+      ),
     );
   }
 }

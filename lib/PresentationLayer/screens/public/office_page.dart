@@ -11,19 +11,15 @@ class OfficePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.rtl,
-      child: Hero(
-        tag: 'office_hero',
-        child: Scaffold(
-          body: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Expanded(
-                  child: OfficeInfo(),
-                  flex: 1,
-                ),
-                const Expanded(flex: 1, child:  OfficeBody())
-              ]),
-        ),
+      child: Scaffold(
+        body:
+            Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+          Expanded(
+            child: OfficeInfo(),
+            flex: 1,
+          ),
+          const Expanded(flex: 1, child: OfficeBody())
+        ]),
       ),
     );
   }

@@ -27,10 +27,12 @@ List<GetPage<dynamic>> routes = [
       transition: Transition.downToUp),
   GetPage(
     name: AppRoutes.office,
+    transition: Transition.fadeIn,
     page: () => const OfficePage(),
   ),
   GetPage(
     name: AppRoutes.propertyScreen,
+    transition: Transition.fadeIn,
     page: () => const PropertyScreen(),
   ),
 ];
