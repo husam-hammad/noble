@@ -27,7 +27,7 @@ class SupremePoclaimes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 120,
+      height: 130,
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,

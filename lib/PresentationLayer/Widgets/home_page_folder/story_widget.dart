@@ -26,45 +26,49 @@ class StoryOffice extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      scrollDirection: Axis.horizontal,
-      itemBuilder: (context, i) {
-        return Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-            width: elementW,
-            decoration: BoxDecoration(
-                color: backColor, borderRadius: BorderRadius.circular(20)),
-            child: InkWell(
-              onTap: () {
-                Get.to(StoryView(
-                  storyItems: [
-                    StoryItem.text(
-                        title: "Hello",
-                        backgroundColor: Colors.blue,
-                        roundedTop: true),
-                    StoryItem.inlineImage(
-                        url: 'assets/images/person.jpg',
-                        controller: controller,
-                        caption: const Text("")),
-                  ],
-                  controller: controller,
-                  onStoryShow: (s) {},
-                  onComplete: () {
-                    Get.back();
-                  },
-                ));
-              },
-              child: Container(
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage(imagesUrl[i]), fit: BoxFit.cover),
-                      borderRadius: BorderRadius.circular(20))),
+    return Container(
+      height: 160,
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, i) {
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              width: elementW,
+              decoration: BoxDecoration(
+                  color: backColor, borderRadius: BorderRadius.circular(20)),
+              child: InkWell(
+                onTap: () {
+                  Get.to(StoryView(
+                    storyItems: [
+                      StoryItem.text(
+                          title: "Hello",
+                          backgroundColor: Colors.blue,
+                          roundedTop: true),
+                      StoryItem.inlineImage(
+                          url: 'assets/images/person.jpg',
+                          controller: controller,
+                          caption: const Text("")),
+                    ],
+                    controller: controller,
+                    onStoryShow: (s) {},
+                    onComplete: () {
+                      Get.back();
+                    },
+                  ));
+                },
+                child: Container(
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage(imagesUrl[i]), fit: BoxFit.cover),
+                        borderRadius: BorderRadius.circular(20))),
+              ),
             ),
-          ),
-        );
-      },
-      itemCount: itemCount,
+          );
+        },
+        itemCount: itemCount,
+      ),
     );
   }
 }

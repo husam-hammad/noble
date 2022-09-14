@@ -111,6 +111,12 @@ class HomePage extends StatelessWidget {
                           ],
                         ),
                       ),
+                      const RealStateOffice(
+                        elementW: 100,
+                        itemCount: 11,
+                        backColor: Color(0XFF487CC7),
+                        content2: Content1(),
+                      )
                     ],
                   ),
                 ),
@@ -137,6 +143,11 @@ class HomePage extends StatelessWidget {
                         ],
                       ),
                     ),
+                    const SupremePoclaimes(
+                      elementW: 175,
+                      itemCount: 4,
+                      backColor: Colors.transparent,
+                    )
                   ],
                 ),
               ),
