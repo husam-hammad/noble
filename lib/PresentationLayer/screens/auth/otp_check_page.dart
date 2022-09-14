@@ -48,14 +48,14 @@ class OtpCheckPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 8.0, horizontal: 20),
+                        padding: const EdgeInsets.only(
+                            bottom: 8.0, right: 20, left: 20),
                         child: Text("enter_the_code".tr, style: sendCodeStyle),
                       ),
                       const Center(child: Verify()),
                       Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 8.0, horizontal: 20),
+                        padding: const EdgeInsets.only(
+                            top: 8.0, right: 20, left: 20),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
