@@ -3,6 +3,13 @@ import 'package:get/get.dart';
 import 'package:noble/Constants/colors.dart';
 import 'package:noble/Constants/font_styles.dart';
 
+int showerNumber = 7;
+int roomNumber = 5;
+int opacity = 230;
+String location = "east".tr;
+String officeName = "sham_office".tr;
+String adViewer = "show_proclaim".tr;
+
 class PropertyScreen extends StatelessWidget {
   const PropertyScreen({
     Key? key,
@@ -11,7 +18,9 @@ class PropertyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Directionality(
-      textDirection: TextDirection.rtl,
+      textDirection: Get.locale!.languageCode == "ar"
+          ? TextDirection.rtl
+          : TextDirection.ltr,
       child: Scaffold(
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -20,10 +29,10 @@ class PropertyScreen extends StatelessWidget {
             width: double.infinity,
             decoration: BoxDecoration(
                 color: AppColors.blue, borderRadius: BorderRadius.circular(10)),
-            child: const Center(
+            child: Center(
                 child: Padding(
-              padding: EdgeInsets.all(12.0),
-              child: Text("شراء العقار", style: white18NoBold),
+              padding: const EdgeInsets.all(12.0),
+              child: Text("buy_the_realstate".tr, style: white18NoBold),
             )),
           ),
         ),
@@ -47,10 +56,10 @@ class PropertyScreen extends StatelessWidget {
                   preferredSize: const Size.fromHeight(0)),
               floating: true,
               flexibleSpace: FlexibleSpaceBar(
-                title: const Padding(
-                  padding: EdgeInsets.only(bottom: 5.0),
+                title: Padding(
+                  padding: const EdgeInsets.only(bottom: 5.0),
                   child: Text(
-                    "فيلا للبيع في دمشق",
+                    "villa_for_sale_in_damascus".tr,
                     style: white18NoBold,
                   ),
                 ),
@@ -100,7 +109,7 @@ Widget buildBody() => SliverToBoxAdapter(
           const SizedBox(height: 25),
           Row(
             children: [
-              const Text("مواصفات العقار", style: blue20ArabicBold),
+              Text("realstate_specifications".tr, style: blue18NoBold),
               const Spacer(),
               Row(
                 children: [
@@ -126,14 +135,14 @@ Widget buildBody() => SliverToBoxAdapter(
               Icon(
                 Icons.sell,
                 color: Color(0XFFBEBEBE),
-                size: 30,
+                size: 25,
               ),
               SizedBox(
                 width: 10,
               ),
               Text(
                 "130.000.000",
-                style: grey25ArabicBold,
+                style: grey18ArabicNoBold,
               )
             ],
           ),
@@ -142,51 +151,51 @@ Widget buildBody() => SliverToBoxAdapter(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Row(
-                children: const [
-                  Icon(
+                children: [
+                  const Icon(
                     Icons.home,
                     color: AppColors.orange,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 3,
                   ),
-                  Text("700", style: blue15TextArabicBold)
+                  Text("$opacity", style: blue15ArabicNoBold)
                 ],
               ),
               Row(
-                children: const [
-                  Icon(
+                children: [
+                  const Icon(
                     Icons.open_with,
                     color: AppColors.orange,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 3,
                   ),
-                  Text("شرقي", style: blue15TextArabicBold)
+                  Text(location, style: blue15ArabicNoBold)
                 ],
               ),
               Row(
-                children: const [
-                  Icon(
+                children: [
+                  const Icon(
                     Icons.single_bed,
                     color: AppColors.orange,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 3,
                   ),
-                  Text("5 غرف", style: blue15TextArabicBold)
+                  Text("$roomNumber " + "rooms".tr, style: blue15ArabicNoBold)
                 ],
               ),
               Row(
-                children: const [
-                  Icon(
+                children: [
+                  const Icon(
                     Icons.bathtub_sharp,
                     color: AppColors.orange,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 3,
                   ),
-                  Text("حمام 2", style: blue15TextArabicBold)
+                  Text("$showerNumber " + "bath".tr, style: blue15ArabicNoBold)
                 ],
               ),
             ],
@@ -221,9 +230,9 @@ Widget buildBody() => SliverToBoxAdapter(
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text("مكتب الشام", style: blue18NoBold),
-                    Text("عارض الإعلان", style: grey15ArabicNoBold)
+                  children: [
+                    Text(officeName, style: blue18NoBold),
+                    Text(adViewer, style: grey15ArabicNoBold)
                   ],
                 ),
                 const Spacer(),
@@ -236,19 +245,18 @@ Widget buildBody() => SliverToBoxAdapter(
             ),
           ),
           const SizedBox(height: 15),
-          const Text(
-            "وصف العقار",
-            style: blue20ArabicBold,
+          Text(
+            "about_realstate".tr,
+            style: blue18NoBold,
           ),
           const SizedBox(height: 15),
           TextFormField(
             minLines: 1,
             maxLines: 10,
             style: blue15TextArabicBold,
-            decoration: const InputDecoration(
-                border: UnderlineInputBorder(borderSide: BorderSide.none),
-                hintText:
-                    "هنا نكتب مواصفات العقار أو نبذة تعريفيه عنه\nوعن مكوناته وموقعه",
+            decoration: InputDecoration(
+                border: const UnderlineInputBorder(borderSide: BorderSide.none),
+                hintText: "hint_realstate".tr,
                 hintStyle: grey15ArabicNoBold),
           ),
           const SizedBox(height: 200)

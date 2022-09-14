@@ -17,7 +17,9 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     controller.onInit();
     return Directionality(
-      textDirection: TextDirection.rtl,
+      textDirection: Get.locale!.languageCode == "ar"
+          ? TextDirection.rtl
+          : TextDirection.ltr,
       child: Scaffold(
           body: Container(
         color: AppColors.blue,
