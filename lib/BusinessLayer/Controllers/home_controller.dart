@@ -12,4 +12,10 @@ class HomeController extends GetxController {
     }
     super.onInit();
   }
+
+  int selectItem = 0;
+  void changeBord(int index) {
+    selectItem = index;
+    update();
+  }
 }

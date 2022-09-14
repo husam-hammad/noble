@@ -12,6 +12,11 @@ List<String> imagesUrl = [
   "assets/images/house4.png",
 ];
 
+int showerNumber = 7;
+int roomNumber = 5;
+int opacity = 230;
+String location = "شرقي";
+
 class SupremePoclaimes extends StatelessWidget {
   final double elementW;
   final int itemCount;
@@ -64,9 +69,9 @@ class SupremePoclaimes extends StatelessWidget {
                             Container(
                               width: 50,
                               height: 30,
-                              child: const Center(
+                              child: Center(
                                   child: Text(
-                                "بيع",
+                                "sell".tr,
                                 style: white10NoBold,
                               )),
                               decoration: BoxDecoration(
@@ -87,55 +92,55 @@ class SupremePoclaimes extends StatelessWidget {
                                 ),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.end,
-                                  children: const [
-                                    Text("حمام 2",
-                                        style: TextStyle(
+                                  children: [
+                                    Text("$showerNumber حمام",
+                                        style: const TextStyle(
                                             color: Colors.white,
                                             fontSize: 8,
                                             fontFamily: "Cairo")),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 3,
                                     ),
-                                    Icon(Icons.ac_unit_sharp,
+                                    const Icon(Icons.bathtub_sharp,
                                         size: 8, color: Colors.white),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 5,
                                     ),
-                                    Text("غرف 5",
-                                        style: TextStyle(
+                                    Text("$roomNumber غرف",
+                                        style: const TextStyle(
                                             color: Colors.white,
                                             fontSize: 8,
                                             fontFamily: "Cairo")),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 3,
                                     ),
-                                    Icon(Icons.abc_outlined,
+                                    const Icon(Icons.single_bed,
                                         size: 8, color: Colors.white),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 5,
                                     ),
-                                    Text("شرقي",
-                                        style: TextStyle(
+                                    Text(location,
+                                        style: const TextStyle(
                                             color: Colors.white,
                                             fontSize: 8,
                                             fontFamily: "Cairo")),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 3,
                                     ),
-                                    Icon(Icons.ac_unit_sharp,
+                                    const Icon(Icons.open_with,
                                         size: 8, color: Colors.white),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 5,
                                     ),
-                                    Text("700",
-                                        style: TextStyle(
+                                    Text("$opacity",
+                                        style: const TextStyle(
                                             color: Colors.white,
                                             fontSize: 8,
                                             fontFamily: "Cairo")),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 3,
                                     ),
-                                    Icon(Icons.ac_unit_sharp,
+                                    const Icon(Icons.home,
                                         size: 8, color: Colors.white),
                                   ],
                                 )

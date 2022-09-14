@@ -32,7 +32,7 @@ class RealStateOffice extends StatelessWidget {
                 width: elementW,
                 decoration: BoxDecoration(
                     color: backColor, borderRadius: BorderRadius.circular(20)),
-                child: Content1()),
+                child: const Content1()),
           );
         },
         itemCount: itemCount,

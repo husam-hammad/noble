@@ -14,7 +14,9 @@ class OtpCheckPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Directionality(
-      textDirection: TextDirection.rtl,
+      textDirection: Get.locale!.languageCode == "ar"
+          ? TextDirection.rtl
+          : TextDirection.ltr,
       child: Scaffold(
           resizeToAvoidBottomInset: true,
           backgroundColor: Colors.white,

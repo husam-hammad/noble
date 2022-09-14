@@ -23,7 +23,9 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Directionality(
-      textDirection: TextDirection.rtl,
+      textDirection: Get.locale!.languageCode == "ar"
+          ? TextDirection.rtl
+          : TextDirection.ltr,
       child: Scaffold(
         backgroundColor: Colors.white,
         body: Column(
@@ -143,7 +145,8 @@ class LoginPage extends StatelessWidget {
                             decoration: InputDecoration(
                                 hintTextDirection: TextDirection.ltr,
                                 hintText: '09XXXXXXXX',
-                                hintStyle: const TextStyle(color: Color(0XFFBEBEBE)),
+                                hintStyle:
+                                    const TextStyle(color: Color(0XFFBEBEBE)),
                                 focusedErrorBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10),
                                     borderSide: const BorderSide(

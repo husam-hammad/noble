@@ -55,7 +55,23 @@ class Languages extends Translations {
           "now": "الآن",
           "ten_min": "منذ 10 دقائق",
           "one_hour": "منذ ساعة",
-          "tow_hour": "منذ ساعتين"
+          "tow_hour": "منذ ساعتين",
+
+          ////////////                      Property Screen
+          "buy_the_realstate": "شراء العقار",
+          "villa_for_sale_in_damascus": "فيلا للبيع في دمشق",
+          "realstate_specifications": "مواصفات العقار",
+          "rooms": "غرف",
+          "bath": "حمام",
+          "about_realstate": "وصف العقار",
+          "hint_realstate":
+              "هنا نكتب مواصفات العقار أو نبذة تعريفيه عنه\nوعن مكوناته وموقعه",
+          "east": "شرقي",
+          "west": "غربي",
+          "north": "شمالي",
+          "south": "جنوبي",
+          "sham_office": "مكتب الشام",
+          "show_proclaim": "عارض الإعلان"
         },
         ////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////
@@ -113,7 +129,23 @@ class Languages extends Translations {
           "now": "Now",
           "ten_min": "10 minute ago",
           "one_hour": "1 Hour ago",
-          "tow_hour": "2 Hours ago"
+          "tow_hour": "2 Hours ago",
+
+          ////////////                      Property Screen
+          "buy_the_realstate": "Buy RealState",
+          "villa_for_sale_in_damascus": "Villa for sale in Damascus",
+          "realstate_specifications": "RealState Specifications",
+          "rooms": "Rooms",
+          "bath": "Bath",
+          "about_realstate": "About RealState",
+          "hint_realstate":
+              "write about the real state and about\nhis specifications",
+          "east": "East",
+          "west": "West",
+          "north": "North",
+          "south": "South",
+          "sham_office": "Sham Office",
+          "show_proclaim": "Ad Viewer"
         }
       };
 }
