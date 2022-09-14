@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:noble/PresentationLayer/Screens/Public/splash_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'BusinessLayer/Bindings/init_bindings.dart';
 import 'BusinessLayer/Controllers/locale_controller.dart';
 import 'Constants/languages.dart';
 import 'Constants/router.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
       home: SplashScreen(),
       locale: controller.initalLang,
       translations: Languages(),
+      initialBinding: InitBinding(),
       getPages: routes,
     );
   }

@@ -83,7 +83,6 @@ class HomePage extends StatelessWidget {
                     StoryOffice(
                       backColor: Colors.transparent,
                       elementW: 100,
-                      itemCount: 4,
                     )
                   ],
                 ),
