@@ -27,7 +27,7 @@ class LoginPage extends StatelessWidget {
           ? TextDirection.rtl
           : TextDirection.ltr,
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.lightwhite,
         body: Column(
           children: [
             Expanded(
