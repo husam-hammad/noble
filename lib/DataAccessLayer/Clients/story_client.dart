@@ -4,16 +4,18 @@ import 'package:dio/dio.dart';
 import 'package:noble/Constants/api_links.dart';
 
 class StoryClient {
-  Future<dynamic> getStories() async {
+  Future<List<dynamic>> getStories() async {
     try {
       var response = await Dio().get(ApiLinks.baseUrl + ApiLinks.stories);
+      print(response.data);
       if (response.statusCode == 200) {
-        return response;
+        return response.data;
       } else {
-        return null;
+        return [];
       }
     } catch (e) {
       print(e);
     }
+    return [];
   }
 }

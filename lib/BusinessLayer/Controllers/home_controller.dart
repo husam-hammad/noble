@@ -10,6 +10,7 @@ class HomeController extends GetxController {
         Get.offNamed(AppRoutes.loginPage);
       });
     }
+
     super.onInit();
   }
 
