@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_utils/src/extensions/internacionalization.dart';
+import 'package:get/get.dart';
+import 'package:noble/BusinessLayer/Controllers/back_notification_controller.dart';
 
 import '../../Constants/font_styles.dart';
 
 class NotificationBody extends StatelessWidget {
-  const NotificationBody({
+  final BackNotificationController notController = Get.find();
+  NotificationBody({
     Key? key,
     required this.notificationNumber,
   }) : super(key: key);
@@ -13,27 +15,31 @@ class NotificationBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-        physics: const BouncingScrollPhysics(),
-        itemBuilder: (context, i) {
-          return ListTile(
-              onTap: () {},
-              title: Text(
-                notificationContent[i],
-                style: blue15TextArabicBold,
-              ),
-              subtitle: Text(
-                notificationTime[i],
-                style: grey15ArabicNoBold,
-              ),
-              leading: CircleAvatar(
-                backgroundImage: AssetImage(photo[0]),
-              ));
-        },
-        itemCount: notificationNumber,
-      ),
-    );
+    return GetBuilder<BackNotificationController>(
+        init: notController,
+        builder: (_) {
+          return Expanded(
+            child: ListView.builder(
+              physics: const BouncingScrollPhysics(),
+              itemBuilder: (context, i) {
+                return ListTile(
+                    onTap: () {},
+                    title: Text(
+                      notController.backNotifications[i].message,
+                      style: blue15TextArabicBold,
+                    ),
+                    subtitle: Text(
+                      notController.backNotifications[i].createdAt,
+                      style: grey15ArabicNoBold,
+                    ),
+                    leading: CircleAvatar(
+                      backgroundImage: AssetImage(photo[0]),
+                    ));
+              },
+              itemCount: notController.backNotifications.length,
+            ),
+          );
+        });
   }
 }
 
@@ -87,7 +93,7 @@ class NotificationTextfield extends StatelessWidget {
             hintStyle: grey15ArabicNoBold,
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
-                borderSide: const BorderSide(color:  Color(0XFFD2D2D2))),
+                borderSide: const BorderSide(color: Color(0XFFD2D2D2))),
             focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
                 borderSide: const BorderSide(color: Color(0XFFD2D2D2)))),

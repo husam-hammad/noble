@@ -23,6 +23,7 @@ class StoryOffice extends StatelessWidget {
           return Container(
             height: 160,
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+            // ignore: unrelated_type_equality_checks
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: storiesController.stories.length,

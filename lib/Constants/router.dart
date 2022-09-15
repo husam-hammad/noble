@@ -33,6 +33,6 @@ List<GetPage<dynamic>> routes = [
   GetPage(
     name: AppRoutes.propertyScreen,
     transition: Transition.fadeIn,
-    page: () => const PropertyScreen(),
+    page: () => PropertyScreen(),
   ),
 ];

@@ -54,8 +54,7 @@ class OtpCheckPage extends StatelessWidget {
                       ),
                       const Center(child: Verify()),
                       Padding(
-                        padding: const EdgeInsets.only(
-                            top: 8.0, right: 20, left: 20),
+                        padding: const EdgeInsets.only(right: 20, left: 20),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
