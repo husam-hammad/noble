@@ -27,19 +27,20 @@ class OnBoarding extends StatelessWidget {
             },
             selectedItemColor: Colors.white,
             unselectedItemColor: Colors.white.withOpacity(.5),
-            items: const [
+            items: [
               BottomNavigationBarItem(
                   backgroundColor: AppColors.blue,
-                  icon: Icon(Icons.message_sharp),
-                  label: "المزيد"),
+                  icon: const Icon(Icons.message_sharp),
+                  label: "the_more".tr),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.notifications), label: "الإشعارات"),
+                  icon: const Icon(Icons.notifications),
+                  label: "the_notification".tr),
               BottomNavigationBarItem(
-                icon: Icon(Icons.favorite_border),
-                label: "المفضلة",
+                icon: const Icon(Icons.favorite_border),
+                label: "the_favorite".tr,
               ),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.home), label: "الرئيسية"),
+                  icon: const Icon(Icons.home), label: "the_home".tr),
             ]),
         body: homeWidget.elementAt(controller.selectItem),
       );

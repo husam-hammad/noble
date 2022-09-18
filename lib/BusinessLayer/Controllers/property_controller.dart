@@ -14,7 +14,6 @@ class PropertyController extends GetxController {
     isLoading.value = true;
     properties = await propertyRepo.getProperty();
 
-    print(properties);
     isLoading.value = false;
     super.onInit();
   }

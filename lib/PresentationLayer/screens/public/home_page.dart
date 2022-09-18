@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:noble/Constants/colors.dart';
 import 'package:noble/Constants/font_styles.dart';
+import 'package:noble/Constants/routes.dart';
 import '../../Widgets/home_page_folder/realstate_office.dart';
 import '../../Widgets/home_page_folder/story_widget.dart';
 import '../../Widgets/home_page_folder/supreme_poiclame.dart';
@@ -40,12 +41,17 @@ class HomePage extends StatelessWidget {
             style: blue20ArabicBold,
           ),
           centerTitle: true,
-          actions: const [
+          actions: [
             Padding(
-              padding: EdgeInsets.all(8.0),
-              child: CircleAvatar(
-                backgroundImage: AssetImage("assets/images/person.jpg"),
-                radius: 15,
+              padding: const EdgeInsets.all(8.0),
+              child: InkWell(
+                onTap: () {
+                  Get.toNamed(AppRoutes.profileScreen);
+                },
+                child: const CircleAvatar(
+                  backgroundImage: AssetImage("assets/images/person.jpg"),
+                  radius: 15,
+                ),
               ),
             ),
           ],

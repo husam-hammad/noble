@@ -4,6 +4,7 @@ import 'package:noble/PresentationLayer/Screens/Auth/login_page.dart';
 import 'package:noble/PresentationLayer/Screens/Auth/otp_check_page.dart';
 import 'package:noble/PresentationLayer/Screens/Public/office_page.dart';
 import 'package:noble/PresentationLayer/Screens/Public/on_boarding.dart';
+import 'package:noble/PresentationLayer/screens/public/profile_screen.dart';
 
 import '../PresentationLayer/Screens/Public/property_screen.dart';
 import '../PresentationLayer/Screens/Public/splash_screen.dart';
@@ -34,5 +35,10 @@ List<GetPage<dynamic>> routes = [
     name: AppRoutes.propertyScreen,
     transition: Transition.fadeIn,
     page: () => PropertyScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.profileScreen,
+    transition: Transition.circularReveal,
+    page: () => const ProfileScreen(),
   ),
 ];

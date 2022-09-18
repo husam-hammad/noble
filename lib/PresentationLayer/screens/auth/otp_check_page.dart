@@ -29,8 +29,7 @@ class OtpCheckPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Image.asset("assets/images/messageOtp.png",
-                        height: 200, width: 200),
-                    const SizedBox(height: 5),
+                        height: 190, width: 190),
                     Center(
                       child: Text(
                         "we_send_code".tr,
@@ -42,7 +41,7 @@ class OtpCheckPage extends StatelessWidget {
                 ),
               ),
               Expanded(
-                flex: 3,
+                flex: 2,
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,

@@ -71,7 +71,13 @@ class Languages extends Translations {
           "north": "شمالي",
           "south": "جنوبي",
           "sham_office": "مكتب الشام",
-          "show_proclaim": "عارض الإعلان"
+          "show_proclaim": "عارض الإعلان",
+
+          ///////////                       On Boarding Screen
+          "the_home": "الرئيسية",
+          "the_favorite": "المفضلة",
+          "the_notification": "الإشعارات",
+          "the_more": "المزيد",
         },
         ////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////
@@ -145,7 +151,13 @@ class Languages extends Translations {
           "north": "North",
           "south": "South",
           "sham_office": "Sham Office",
-          "show_proclaim": "Ad Viewer"
+          "show_proclaim": "Ad Viewer",
+
+          ///////////                       On Boarding Screen
+          "the_home": "Home",
+          "the_favorite": "Favorite",
+          "the_notification": "Notifications",
+          "the_more": "More",
         }
       };
 }

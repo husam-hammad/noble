@@ -19,7 +19,8 @@ class StoriesController extends GetxController {
     stories = await storyRepo.getStories();
     for (var element in stories) {
       print(element.image);
-      storyviews.add(StoryItem.inlineImage(
+
+      storyviews.add(StoryItem.pageImage(
           url: element.image, controller: storyviewcontroller));
     }
     print(stories);

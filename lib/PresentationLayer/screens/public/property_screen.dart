@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:noble/Constants/colors.dart';
 import 'package:noble/Constants/font_styles.dart';
-import 'package:noble/DataAccessLayer/Models/property.dart';
 
 import '../../../BusinessLayer/Controllers/property_controller.dart';
 
@@ -16,7 +15,7 @@ String adViewer = "show_proclaim".tr;
 final PropertyController proController = Get.find();
 
 class PropertyScreen extends StatelessWidget {
-  PropertyScreen({
+  const PropertyScreen({
     Key? key,
   }) : super(key: key);
 
