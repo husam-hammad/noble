@@ -7,7 +7,7 @@ class PropertyHasFeature {
   late final int id;
   late final String name;
   late final String type;
-  late final Null properyType;
+  late final int? properyType;
   late final String price;
   late final String title;
   late final String description;
@@ -83,7 +83,7 @@ class PropertyHasFeature {
     int? id,
     String? name,
     String? type,
-    Null properyType,
+    int? properyType,
     String? price,
     String? title,
     String? description,
@@ -203,7 +203,7 @@ class PropertyHasFeature {
       id: map['id'] as int,
       name: map['name'] as String,
       type: map['type'] as String,
-      properyType: map['properyType'] as Null,
+      properyType: map['properyType'] as int,
       price: map['price'] as String,
       title: map['title'] as String,
       description: map['description'] as String,

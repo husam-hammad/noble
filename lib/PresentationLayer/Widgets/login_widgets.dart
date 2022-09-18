@@ -14,13 +14,11 @@ class LoginWidgets extends StatelessWidget {
 }
 
 class BottomCircle extends StatelessWidget {
-
   final String text;
   final Color circleColor;
   final Color textColor;
   final double fontSize;
 
- 
   const BottomCircle({
     Key? key,
     required this.text,
@@ -32,11 +30,11 @@ class BottomCircle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 100,
       decoration: BoxDecoration(
           color: circleColor,
           borderRadius: const BorderRadius.only(
-              topLeft:  Radius.circular(120),
-              topRight: Radius.circular(120))),
+              topLeft: Radius.circular(120), topRight: Radius.circular(120))),
       child: Center(
         child: Text(text,
             textAlign: TextAlign.center,
@@ -70,8 +68,8 @@ class Button extends StatelessWidget {
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-          boxShadow:const [
-             BoxShadow(
+          boxShadow: const [
+            BoxShadow(
                 color: Colors.grey, blurRadius: 2.0, offset: Offset(0.0, 2.0))
           ],
           borderRadius: BorderRadius.circular(10),

@@ -62,8 +62,10 @@ const grey18ArabicNoBold = TextStyle(
   fontSize: 18,
 );
 
-const sendCodeStyle =
-    TextStyle(color: Color(0XFF292929), fontSize: 15, fontFamily: "Cairo");
+const sendCodeStyle = TextStyle(
+    color: Color.fromARGB(255, 105, 105, 105),
+    fontSize: 15,
+    fontFamily: "Cairo");
 
 const blue18NoBold = TextStyle(
   color: AppColors.blue,

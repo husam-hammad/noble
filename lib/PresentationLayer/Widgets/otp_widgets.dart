@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:noble/BusinessLayer/Controllers/auth_controller.dart';
 import 'package:noble/Constants/font_styles.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
@@ -11,8 +13,8 @@ import '../../Constants/font_styles.dart';
 /* GlobalKey<FormState> formState2 = new GlobalKey<FormState>();
  */
 class Verify extends StatelessWidget {
-  const Verify({Key? key}) : super(key: key);
-
+  Verify({Key? key}) : super(key: key);
+  final AuthController authController = Get.find();
   @override
   Widget build(BuildContext context) {
     return Directionality(

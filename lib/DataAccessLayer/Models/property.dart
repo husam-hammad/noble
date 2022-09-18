@@ -5,7 +5,7 @@ class Property {
   final int id;
   final String name;
   final String type;
-  final Null properyType;
+  final int? properyType;
   final String price;
   final String title;
   final String description;
@@ -50,7 +50,8 @@ class Property {
       id: map['id'] as int,
       name: map['name'] as String,
       type: map['type'] as String,
-      properyType: map['properyType'] as Null,
+      properyType:
+          map['properyType'] != null ? map['properyType'] as int : null,
       price: map['price'] as String,
       title: map['title'] as String,
       description: map['description'] as String,
