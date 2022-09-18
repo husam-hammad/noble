@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:noble/Constants/routes.dart';
 import 'package:noble/PresentationLayer/Screens/Auth/login_page.dart';
 import 'package:noble/PresentationLayer/Screens/Auth/otp_check_page.dart';
-import 'package:noble/PresentationLayer/Screens/Public/office_page.dart';
+
 import 'package:noble/PresentationLayer/Screens/Public/on_boarding.dart';
 import 'package:noble/PresentationLayer/screens/public/profile_screen.dart';
 
@@ -26,11 +26,12 @@ List<GetPage<dynamic>> routes = [
       name: AppRoutes.onBoardingScreen,
       page: () => const OnBoarding(),
       transition: Transition.downToUp),
-  GetPage(
+  /* GetPage(
     name: AppRoutes.office,
     transition: Transition.fadeIn,
     page: () => const OfficePage(),
-  ),
+    arguments: 
+  ), */
   GetPage(
     name: AppRoutes.propertyScreen,
     transition: Transition.fadeIn,

@@ -20,12 +20,17 @@ class OtpCheckPage extends StatelessWidget {
       child: Scaffold(
           resizeToAvoidBottomInset: true,
           backgroundColor: Colors.white,
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                flex: 2,
-                child: Column(
+          bottomNavigationBar: BottomCircle(
+            text: 'verification'.tr,
+            circleColor: AppColors.blue,
+            textColor: Colors.white,
+            fontSize: 25,
+          ),
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Image.asset("assets/images/messageOtp.png",
@@ -39,19 +44,23 @@ class OtpCheckPage extends StatelessWidget {
                     )
                   ],
                 ),
-              ),
-              Expanded(
-                flex: 2,
-                child: Column(
+                Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      const SizedBox(
+                        height: 20,
+                      ),
                       Padding(
                         padding: const EdgeInsets.only(
                             bottom: 8.0, right: 20, left: 20),
                         child: Text("enter_the_code".tr, style: sendCodeStyle),
                       ),
-                      const Center(child: Verify()),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            bottom: 8.0, right: 20, left: 20),
+                        child: Center(child: Verify()),
+                      ),
                       Padding(
                         padding: const EdgeInsets.only(right: 20, left: 20),
                         child: Row(
@@ -82,15 +91,8 @@ class OtpCheckPage extends StatelessWidget {
                         ),
                       )
                     ]),
-              ),
-              Expanded(
-                  child: BottomCircle(
-                text: 'verification'.tr,
-                circleColor: AppColors.blue,
-                textColor: Colors.white,
-                fontSize: 25,
-              ))
-            ],
+              ],
+            ),
           )),
     );
   }

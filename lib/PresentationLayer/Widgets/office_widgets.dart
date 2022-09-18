@@ -10,8 +10,8 @@ final OfficesController offController = Get.find();
 
 // ignore: must_be_immutable
 class OfficeInfo extends StatelessWidget {
-  int followersNumber = 200;
   final Office office;
+  int followersNumber = 200;
   OfficeInfo({Key? key, required this.office}) : super(key: key);
 
   @override
@@ -128,7 +128,7 @@ class OfficeBody extends StatelessWidget {
                                 "address".tr,
                                 style: blue15ArabicNoBold,
                               ),
-                              Text(office.address, style: grey15ArabicNoBold),
+                              const Text("", style: grey15ArabicNoBold),
                             ]),
                         const Spacer(),
                         const Icon(

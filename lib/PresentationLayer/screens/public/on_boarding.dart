@@ -16,42 +16,50 @@ class OnBoarding extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeController>(builder: (controller) {
-      return Scaffold(
-        bottomNavigationBar: BottomNavigationBar(
-            showSelectedLabels: true,
-            selectedLabelStyle: white15ArabicBold,
-            unselectedLabelStyle: white15ArabicBold,
-            backgroundColor: AppColors.blue,
-            currentIndex: controller.selectItem,
-            onTap: (index) {
-              controller.changeBord(index);
-            },
-            selectedItemColor: Colors.white,
-            unselectedItemColor: Colors.white.withOpacity(.5),
-            items: [
-              BottomNavigationBarItem(
+      return Directionality(
+        textDirection: Get.locale!.languageCode == "ar"
+            ? TextDirection.rtl
+            : TextDirection.ltr,
+        child: Scaffold(
+          bottomNavigationBar: BottomNavigationBar(
+              selectedLabelStyle: white15ArabicBold,
+              unselectedLabelStyle: white15ArabicBold,
+              backgroundColor: AppColors.blue,
+              currentIndex: controller.selectItem,
+              onTap: (index) {
+                controller.changeBord(index);
+              },
+              selectedItemColor: Colors.white,
+              unselectedItemColor: Colors.white.withOpacity(.5),
+              items: [
+                BottomNavigationBarItem(
+                    backgroundColor: AppColors.blue,
+                    icon: const Icon(Icons.home),
+                    label: "the_home".tr),
+                BottomNavigationBarItem(
+                    backgroundColor: AppColors.blue,
+                    icon: const Icon(Icons.notifications),
+                    label: "the_notification".tr),
+                BottomNavigationBarItem(
                   backgroundColor: AppColors.blue,
-                  icon: const Icon(Icons.message_sharp),
-                  label: "the_more".tr),
-              BottomNavigationBarItem(
-                  icon: const Icon(Icons.notifications),
-                  label: "the_notification".tr),
-              BottomNavigationBarItem(
-                icon: const Icon(Icons.favorite_border),
-                label: "the_favorite".tr,
-              ),
-              BottomNavigationBarItem(
-                  icon: const Icon(Icons.home), label: "the_home".tr),
-            ]),
-        body: homeWidget.elementAt(controller.selectItem),
+                  icon: const Icon(Icons.favorite_border),
+                  label: "the_favorite".tr,
+                ),
+                BottomNavigationBarItem(
+                    backgroundColor: AppColors.blue,
+                    icon: const Icon(Icons.message_sharp),
+                    label: "the_more".tr),
+              ]),
+          body: homeWidget.elementAt(controller.selectItem),
+        ),
       );
     });
   }
 }
 
 List<Widget> homeWidget = [
-  const MorePage(),
+  const HomePage(),
   NotificationPage(),
   const FavoritePage(),
-  const HomePage()
+  const MorePage(),
 ];

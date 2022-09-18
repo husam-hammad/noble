@@ -3,7 +3,7 @@ import 'dart:convert';
 
 class BackNotification {
   final int id;
-  final Null fromId;
+  final int fromId;
   final int toId;
   final String message;
   final String payload;
@@ -31,7 +31,7 @@ class BackNotification {
   factory BackNotification.fromMap(Map<String, dynamic> map) {
     return BackNotification(
       id: map['id'] as int,
-      fromId: map['from_id'] as Null,
+      fromId: map['from_id'] ?? map['from_id'] as int,
       toId: map['to_id'] as int,
       message: map['message'] as String,
       payload: map['payload'] as String,
