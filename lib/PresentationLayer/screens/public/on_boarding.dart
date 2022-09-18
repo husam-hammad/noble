@@ -18,6 +18,7 @@ class OnBoarding extends StatelessWidget {
     return GetBuilder<HomeController>(builder: (controller) {
       return Scaffold(
         bottomNavigationBar: BottomNavigationBar(
+            showSelectedLabels: true,
             selectedLabelStyle: white15ArabicBold,
             unselectedLabelStyle: white15ArabicBold,
             backgroundColor: AppColors.blue,

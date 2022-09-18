@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, must_be_immutable
 
 import 'dart:math';
 
@@ -10,8 +10,6 @@ import 'package:get/get.dart';
 import '../../../Constants/font_styles.dart';
 import '../../Widgets/login_widgets.dart';
 import 'package:http/http.dart' as http;
-
-// ignore: must_be_immutable
 
 Random number = Random();
 var otp_number = number.nextInt(999999);

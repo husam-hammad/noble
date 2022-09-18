@@ -11,7 +11,8 @@ final OfficesController offController = Get.find();
 // ignore: must_be_immutable
 class OfficeInfo extends StatelessWidget {
   int followersNumber = 200;
-  OfficeInfo({Key? key}) : super(key: key);
+  final Office office;
+  OfficeInfo({Key? key, required this.office}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -56,18 +57,18 @@ class OfficeInfo extends StatelessWidget {
                   Center(
                       child: Column(children: [
                     CircleAvatar(
-                      backgroundImage: NetworkImage(""),
+                      backgroundImage: NetworkImage(office.logo),
                       radius: 50,
                       backgroundColor: Colors.transparent,
                     ),
                     const SizedBox(height: 5),
                     Text(
-                      "",
+                      office.name,
                       style: white20ArabicBold,
                     ),
                     const SizedBox(height: 5),
                     Text(
-                      "",
+                      office.slug,
                       style: white15ArabicBold,
                     ),
                   ])),
@@ -95,9 +96,8 @@ class OfficeInfo extends StatelessWidget {
 }
 
 class OfficeBody extends StatelessWidget {
-  const OfficeBody({
-    Key? key,
-  }) : super(key: key);
+  final Office office;
+  const OfficeBody({Key? key, required this.office}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -128,7 +128,7 @@ class OfficeBody extends StatelessWidget {
                                 "address".tr,
                                 style: blue15ArabicNoBold,
                               ),
-                              Text("", style: grey15ArabicNoBold),
+                              Text(office.address, style: grey15ArabicNoBold),
                             ]),
                         const Spacer(),
                         const Icon(
