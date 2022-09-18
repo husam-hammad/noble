@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:noble/Constants/routes.dart';
+import 'package:noble/DataAccessLayer/Models/office.dart';
 import 'package:noble/PresentationLayer/Screens/Auth/login_page.dart';
 import 'package:noble/PresentationLayer/Screens/Auth/otp_check_page.dart';
 import 'package:noble/PresentationLayer/Screens/Public/office_page.dart';

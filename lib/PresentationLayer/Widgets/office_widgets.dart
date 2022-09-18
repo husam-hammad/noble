@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:noble/BusinessLayer/Controllers/office_controller.dart';
 import 'package:noble/Constants/font_styles.dart';
+import 'package:noble/DataAccessLayer/Models/office.dart';
 
 import '../../Constants/colors.dart';
 
@@ -10,9 +11,7 @@ final OfficesController offController = Get.find();
 // ignore: must_be_immutable
 class OfficeInfo extends StatelessWidget {
   int followersNumber = 200;
-  OfficeInfo({
-    Key? key,
-  }) : super(key: key);
+  OfficeInfo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -57,19 +56,18 @@ class OfficeInfo extends StatelessWidget {
                   Center(
                       child: Column(children: [
                     CircleAvatar(
-                      backgroundImage:
-                          NetworkImage(offController.offices[0].logo),
+                      backgroundImage: NetworkImage(""),
                       radius: 50,
                       backgroundColor: Colors.transparent,
                     ),
                     const SizedBox(height: 5),
                     Text(
-                      offController.offices[0].name,
+                      "",
                       style: white20ArabicBold,
                     ),
                     const SizedBox(height: 5),
                     Text(
-                      offController.offices[0].slug,
+                      "",
                       style: white15ArabicBold,
                     ),
                   ])),
@@ -130,8 +128,7 @@ class OfficeBody extends StatelessWidget {
                                 "address".tr,
                                 style: blue15ArabicNoBold,
                               ),
-                              Text(offController.offices[0].address,
-                                  style: grey15ArabicNoBold),
+                              Text("", style: grey15ArabicNoBold),
                             ]),
                         const Spacer(),
                         const Icon(

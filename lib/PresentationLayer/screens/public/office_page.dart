@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../DataAccessLayer/Models/office.dart';
 import '../../Widgets/office_widgets.dart';
 
 class OfficePage extends StatelessWidget {
-  const OfficePage({
-    Key? key,
-  }) : super(key: key);
+  final Office office;
+
+  const OfficePage({Key? key, required this.office}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,10 +19,14 @@ class OfficePage extends StatelessWidget {
         body:
             Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
           Expanded(
-            child: OfficeInfo(),
+            child: OfficeInfo(office: office),
             flex: 1,
           ),
-          const Expanded(flex: 1, child: OfficeBody())
+          Expanded(
+              flex: 1,
+              child: OfficeBody(
+                office: office,
+              ))
         ]),
       ),
     );

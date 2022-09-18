@@ -1,21 +1,39 @@
+// ignore_for_file: non_constant_identifier_names
+
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:noble/BusinessLayer/Controllers/auth_controller.dart';
 import 'package:noble/Constants/colors.dart';
 import 'package:noble/Constants/routes.dart';
 import 'package:get/get.dart';
 import '../../../Constants/font_styles.dart';
 import '../../Widgets/login_widgets.dart';
+import 'package:http/http.dart' as http;
 
 // ignore: must_be_immutable
+
+Random number = Random();
+var otp_number = number.nextInt(999999);
+
 class LoginPage extends StatelessWidget {
+  AuthController controller = Get.put(AuthController());
+
   LoginPage({
     Key? key,
   }) : super(key: key);
 
   GlobalKey<FormState> formState = GlobalKey<FormState>();
 
-  send() {
+  send() async {
     var formdata = formState.currentState;
     if (formdata!.validate() == true) {
+      var response = await http.post(
+          Uri.parse('https://noble.brain.sy/api/v1/getVerifyCode'),
+          headers: ({
+            "code": otp_number.toString(),
+            "mobile_number": controller.phoneController.text
+          }));
       Get.toNamed(AppRoutes.otpPage);
     }
   }
@@ -60,6 +78,7 @@ class LoginPage extends StatelessWidget {
                         child: Form(
                           key: formState,
                           child: TextFormField(
+                            controller: controller.phoneController,
                             validator: (text) {
                               if (text?.isEmpty == true) {
                                 Get.snackbar("Cannot be empty",
