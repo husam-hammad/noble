@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:noble/BusinessLayer/Controllers/property_controller.dart';
+import 'package:noble/PresentationLayer/screens/public/property_screen.dart';
 import '../../../Constants/colors.dart';
 import '../../../Constants/font_styles.dart';
-import '../../../Constants/routes.dart';
 
 String location = "شرقي";
 
-class SupremePoclaimes extends StatelessWidget {
+class HighLights extends StatelessWidget {
   final PropertyController propertyController = Get.find();
   final double elementW;
   final int itemCount;
   final Color backColor;
 
-  SupremePoclaimes({
+  HighLights({
     Key? key,
     required this.backColor,
     required this.itemCount,
@@ -41,7 +41,8 @@ class SupremePoclaimes extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20)),
                     child: InkWell(
                       onTap: () {
-                        Get.toNamed(AppRoutes.propertyScreen);
+                        Get.to(() => PropertyScreen(
+                            propety: propertyController.properties[i]));
                       },
                       child: Container(
                         decoration: BoxDecoration(

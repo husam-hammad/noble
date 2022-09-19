@@ -13,7 +13,7 @@ class BackNotificationController extends GetxController {
   @override
   void onInit() async {
     isLoading.value = true;
-    backNotifications = await backNotificationRepo.getBackNotification();
+    //backNotifications = await backNotificationRepo.getBackNotification();
 
     isLoading.value = false;
 

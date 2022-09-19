@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:noble/BusinessLayer/Controllers/office_controller.dart';
+import 'package:noble/PresentationLayer/screens/public/office_page.dart';
 
 import '../../../Constants/font_styles.dart';
-import '../../../Constants/routes.dart';
 
 class RealStateOffice extends StatelessWidget {
   final OfficesController officesController = Get.find();
+
   final double elementW;
   final int itemCount;
   final Color backColor;
@@ -39,7 +40,8 @@ class RealStateOffice extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20)),
                       child: InkWell(
                         onTap: () {
-                          Get.toNamed(AppRoutes.office);
+                          Get.to(() =>
+                              OfficePage(office: officesController.offices[i]));
                         },
                         child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -147,7 +147,7 @@ class HomePage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SupremePoclaimes(
+                    HighLights(
                       elementW: 185,
                       itemCount: 4,
                       backColor: Colors.transparent,
