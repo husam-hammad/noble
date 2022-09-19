@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:noble/BusinessLayer/Controllers/office_controller.dart';
@@ -13,13 +15,11 @@ class HighLights extends StatelessWidget {
   final OfficesController officesController = Get.find();
 
   final double elementW;
-  final int itemCount;
   final Color backColor;
 
   HighLights({
     Key? key,
     required this.backColor,
-    required this.itemCount,
     required this.elementW,
   }) : super(key: key);
 
@@ -53,7 +53,9 @@ class HighLights extends StatelessWidget {
                         decoration: BoxDecoration(
                             image: DecorationImage(
                                 image: NetworkImage(
-                                    propertyController.properties[i].image),
+                                    'https://noble.brain.sy/storage/' +
+                                        json.decode(propertyController
+                                            .properties[i].image)[0]),
                                 fit: BoxFit.fill),
                             borderRadius: BorderRadius.circular(20)),
                         child: Stack(

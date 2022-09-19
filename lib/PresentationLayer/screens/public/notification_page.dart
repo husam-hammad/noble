@@ -63,7 +63,7 @@ class NotificationPage extends StatelessWidget {
                 style: blue20ArabicBold,
               ),
             ),
-            NotificationBody(notificationNumber: notificationNumber)
+            NotificationBody()
           ],
         ),
       ),

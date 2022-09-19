@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:noble/BusinessLayer/Controllers/office_controller.dart';
+import 'package:noble/BusinessLayer/Controllers/property_controller.dart';
 import 'package:noble/Constants/font_styles.dart';
 import 'package:noble/DataAccessLayer/Models/office.dart';
 
 import '../../Constants/colors.dart';
 
 final OfficesController offController = Get.find();
+final PropertyController propertyController = Get.find();
 
 // ignore: must_be_immutable
 class OfficeInfo extends StatelessWidget {
@@ -147,61 +149,44 @@ class OfficeBody extends StatelessWidget {
               ),
               SizedBox(
                 height: 200,
-                child: ListView(
-                  scrollDirection: Axis.vertical,
+                child: ListView.builder(
                   physics: const BouncingScrollPhysics(),
-                  children: [
-                    ListTile(
-                      leading: const CircleAvatar(
-                        backgroundImage: AssetImage("assets/images/house4.png"),
-                        radius: 25,
+                  itemCount: propertyController.properties.length,
+                  itemBuilder: (context, i) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20.0, vertical: 8),
+                      child: Row(
+                        children: [
+                          Container(
+                            height: 60,
+                            width: 50,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(40),
+                              image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: NetworkImage(
+                                    propertyController.properties[i].image),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          Column(
+                            children: [
+                              Text(
+                                propertyController.properties[i].name,
+                                style: blue18NoBold,
+                              ),
+                              Text(propertyController.properties[i].price,
+                                  style: grey15ArabicNoBold)
+                            ],
+                          )
+                        ],
                       ),
-                      title: Text(
-                        "villa_for_sale".tr,
-                        style: blue18NoBold,
-                      ),
-                      subtitle: const Text(
-                        "1,300,000",
-                        style: grey15ArabicNoBold,
-                      ),
-                    ),
-                    ListTile(
-                      leading: const CircleAvatar(
-                        backgroundImage: AssetImage("assets/images/house1.png"),
-                        radius: 25,
-                      ),
-                      title: Text(
-                        "villa_for_sale".tr,
-                        style: blue18NoBold,
-                      ),
-                      subtitle: const Text("1,300,000",
-                          style: TextStyle(
-                              color: Color(0XFFD2D2D2), fontSize: 14)),
-                    ),
-                    ListTile(
-                      leading: const CircleAvatar(
-                        backgroundImage: AssetImage("assets/images/house2.png"),
-                        radius: 25,
-                      ),
-                      title: Text(
-                        "villa_for_sale".tr,
-                        style: blue18NoBold,
-                      ),
-                      subtitle:
-                          const Text("1,300,000", style: grey15ArabicNoBold),
-                    ),
-                    const ListTile(
-                      leading: CircleAvatar(
-                        backgroundImage: AssetImage("assets/images/house3.png"),
-                        radius: 25,
-                      ),
-                      title: Text(
-                        "فيلا للبيع",
-                        style: blue18NoBold,
-                      ),
-                      subtitle: Text("1,300,000"),
-                    ),
-                  ],
+                    );
+                  },
                 ),
               )
             ],

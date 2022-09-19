@@ -5,7 +5,7 @@ import 'package:noble/Constants/font_styles.dart';
 import 'package:noble/Constants/routes.dart';
 import '../../Widgets/home_page_folder/realstate_office.dart';
 import '../../Widgets/home_page_folder/story_widget.dart';
-import '../../Widgets/home_page_folder/supreme_poiclame.dart';
+import '../../Widgets/home_page_folder/highlights.dart';
 import '../../Widgets/on_boarding_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -140,16 +140,23 @@ class HomePage extends StatelessWidget {
                             style: blue15TextArabicBold,
                           ),
                           const Spacer(),
-                          Text(
-                            "show_all".tr,
-                            style: grey15ArabicNoBold,
+                          InkWell(
+                            onTap: () {
+                              Get.toNamed(AppRoutes.highlights);
+                            },
+                            child: Hero(
+                              tag: 'highlights_hero',
+                              child: Text(
+                                "show_all".tr,
+                                style: grey15ArabicNoBold,
+                              ),
+                            ),
                           ),
                         ],
                       ),
                     ),
                     HighLights(
                       elementW: 185,
-                      itemCount: 4,
                       backColor: Colors.transparent,
                     )
                   ],

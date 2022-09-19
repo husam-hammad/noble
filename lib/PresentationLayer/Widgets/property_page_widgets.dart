@@ -195,7 +195,7 @@ class SliverAppBarProperty extends StatelessWidget {
                                       horizontal: 10.0),
                                   child: Row(children: [
                                     Padding(
-                                      padding: const EdgeInsets.all(8.0),
+                                      padding: const EdgeInsets.all(5.0),
                                       child: Container(
                                         height: 60,
                                         width: 60,

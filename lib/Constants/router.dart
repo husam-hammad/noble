@@ -5,6 +5,7 @@ import 'package:noble/PresentationLayer/Screens/Auth/otp_check_page.dart';
 import 'package:noble/PresentationLayer/Screens/Public/on_boarding.dart';
 import 'package:noble/PresentationLayer/screens/public/profile_screen.dart';
 import '../PresentationLayer/Screens/Public/splash_screen.dart';
+import '../PresentationLayer/screens/public/highlights_screen.dart';
 
 List<GetPage<dynamic>> routes = [
   GetPage(
@@ -39,4 +40,5 @@ List<GetPage<dynamic>> routes = [
     transition: Transition.circularReveal,
     page: () => const ProfileScreen(),
   ),
+  GetPage(name: AppRoutes.highlights, page: () => const HighLightsScreen())
 ];

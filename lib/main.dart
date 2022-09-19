@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:noble/PresentationLayer/Screens/Public/splash_screen.dart';
+
+import 'package:noble/PresentationLayer/screens/public/home_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'BusinessLayer/Bindings/init_bindings.dart';
 import 'BusinessLayer/Controllers/locale_controller.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
     MyLocaleController controller = Get.put(MyLocaleController());
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: const HomePage(),
       locale: controller.initalLang,
       translations: Languages(),
       initialBinding: InitBinding(),
