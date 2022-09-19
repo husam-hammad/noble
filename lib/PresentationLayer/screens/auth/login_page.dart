@@ -33,8 +33,8 @@ class LoginPage extends StatelessWidget {
                 decoration: const BoxDecoration(
                     color: AppColors.blue,
                     borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(120),
-                        bottomRight: Radius.circular(120))),
+                        bottomLeft: Radius.circular(200),
+                        bottomRight: Radius.circular(200))),
               ),
             ),
             Expanded(

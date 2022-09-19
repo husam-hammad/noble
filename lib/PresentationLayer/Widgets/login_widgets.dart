@@ -34,7 +34,7 @@ class BottomCircle extends StatelessWidget {
       decoration: BoxDecoration(
           color: circleColor,
           borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(120), topRight: Radius.circular(120))),
+              topLeft: Radius.circular(200), topRight: Radius.circular(200))),
       child: Center(
         child: Text(text,
             textAlign: TextAlign.center,

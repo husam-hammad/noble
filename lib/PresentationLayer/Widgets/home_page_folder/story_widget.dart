@@ -20,10 +20,8 @@ class StoryOffice extends StatelessWidget {
     return GetBuilder<StoriesController>(
         init: storiesController,
         builder: (_) {
-          return Container(
+          return SizedBox(
             height: 160,
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-            // ignore: unrelated_type_equality_checks
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: storiesController.stories.length,
@@ -52,7 +50,7 @@ class StoryOffice extends StatelessWidget {
                                   image: NetworkImage(
                                       storiesController.stories[i].image),
                                   fit: BoxFit.cover),
-                              borderRadius: BorderRadius.circular(20))),
+                              borderRadius: BorderRadius.circular(15))),
                     ),
                   ),
                 );
