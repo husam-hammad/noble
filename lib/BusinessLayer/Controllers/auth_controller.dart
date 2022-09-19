@@ -3,6 +3,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:noble/Constants/font_styles.dart';
 import 'package:noble/Constants/routes.dart';
 import 'package:noble/DataAccessLayer/Clients/user_client.dart';
 import 'package:noble/PresentationLayer/screens/auth/otp_check_page.dart';
@@ -45,27 +46,23 @@ class AuthController extends GetxController {
 
   validate() {
     if (phoneController.value.text.isEmpty == true) {
-      Get.snackbar("Cannot be empty", "Please enter your phone number",
-          titleText: Text(
-            "Cannot be empty",
-            style: blue20ArabicBold,
+      Get.rawSnackbar(
+          icon: const Icon(
+            Icons.warning,
+            color: AppColors.orange,
           ),
-          backgroundColor: Colors.grey,
-          messageText: const Text(
-            "Please enter your phone number",
-            style: TextStyle(
-                color: Color(0XFF707070),
-                fontWeight: FontWeight.bold,
-                fontSize: 15),
+          boxShadows: const [
+            BoxShadow(blurRadius: 20.0, offset: Offset(0, 10))
+          ],
+          backgroundColor: AppColors.blue,
+          messageText: const Text(""),
+          titleText: const Center(
+            child: Text(
+              "Cannot be Empty",
+              style: grey18ArabicNoBold,
+            ),
           ),
-          duration: const Duration(seconds: 2),
-          colorText: AppColors.blue,
-          boxShadows: [
-            BoxShadow(
-                color: Colors.grey.withOpacity(.2),
-                blurRadius: 10.0,
-                offset: const Offset(0.0, 10.0))
-          ]);
+          duration: const Duration(seconds: 2));
       return "";
     } else if (phoneController.value.text.length <= 9 ||
         phoneController.value.text.length >= 11) {
