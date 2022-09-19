@@ -8,4 +8,6 @@ class AppColors {
   static const lightwhite = Color(0xffF8F8F8);
   static const lightgrey = Color(0xffD5D5D5);
   static const darkColor = Color(0XFF212121);
+  static const succesGreen = Color(0XFF3BB537);
+  static const errorRed = Color(0XFFEE4549);
 }

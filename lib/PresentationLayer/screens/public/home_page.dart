@@ -5,7 +5,7 @@ import 'package:noble/Constants/font_styles.dart';
 import 'package:noble/Constants/routes.dart';
 import '../../Widgets/home_page_folder/realstate_office.dart';
 import '../../Widgets/home_page_folder/story_widget.dart';
-import '../../Widgets/home_page_folder/supreme_poiclame.dart';
+import '../../Widgets/home_page_folder/highlights.dart';
 import '../../Widgets/on_boarding_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -116,11 +116,10 @@ class HomePage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      const RealStateOffice(
-                        elementW: 100,
+                      RealStateOffice(
+                        elementW: 120,
                         itemCount: 11,
-                        backColor: Color(0XFF487CC7),
-                        content2: Content1(),
+                        backColor: const Color(0XFF487CC7),
                       )
                     ],
                   ),
@@ -141,16 +140,23 @@ class HomePage extends StatelessWidget {
                             style: blue15TextArabicBold,
                           ),
                           const Spacer(),
-                          Text(
-                            "show_all".tr,
-                            style: grey15ArabicNoBold,
+                          InkWell(
+                            onTap: () {
+                              Get.toNamed(AppRoutes.highlights);
+                            },
+                            child: Hero(
+                              tag: 'highlights_hero',
+                              child: Text(
+                                "show_all".tr,
+                                style: grey15ArabicNoBold,
+                              ),
+                            ),
                           ),
                         ],
                       ),
                     ),
-                    const SupremePoclaimes(
-                      elementW: 175,
-                      itemCount: 4,
+                    HighLights(
+                      elementW: 185,
                       backColor: Colors.transparent,
                     )
                   ],

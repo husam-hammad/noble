@@ -78,6 +78,10 @@ class Languages extends Translations {
           "the_favorite": "المفضلة",
           "the_notification": "الإشعارات",
           "the_more": "المزيد",
+
+          ///////////             HighLights Screen
+          "search_in_highlights": "ابحث عن أبرز الإعلانات",
+          "highlights": "أبرز الإعلانات",
         },
         ////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////
@@ -158,6 +162,10 @@ class Languages extends Translations {
           "the_favorite": "Favorite",
           "the_notification": "Notifications",
           "the_more": "More",
+
+          ///////////             HighLights Screen
+          "search_in_highlights": "Search in HighLights",
+          "highlights": "HighLights",
         }
       };
 }

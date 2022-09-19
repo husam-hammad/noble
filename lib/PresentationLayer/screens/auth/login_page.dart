@@ -22,6 +22,12 @@ class LoginPage extends StatelessWidget {
           : TextDirection.ltr,
       child: Scaffold(
         backgroundColor: AppColors.lightwhite,
+        bottomNavigationBar: BottomCircle(
+          text: 'you_can_create_account'.tr,
+          circleColor: const Color(0XFF707070).withOpacity(.2),
+          textColor: const Color(0XFF707070),
+          fontSize: 15,
+        ),
         body: Column(
           children: [
             Expanded(
@@ -102,13 +108,6 @@ class LoginPage extends StatelessWidget {
                     ]),
               ),
             ),
-            Expanded(
-                child: BottomCircle(
-              text: 'you_can_create_account'.tr,
-              circleColor: const Color(0XFF707070).withOpacity(.2),
-              textColor: const Color(0XFF707070),
-              fontSize: 15,
-            ))
           ],
         ),
       ),

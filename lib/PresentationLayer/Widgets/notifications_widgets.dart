@@ -8,10 +8,7 @@ class NotificationBody extends StatelessWidget {
   final BackNotificationController notController = Get.find();
   NotificationBody({
     Key? key,
-    required this.notificationNumber,
   }) : super(key: key);
-
-  final int notificationNumber;
 
   @override
   Widget build(BuildContext context) {
@@ -42,34 +39,6 @@ class NotificationBody extends StatelessWidget {
         });
   }
 }
-
-List<String> notificationContent = [
-  "new_watch".tr,
-  "new_watch".tr,
-  "new_watch".tr,
-  "new_watch".tr,
-  "new_watch".tr,
-  "new_watch".tr,
-  "new_watch".tr,
-  "new_watch".tr,
-  "new_watch".tr,
-  "new_watch".tr,
-  "new_watch".tr,
-];
-
-List<String> notificationTime = [
-  "now".tr,
-  "ten_min".tr,
-  "tow_hour".tr,
-  "one_hour".tr,
-  "now".tr,
-  "ten_min".tr,
-  "tow_hour".tr,
-  "one_hour".tr,
-  "ten_min".tr,
-  "tow_hour".tr,
-  "one_hour".tr,
-];
 
 List<String> photo = ["assets/images/person.jpg"];
 
