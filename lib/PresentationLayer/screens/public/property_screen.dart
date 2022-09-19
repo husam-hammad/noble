@@ -4,6 +4,7 @@ import 'package:noble/Constants/colors.dart';
 import 'package:noble/Constants/font_styles.dart';
 
 import '../../../BusinessLayer/Controllers/property_controller.dart';
+import '../../../DataAccessLayer/Models/office.dart';
 import '../../../DataAccessLayer/Models/property.dart';
 import '../../Widgets/property_page_widgets.dart';
 
@@ -18,7 +19,9 @@ final PropertyController proController = Get.find();
 
 class PropertyScreen extends StatelessWidget {
   final Property propety;
-  const PropertyScreen({Key? key, required this.propety}) : super(key: key);
+  final Office office;
+  const PropertyScreen({Key? key, required this.propety, required this.office})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +45,10 @@ class PropertyScreen extends StatelessWidget {
           ),
         ),
         backgroundColor: Colors.white,
-        body: SliverAppBarProperty(propety: propety),
+        body: SliverAppBarProperty(
+          propety: propety,
+          office: office,
+        ),
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:noble/DataAccessLayer/Models/office.dart';
 
 import '../../BusinessLayer/Controllers/property_controller.dart';
 import '../../Constants/colors.dart';
@@ -8,12 +9,11 @@ import '../../DataAccessLayer/Models/property.dart';
 import '../Screens/Public/property_screen.dart';
 
 class SliverAppBarProperty extends StatelessWidget {
-  const SliverAppBarProperty({
-    Key? key,
-    required this.propety,
-  }) : super(key: key);
-
   final Property propety;
+  final Office office;
+  const SliverAppBarProperty(
+      {Key? key, required this.propety, required this.office})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -164,9 +164,7 @@ class SliverAppBarProperty extends StatelessWidget {
                                       const SizedBox(
                                         width: 3,
                                       ),
-                                      Text(
-                                          proController.properties[0].rooms
-                                              .toString(),
+                                      Text(propety.rooms.toString(),
                                           style: blue15ArabicNoBold)
                                     ],
                                   ),
@@ -179,9 +177,7 @@ class SliverAppBarProperty extends StatelessWidget {
                                       const SizedBox(
                                         width: 3,
                                       ),
-                                      Text(
-                                          proController.properties[0].baths
-                                              .toString(),
+                                      Text(propety.baths.toString(),
                                           style: blue15ArabicNoBold)
                                     ],
                                   ),
@@ -203,8 +199,8 @@ class SliverAppBarProperty extends StatelessWidget {
                                       child: Container(
                                         height: 60,
                                         width: 60,
-                                        child: Image.asset(
-                                          "assets/images/office.png",
+                                        child: Image.network(
+                                          office.logo,
                                           fit: BoxFit.fill,
                                         ),
                                         decoration: BoxDecoration(
@@ -221,7 +217,7 @@ class SliverAppBarProperty extends StatelessWidget {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Text(officeName, style: blue18NoBold),
+                                        Text(office.name, style: blue18NoBold),
                                         Text(adViewer,
                                             style: grey15ArabicNoBold)
                                       ],

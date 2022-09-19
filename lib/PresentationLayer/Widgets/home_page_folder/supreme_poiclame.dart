@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:noble/BusinessLayer/Controllers/office_controller.dart';
 import 'package:noble/BusinessLayer/Controllers/property_controller.dart';
 import 'package:noble/PresentationLayer/screens/public/property_screen.dart';
 import '../../../Constants/colors.dart';
@@ -9,6 +10,8 @@ String location = "شرقي";
 
 class HighLights extends StatelessWidget {
   final PropertyController propertyController = Get.find();
+  final OfficesController officesController = Get.find();
+
   final double elementW;
   final int itemCount;
   final Color backColor;
@@ -42,7 +45,9 @@ class HighLights extends StatelessWidget {
                     child: InkWell(
                       onTap: () {
                         Get.to(() => PropertyScreen(
-                            propety: propertyController.properties[i]));
+                              propety: propertyController.properties[i],
+                              office: officesController.offices[i],
+                            ));
                       },
                       child: Container(
                         decoration: BoxDecoration(
