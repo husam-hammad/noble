@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:noble/BusinessLayer/Controllers/auth_controller.dart';
-import 'package:noble/Constants/font_styles.dart';
+import '../../BusinessLayer/Controllers/auth_controller.dart';
+import '../../Constants/font_styles.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 import '../../Constants/colors.dart';
@@ -20,6 +20,7 @@ class Verify extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.ltr,
       child: PinCodeTextField(
+        controller: authController.otpController,
         pinTheme: PinTheme(
             shape: PinCodeFieldShape.box,
             borderRadius: BorderRadius.circular(10),
@@ -33,7 +34,10 @@ class Verify extends StatelessWidget {
             activeColor: AppColors.lightgrey),
         appContext: context,
         length: 6,
-        onChanged: (_) {},
+        onCompleted: (_) {
+          authController.verify();
+        },
+        onChanged: (text) {},
         autoFocus: true,
         cursorColor: AppColors.blue,
         textStyle: blue18NoBold,

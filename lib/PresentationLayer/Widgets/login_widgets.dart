@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../Constants/font_styles.dart';
+
 class LoginWidgets extends StatelessWidget {
   const LoginWidgets({
     Key? key,
@@ -41,7 +43,6 @@ class BottomCircle extends StatelessWidget {
             style: TextStyle(
                 color: textColor,
                 fontSize: fontSize,
-                fontFamily: "Cairo",
                 fontWeight: FontWeight.bold)),
       ),
     );
@@ -52,36 +53,55 @@ class Button extends StatelessWidget {
   final String text1;
   final Color buttonColor;
   final Color textColor;
-
-  @override
-  const Button(
-      {Key? key,
-      required this.text1,
-      required this.buttonColor,
-      required this.textColor})
-      : super(key: key);
+  final bool loading;
+  final String loadingText;
+  const Button({
+    Key? key,
+    required this.text1,
+    required this.buttonColor,
+    required this.textColor,
+    required this.loading,
+    required this.loadingText,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      padding: const EdgeInsets.symmetric(vertical: 5.0),
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-          boxShadow: const [
+          boxShadow: [
             BoxShadow(
-                color: Colors.grey, blurRadius: 2.0, offset: Offset(0.0, 2.0))
+                color: buttonColor.withAlpha(50),
+                blurRadius: 2.0,
+                offset: const Offset(0.0, 2.0))
           ],
           borderRadius: BorderRadius.circular(10),
           color: buttonColor,
         ),
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              text1,
-              style: TextStyle(
-                  color: textColor, fontSize: 15, fontFamily: "Cairo"),
+            padding: const EdgeInsets.symmetric(
+              vertical: 15,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                if (loading)
+                  const CircularProgressIndicator(
+                    color: Colors.white,
+                  ),
+                if (loading)
+                  const SizedBox(
+                    width: 10,
+                  ),
+                Text(
+                  loadingText != "" ? loadingText : text1,
+                  style: white18NoBold,
+                ),
+              ],
             ),
           ),
         ),

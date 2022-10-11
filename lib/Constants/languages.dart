@@ -5,8 +5,8 @@ class Languages extends Translations {
   Map<String, Map<String, String>> get keys => {
         'ar_AR': {
           ////////////////                  Splash Screen
-          "noble": "نوبل",
-          "real_estate_service": "خدمات عقارية",
+          "noble": "Noble",
+          "real_estate_service": "Realestate Service",
 
           ///////////////                    Login Screen
           "login": "تسجيل الدخول",
@@ -38,12 +38,15 @@ class Languages extends Translations {
           "followers": "متابعين",
           "address": "العنوان",
           "damascus_salhiya": "دمشق, الصالحية",
-          "last_properties": "آخر العقارات",
+          "last_properties": "آخر الإعلانات العقارية",
           "villa_for_sale": "فيلا للبيع",
 
           /////////////                   Drawer
           "home": "الصفحة الرئيسية",
           "language": "اللغة",
+          "createnew": "إنشاء جديد",
+          "ads": "الإعلانات",
+          "realestate": "عقارات",
           "theme": "المظهر",
           "about": "حول",
           "logout": "تسجيل الخروج",
@@ -82,6 +85,71 @@ class Languages extends Translations {
           ///////////             HighLights Screen
           "search_in_highlights": "ابحث عن أبرز الإعلانات",
           "highlights": "أبرز الإعلانات",
+
+          ////////////////// Auth
+          "welcomeyouare": "شكراً لإنشاء حسابك في نوبل",
+          "sorryerror": "هناك خطأ ما , تأكد من اتصالك بالإنترنت",
+          "wrongotp": "الرقم المدخل خاطئ , تأكد من الرسالة",
+          "phonecantbeempty": "الرجاء إدخال رقم الهاتف",
+          "enter10digits": "الرجاء إدخال رقم مكون من 10 خانات",
+          "sryiannumbervalidation": "يجب أن يبدأ الرقم بـ 09",
+
+          ////////////////// Profie
+          "profile": "الملف الشخصي",
+          "name": "الإسم ",
+          "mobilenumber": "رقم الموبايل",
+          "passowrd": "كلمة المرور",
+          "keepitempty": "أبقها فارغة لتجنب التعديل",
+          "editprofiledata": "تعديل بيانات الحساب",
+          "editng": "جار التعديل ...",
+
+          //Advertisings
+          "spec": "المواصفات",
+          "price": "السعر",
+          "contactwith": "تواصل مع المعلن",
+
+          //add Property
+          "addnewproperty": "إنشاء إعلان",
+          "newrealestate": "إنشاء إعلان عقاري",
+          "addimages": "إضافة صور للإعلان",
+          "title": "نص إعلاني",
+          "titlehint": "منزل للبيع في المالكي",
+          "p_type": "نمط الإعلان",
+          "p_options": " نوع الإعلان",
+          "p_city": " المدينة",
+          "p_space": "المساحة",
+          "p_place": "المنطقة",
+          "p_adress": "العنوان",
+          "p_direction": "الاتجاه",
+          "p_cladding": "الاكساء",
+          "p_mobnumber": "رقم للتواصل",
+          "p_mobnumber_hint": "يساعد رقم التواصل في سرعة تواصل العملاء معك",
+          "p_rooms": "عدد الغرف",
+          "p_salons": "عدد الصالونات",
+          "p_baths": "عدد الحمامات",
+          "p_floor": "الطابق",
+          "p_floors": "الطوابق",
+          "mesaad": "مصعد",
+          "moaldeh": "مولدة",
+          "terras": "تراس",
+          "baranda": "شرفة",
+          "pool": "بركة سباحة",
+          "mokaiif": "مكيف",
+          "saona": "ساونا",
+          "carage": "كراج",
+          "shofag": "شوفاج",
+          "jakoozy": "جاكوزي",
+          "garden": "حديقة",
+          "desc": "الوصف",
+          "submitforreview": "إرسال للتدقيق",
+
+          ///Fixes
+          "latestproperties": "آخر الإعلانات العقارية",
+          "searchresult": "نتائج البحث",
+          "favorites": "المفضلة",
+          "aboutus": "عن التطبيق",
+          "aboutdesc":
+              "هو تطبيق يتيح للمستخدمين البحث و التواصل مع أصحاب العقارات و المكاتب العقارية في سبيل شراء عقارهم المستقبلي , كما يتيح للمكاتب إضافة إعلاناتهم العقارية لتصل لآلاف المستخدمين داخل و خارج أراضي الجمهورية العربية السورية"
         },
         ////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////
@@ -101,7 +169,7 @@ class Languages extends Translations {
 
           //////////////                      Otp Check Screen
           "we_send_code":
-              "قمنا بإرسال رمز إلى هاتفك لتتمكن من تأكيد حسابك\nقم بإدخاله في الخانات في الأسفل حال وصوله",
+              "We've Sent 6 Digits Code in SMS , Enter it Below To Confirm Your Login",
           "enter_the_code": "Enter code number",
           "re_sent_code": "Re-sent the code",
           "confirm": "Confirm",
@@ -111,10 +179,10 @@ class Languages extends Translations {
           "noble_realstate": "Noble Real State",
           "search_hint": "Search in noble, house, office, city"
               "Search, realstate ofices, city",
-          "last_story": "Last stories",
+          "last_story": "Lastest Stories",
           "show_all": "Show All",
-          "real_estate_ofices": "Real state ofices",
-          "top_real_estate_announcements": "Top Real state announcements",
+          "real_estate_ofices": "Nearby Offices",
+          "top_real_estate_announcements": "Highlights",
           "sell": "Sell",
 
           //////////////                      office screen
@@ -122,13 +190,16 @@ class Languages extends Translations {
           "followers": "Followers",
           "address": "Address",
           "damascus_salhiya": "Damascus, Salhiya",
-          "last_properties": "Last Properties",
+          "last_properties": "Latest Properties",
           "villa_for_sale": "Villa for sale",
 
           /////////////                   Drawer
           "home": "Home",
           "language": "Language",
           "theme": "Theme",
+          "createnew": "Create New",
+          "ads": "Advertisings",
+          "realestate": "Realestate",
           "about": "About",
           "logout": "Logout",
 
@@ -166,6 +237,72 @@ class Languages extends Translations {
           ///////////             HighLights Screen
           "search_in_highlights": "Search in HighLights",
           "highlights": "HighLights",
+
+          ////////////////// Auth
+          "welcomeyouare": "Welcome, you are a noble member now",
+          "sorryerror":
+              "Sorry There Was an Error , Check Your Internet Connection",
+          "wrongotp": "Wrong Otp, please enter the right number",
+          "phonecantbeempty": "Phone Number Cannot Be Empty",
+          "enter10digits": "Please Enter a 10 Digits Number",
+          "sryiannumbervalidation": "Phone Number Must Start With 09",
+
+          ////////////////// Profie
+          "profile": "Profile",
+          "name": "Name",
+          "mobilenumber": "Mobile Number",
+          "passowrd": "Password",
+          "keepitempty": "Keep it Empty To Avoid Change",
+          "editprofiledata": "Edit Profile Data",
+          "editng": "Editing ...",
+
+          //Advertisings
+          "spec": "Spefications",
+          "price": "Price",
+          "contactwith": "Contact With Advertisor",
+
+          //add Property
+          "addnewproperty": "New Advertising",
+          "newrealestate": "New Realestate Advertising",
+          "addimages": "Upload Images",
+          "title": "Title",
+          "titlehint": "house for sale in damascus",
+          "p_type": "Type",
+          "p_options": "Purshase Option",
+          "p_city": " City",
+          "p_space": "Space",
+          "p_place": "Place",
+          "p_adress": "Adress",
+          "p_direction": "Direction",
+          "p_cladding": "Cladding",
+          "p_mobnumber": "Mobile Number",
+          "p_mobnumber_hint":
+              "The contact number helps in the speed of customer contact with you",
+          "p_rooms": "Rooms Count",
+          "p_salons": "Salons",
+          "p_baths": "Baths",
+          "p_floor": "Floor",
+          "p_floors": "Floors Count",
+          "mesaad": "Elevator",
+          "moaldeh": "Generator",
+          "terras": "Terrace",
+          "pool": "Pool",
+          "mokaiif": "Conditioner",
+          "saona": "Saona",
+          "carage": "Garag",
+          "shofag": "Shofag",
+          "jakoozy": "Jacuzzi",
+          "garden": "Garden",
+          "desc": "Desctiption",
+          "submitforreview": "Submit For Review",
+
+          ///Fixes
+          "latestproperties": "Latest Properties",
+          "searchresult": "Search Result",
+          "favorites": "Favorites",
+          "aboutus": "About Noble",
+          "aboutdesc":
+              "It is an application that allows users to search and communicate with real estate owners and real estate offices in order to buy their future property. It also allows offices to add their real estate ads to reach thousands of users inside and outside the territory of the Syrian Arab Republic."
         }
       };
 }

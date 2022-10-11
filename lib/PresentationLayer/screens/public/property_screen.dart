@@ -1,27 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:noble/Constants/colors.dart';
-import 'package:noble/Constants/font_styles.dart';
+import '../../../Constants/colors.dart';
+import '../../../Constants/font_styles.dart';
 
-import '../../../BusinessLayer/Controllers/property_controller.dart';
-import '../../../DataAccessLayer/Models/office.dart';
 import '../../../DataAccessLayer/Models/property.dart';
 import '../../Widgets/property_page_widgets.dart';
 
-int showerNumber = 7;
-int roomNumber = 5;
-int opacity = 230;
-String location = "east".tr;
-String officeName = "sham_office".tr;
-String adViewer = "show_proclaim".tr;
-
-final PropertyController proController = Get.find();
-
 class PropertyScreen extends StatelessWidget {
-  final Property propety;
-  final Office office;
-  const PropertyScreen({Key? key, required this.propety, required this.office})
-      : super(key: key);
+  final Property propety = Get.arguments[0];
+  PropertyScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -47,11 +34,8 @@ class PropertyScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         body: SliverAppBarProperty(
           propety: propety,
-          office: office,
         ),
       ),
     );
   }
 }
-
-int whatchNumber = 100;

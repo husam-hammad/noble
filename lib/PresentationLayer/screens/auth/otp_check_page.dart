@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:noble/Constants/colors.dart';
-import 'package:noble/Constants/font_styles.dart';
-import 'package:noble/Constants/routes.dart';
-import 'package:noble/PresentationLayer/Widgets/login_widgets.dart';
+import '../../../Constants/colors.dart';
+import '../../../Constants/font_styles.dart';
+import '../../Widgets/login_widgets.dart';
 import '../../Widgets/otp_widgets.dart';
 
 class OtpCheckPage extends StatelessWidget {
@@ -35,11 +34,14 @@ class OtpCheckPage extends StatelessWidget {
                   children: [
                     Image.asset("assets/images/messageOtp.png",
                         height: 190, width: 190),
-                    Center(
-                      child: Text(
-                        "we_send_code".tr,
-                        style: sendCodeStyle,
-                        textAlign: TextAlign.center,
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Center(
+                        child: Text(
+                          "we_send_code".tr,
+                          style: sendCodeStyle,
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     )
                   ],
@@ -78,18 +80,6 @@ class OtpCheckPage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                        child: InkWell(
-                          onTap: () {
-                            Get.toNamed(AppRoutes.onBoardingScreen);
-                          },
-                          child: Button(
-                              text1: 'confirm'.tr,
-                              buttonColor: AppColors.orange,
-                              textColor: Colors.white),
-                        ),
-                      )
                     ]),
               ],
             ),

@@ -1,7 +1,6 @@
 // ignore_for_file: avoid_print
 
 import 'package:get/get.dart';
-
 import 'package:noble/BusinessLayer/Repositories/story_repo.dart';
 import 'package:noble/DataAccessLayer/Models/story.dart';
 import 'package:story_view/controller/story_controller.dart';
@@ -16,6 +15,7 @@ class StoriesController extends GetxController {
   @override
   void onInit() async {
     isLoading.value = true;
+    update();
     stories = await storyRepo.getStories();
     for (var element in stories) {
       print(element.image);
@@ -23,8 +23,9 @@ class StoriesController extends GetxController {
       storyviews.add(StoryItem.pageImage(
           url: element.image, controller: storyviewcontroller));
     }
-    print(stories);
+    //print(stories);
     isLoading.value = false;
+    update();
     super.onInit();
   }
 }

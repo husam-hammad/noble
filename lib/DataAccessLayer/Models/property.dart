@@ -1,11 +1,13 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
+import 'package:noble/DataAccessLayer/Models/office.dart';
+
 class Property {
   final int id;
-  final String name;
   final String type;
-  final int? properyType;
+  final String? properyType;
+  final String city;
   final String price;
   final String title;
   final String description;
@@ -14,26 +16,29 @@ class Property {
   final int views;
   final int rooms;
   final int baths;
-  Property(
-      {required this.id,
-      required this.name,
-      required this.type,
-      required this.properyType,
-      required this.price,
-      required this.title,
-      required this.description,
-      required this.image,
-      required this.space,
-      required this.views,
-      required this.rooms,
-      required this.baths});
+  final Office? office;
+  Property({
+    required this.id,
+    required this.type,
+    this.properyType,
+    required this.city,
+    required this.price,
+    required this.title,
+    required this.description,
+    required this.image,
+    required this.space,
+    required this.views,
+    required this.rooms,
+    required this.baths,
+    required this.office,
+  });
 
   Map<String, dynamic> toMap() {
-    return <String, dynamic>{
+    return {
       'id': id,
-      'name': name,
       'type': type,
       'properyType': properyType,
+      'city': city,
       'price': price,
       'title': title,
       'description': description,
@@ -47,24 +52,23 @@ class Property {
 
   factory Property.fromMap(Map<String, dynamic> map) {
     return Property(
-      id: map['id'] as int,
-      name: map['name'] as String,
-      type: map['type'] as String,
-      properyType:
-          map['properyType'] != null ? map['properyType'] as int : null,
-      price: map['price'] as String,
-      title: map['title'] as String,
-      description: map['description'] as String,
-      image: map['image'] as String,
-      space: map['space'] as String,
-      views: map['views'] as int,
-      rooms: map['rooms'] as int,
-      baths: map['baths'] as int,
-    );
+        id: map['id']?.toInt() ?? 0,
+        type: map['type'] ?? '',
+        properyType: map['properyType'] ?? "",
+        city: map['city'] ?? '',
+        price: map['price'] ?? '',
+        title: map['title'] ?? '',
+        description: map['description'] ?? '',
+        image: map['image'] ?? '',
+        space: map['space'] ?? '',
+        views: map['views']?.toInt() ?? 0,
+        rooms: map['rooms']?.toInt() ?? 0,
+        baths: map['baths']?.toInt() ?? 0,
+        office: map['office'] != null ? Office.fromMap(map['office']) : null);
   }
 
   String toJson() => json.encode(toMap());
 
   factory Property.fromJson(String source) =>
-      Property.fromMap(json.decode(source) as Map<String, dynamic>);
+      Property.fromMap(json.decode(source));
 }

@@ -12,9 +12,11 @@ class PropertyController extends GetxController {
   @override
   void onInit() async {
     isLoading.value = true;
+    update();
     properties = await propertyRepo.getProperty();
 
     isLoading.value = false;
+    update();
     super.onInit();
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:noble/BusinessLayer/Controllers/back_notification_controller.dart';
+import '../../BusinessLayer/Controllers/back_notification_controller.dart';
 
 import '../../Constants/font_styles.dart';
 

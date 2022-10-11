@@ -5,23 +5,26 @@ class Office {
   final int id;
   final String name;
   final String logo;
-  final String slug;
+  final String mobileNumber;
   final String address;
-  final String created_at;
+  final String city;
+  final double? lat;
+  final double? long;
+
   Office(
       {required this.id,
       required this.name,
-      required this.slug,
-      required this.created_at,
       required this.address,
-      required this.logo});
+      required this.logo,
+      required this.city,
+      required this.lat,
+      required this.long,
+      required this.mobileNumber});
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'id': id,
       'name': name,
-      'slug': slug,
-      'created_at': created_at,
       'logo': logo,
       'address': address,
     };
@@ -31,10 +34,12 @@ class Office {
     return Office(
       id: map['id'] as int,
       name: map['name'] as String,
-      slug: map['slug'] as String,
       address: map['address'] as String,
-      created_at: map['created_at'] as String,
+      mobileNumber: map['mobile_number'] as String,
       logo: map['logo'] as String,
+      city: map['city'] as String,
+      lat: map['lat'] != null ? double.parse(map['lat']) : null,
+      long: map['long'] != null ? double.parse(map['long']) : null,
     );
   }
 

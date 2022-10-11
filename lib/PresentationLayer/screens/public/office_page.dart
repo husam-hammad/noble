@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import '../../../BusinessLayer/Controllers/office_page_controller.dart';
+import '../../../BusinessLayer/Controllers/property_controller.dart';
 import '../../../DataAccessLayer/Models/office.dart';
-import '../../Widgets/office_widgets.dart';
+import 'custom_botton_nav.dart';
+
+import '../../Widgets/office/office_header.dart';
+import '../../Widgets/office/office_page_body.dart';
 
 class OfficePage extends StatelessWidget {
-  final Office office;
-
-  const OfficePage({Key? key, required this.office}) : super(key: key);
+  final Office office = Get.arguments[0];
+  final PropertyController propertyController = Get.find();
+  final OfficePageController officePageController =
+      Get.put(OfficePageController(Get.arguments[0].id));
+  OfficePage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,19 +24,33 @@ class OfficePage extends StatelessWidget {
           ? TextDirection.rtl
           : TextDirection.ltr,
       child: Scaffold(
-        body:
-            Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-          Expanded(
-            child: OfficeInfo(office: office),
-            flex: 1,
+          bottomNavigationBar: const CustomBottonNav(),
+          body: CustomScrollView(
+            slivers: [
+              SliverAppBar(
+                automaticallyImplyLeading: false,
+                expandedHeight: 350,
+                backgroundColor: Colors.white,
+                flexibleSpace: FlexibleSpaceBar(
+                  background: officeHeader(
+                      office, officePageController.properties.length),
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: OfficeBody(office: office),
+              )
+            ],
+          )
+
+          /* SingleChildScrollView(
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                officeHeader(office, officePageController.properties.length),
+                OfficeBody(office: office)
+              ]),
+        ), */
           ),
-          Expanded(
-              flex: 1,
-              child: OfficeBody(
-                office: office,
-              ))
-        ]),
-      ),
     );
   }
 }

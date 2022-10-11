@@ -2,6 +2,7 @@
 
 import 'package:get/get.dart';
 import 'package:noble/DataAccessLayer/Models/back_notification.dart';
+
 import '../Repositories/notification_repo.dart';
 
 class BackNotificationController extends GetxController {

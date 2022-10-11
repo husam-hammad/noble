@@ -11,7 +11,6 @@ class CladdingRepo {
     var response = await client.getCladding();
 
     if (response.isNotEmpty) {
-      //json.decode(response.toString()).cast<Map<String, dynamic>>();
       return response.map<Cladding>((item) => Cladding.fromMap(item)).toList();
     }
     return [];

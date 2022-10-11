@@ -1,127 +1,174 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:noble/Constants/font_styles.dart';
-import 'package:noble/PresentationLayer/Widgets/login_widgets.dart';
-import 'package:noble/PresentationLayer/Widgets/on_boarding_widget.dart';
+import '../../../BusinessLayer/Controllers/box_controller.dart';
+import '../../../BusinessLayer/Controllers/profile_screen_controller.dart';
 
+import '../../../BusinessLayer/helpers/image_helper.dart';
+
+import '../../../Constants/font_styles.dart';
+import '../../Widgets/appbar.dart';
+import '../../Widgets/login_widgets.dart';
+import '../../Widgets/drawer.dart';
+import '../../Widgets/title.dart';
+import '../../../Constants/api_links.dart';
 import '../../../Constants/colors.dart';
-import '../../Widgets/home_page_folder/highlights.dart';
-import '../../Widgets/profile_widgets.dart';
+import '../../Widgets/text_fields.dart';
+import 'custom_botton_nav.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({
+  final BoxContoller boxContoller = Get.find();
+  final ProfileScreenController profileScreenController =
+      Get.put(ProfileScreenController());
+
+  ProfileScreen({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      drawer: const MyDrawer(),
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: Builder(builder: (context) {
-          return IconButton(
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-              icon: const Icon(
-                Icons.dashboard_outlined,
-                size: 30,
-                color: AppColors.blue,
-              ));
-        }),
-        title: Text(
-          'noble_realstate'.tr,
-          style: const TextStyle(
-              color: Color(0XFF0C3877), fontSize: 20, fontFamily: "Cairo"),
-        ),
-        centerTitle: true,
-        actions: const [
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: CircleAvatar(
-              backgroundImage: AssetImage("assets/images/person.jpg"),
-              radius: 15,
-            ),
-          ),
-        ],
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            const HomeTextField(),
-            const Text(
-              "الملف الشخصي",
-              style: blue20ArabicBold,
-            ),
-            const Center(
-              child: CircleAvatar(
-                  radius: 40,
-                  backgroundImage: AssetImage("assets/images/person.jpg")),
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Text(
-                  "الاسم",
-                  style: blue15TextArabicBold,
-                ),
-                SizedBox(
-                  height: 3,
-                ),
-                ProfileTextfield(
-                  fieldColor: Color(0XFFF3F3F3),
-                  hint: '',
-                ),
-              ],
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Text(
-                  "العنوان",
-                  style: blue15TextArabicBold,
-                ),
-                SizedBox(
-                  height: 3,
-                ),
-                ProfileTextfield(
-                  fieldColor: Color(0XFFF3F3F3),
-                  hint: '',
-                ),
-              ],
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Text(
-                  "تاريخ الميلاد",
-                  style: blue15TextArabicBold,
-                ),
-                SizedBox(
-                  height: 3,
-                ),
-                ProfileTextfield(
-                  fieldColor: Color(0XFFF3F3F3),
-                  hint: '',
-                ),
-              ],
-            ),
-            const Button(
-                text1: "تعديل معلومات الملف الشخصي",
-                buttonColor: AppColors.orange,
-                textColor: AppColors.lightwhite),
-            Button(
-                text1: "skip".tr,
-                buttonColor: AppColors.lightwhite,
-                textColor: AppColors.lightgrey)
-          ],
-        ),
+    return Directionality(
+      textDirection: Get.locale!.languageCode == "ar"
+          ? TextDirection.rtl
+          : TextDirection.ltr,
+      child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        bottomNavigationBar: const CustomBottonNav(),
+        backgroundColor: AppColors.lightwhite,
+        drawer: MyDrawer(),
+        appBar: customAppBar(),
+        body: GetBuilder(
+            init: profileScreenController,
+            builder: (context) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: boxContoller.user == null
+                    ? Center(
+                        child: Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Column(
+                            children: const [
+                              Text(
+                                "There Is No Account , Login To Continue",
+                                style: blue15ArabicNoBold,
+                              ),
+                            ],
+                          ),
+                        ),
+                      )
+                    : SingleChildScrollView(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            pageTitle("profile".tr, null),
+                            Center(
+                              child: CircleAvatar(
+                                  radius: 40,
+                                  backgroundImage: CachedNetworkImageProvider(
+                                      ImageHelper.buildImage(
+                                          ApiLinks.storageUrl +
+                                              boxContoller.user!.avatar))),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 10),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "name".tr,
+                                    style: blue20ArabicBold,
+                                  ),
+                                  const SizedBox(
+                                    height: 3,
+                                  ),
+                                  ProfileTextfield(
+                                    controller:
+                                        profileScreenController.nameController,
+                                    hint: "",
+                                    obsecure: false,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 10),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "mobilenumber".tr,
+                                    style: blue20ArabicBold,
+                                  ),
+                                  const SizedBox(
+                                    height: 3,
+                                  ),
+                                  ProfileTextfield(
+                                    controller:
+                                        profileScreenController.emailController,
+                                    hint: "",
+                                    obsecure: false,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 10),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "passowrd".tr,
+                                    style: blue20ArabicBold,
+                                  ),
+                                  const SizedBox(
+                                    height: 3,
+                                  ),
+                                  ProfileTextfield(
+                                    controller: profileScreenController
+                                        .passwordController,
+                                    hint: "keepitempty".tr,
+                                    obsecure: true,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Obx(() {
+                              return InkWell(
+                                onTap: () async {
+                                  await profileScreenController.updateInfo();
+                                },
+                                child: Button(
+                                  text1: "editprofiledata".tr,
+                                  buttonColor: AppColors.orange,
+                                  textColor: AppColors.lightwhite,
+                                  loading: profileScreenController.loading.value
+                                      ? true
+                                      : false,
+                                  loadingText:
+                                      profileScreenController.loading.value
+                                          ? "editng".tr
+                                          : "",
+                                ),
+                              );
+                            }),
+                            InkWell(
+                              onTap: () async {
+                                await profileScreenController.logout();
+                              },
+                              child: Button(
+                                text1: "logout".tr,
+                                buttonColor: AppColors.lightgrey,
+                                textColor: Colors.white,
+                                loading: false,
+                                loadingText: "",
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+              );
+            }),
       ),
     );
   }

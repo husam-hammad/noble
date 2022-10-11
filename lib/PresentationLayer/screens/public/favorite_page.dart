@@ -1,4 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../Widgets/appbar.dart';
+import '../../Widgets/drawer.dart';
+import '../../Widgets/search_field.dart';
+import '../../Widgets/title.dart';
+import 'custom_botton_nav.dart';
 
 class FavoritePage extends StatelessWidget {
   const FavoritePage({
@@ -7,9 +14,23 @@ class FavoritePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(child: Text("Favorite")),
+    return Directionality(
+      textDirection: Get.locale!.languageCode == "ar"
+          ? TextDirection.rtl
+          : TextDirection.ltr,
+      child: Scaffold(
+        bottomNavigationBar: const CustomBottonNav(),
+        backgroundColor: Colors.white,
+        drawer: MyDrawer(),
+        appBar: customAppBar(),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SearchField(),
+            pageTitle("favorites".tr, null),
+          ],
+        ),
+      ),
     );
   }
 }

@@ -1,10 +1,20 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:noble/main.dart';
+import '../../main.dart';
 
 class MyLocaleController extends GetxController {
-  Locale initalLang =
-      sharedpref!.getString("lang") == "en" ? const Locale("en") : const Locale("ar");
+  late Locale? initalLang;
+  @override
+  void onInit() {
+    initalLang = sharedpref!.getString("lang") != null
+        ? (sharedpref!.getString("lang") == "en"
+            ? const Locale("en", "US")
+            : const Locale('ar', 'AR'))
+        : Get.deviceLocale;
+    update();
+
+    super.onInit();
+  }
 
   void changeLanguage(String codeLanguage) {
     Locale locale = Locale(codeLanguage);

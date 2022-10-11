@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:noble/Constants/colors.dart';
-import 'package:noble/Constants/font_styles.dart';
-import 'package:noble/Constants/routes.dart';
-import '../../Widgets/home_page_folder/realstate_office.dart';
-import '../../Widgets/home_page_folder/story_widget.dart';
-import '../../Widgets/home_page_folder/highlights.dart';
-import '../../Widgets/on_boarding_widget.dart';
+import '../../../Constants/colors.dart';
+
+import '../../../Constants/font_styles.dart';
+import '../../../Constants/routes.dart';
+import '../../Widgets/appbar.dart';
+import '../../Widgets/search_field.dart';
+import 'custom_botton_nav.dart';
+import '../../Widgets/home_page/highlights.dart';
+import '../../Widgets/home_page/nearby_offices.dart';
+import '../../Widgets/home_page/latest_stories.dart';
+import '../../Widgets/drawer.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({
@@ -20,53 +24,17 @@ class HomePage extends StatelessWidget {
           ? TextDirection.rtl
           : TextDirection.ltr,
       child: Scaffold(
-        backgroundColor: Colors.white,
-        drawer: const MyDrawer(),
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          elevation: 0,
-          leading: Builder(builder: (context) {
-            return IconButton(
-                onPressed: () {
-                  Scaffold.of(context).openDrawer();
-                },
-                icon: const Icon(
-                  Icons.dashboard_outlined,
-                  size: 30,
-                  color: AppColors.blue,
-                ));
-          }),
-          title: Text(
-            'noble_realstate'.tr,
-            style: blue20ArabicBold,
-          ),
-          centerTitle: true,
-          actions: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: InkWell(
-                onTap: () {
-                  Get.toNamed(AppRoutes.profileScreen);
-                },
-                child: const CircleAvatar(
-                  backgroundImage: AssetImage("assets/images/person.jpg"),
-                  radius: 15,
-                ),
-              ),
-            ),
-          ],
-        ),
+        bottomNavigationBar: const CustomBottonNav(),
+        drawer: MyDrawer(),
+        appBar: customAppBar(),
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
-                child: HomeTextField(),
-              ),
+              const SearchField(),
               Container(
                 width: double.infinity,
-                decoration: const BoxDecoration(color: Color(0XFFF8F8F8)),
+                decoration: const BoxDecoration(color: AppColors.lightwhite),
                 child: Column(
                   children: [
                     Padding(
@@ -86,24 +54,22 @@ class HomePage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    StoryOffice(
-                      backColor: Colors.transparent,
-                      elementW: 100,
-                    )
+                    LatestStories()
                   ],
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
                 child: Container(
-                  width: double.infinity,
+                  width: Get.width,
+                  height: 170,
                   decoration: const BoxDecoration(color: Color(0XFFF8F8F8)),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(
-                            left: 20.0, right: 20, top: 8),
+                            left: 20.0, right: 20, bottom: 10, top: 10),
                         child: Row(
                           children: [
                             Text("real_estate_ofices".tr,
@@ -116,11 +82,7 @@ class HomePage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      RealStateOffice(
-                        elementW: 120,
-                        itemCount: 11,
-                        backColor: const Color(0XFF487CC7),
-                      )
+                      Nearbyoffices()
                     ],
                   ),
                 ),
@@ -155,10 +117,7 @@ class HomePage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    HighLights(
-                      elementW: 185,
-                      backColor: Colors.transparent,
-                    )
+                    HighLights()
                   ],
                 ),
               ),

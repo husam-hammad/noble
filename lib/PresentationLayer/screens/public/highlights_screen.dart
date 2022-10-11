@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import '../../../Constants/colors.dart';
 import '../../../Constants/font_styles.dart';
 import '../../Widgets/highlights_widgets.dart';
-import '../../Widgets/on_boarding_widget.dart';
+import '../../Widgets/drawer.dart';
 
 class HighLightsScreen extends StatelessWidget {
   const HighLightsScreen({
@@ -21,7 +21,7 @@ class HighLightsScreen extends StatelessWidget {
         tag: 'highlights_hero',
         child: Scaffold(
           backgroundColor: Colors.white,
-          drawer: const MyDrawer(),
+          drawer: MyDrawer(),
           appBar: AppBar(
             backgroundColor: Colors.white,
             elevation: 0,

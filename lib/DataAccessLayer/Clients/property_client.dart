@@ -7,7 +7,7 @@ class PropertyClient {
   Future<List<dynamic>> getProperty() async {
     try {
       var response = await Dio().get(ApiLinks.baseUrl + ApiLinks.properties);
-      print(response.data);
+
       if (response.statusCode == 200) {
         return response.data;
       } else {

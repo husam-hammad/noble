@@ -4,32 +4,23 @@ import 'dart:convert';
 class Cladding {
   final int id;
   final String name;
-  final String createdAt;
-  final List properties;
   Cladding({
     required this.id,
     required this.name,
-    required this.createdAt,
-    required this.properties,
   });
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'id': id,
       'name': name,
-      'created_at': createdAt,
-      'properties': properties,
     };
   }
 
   factory Cladding.fromMap(Map<String, dynamic> map) {
     return Cladding(
-        id: map['id'] as int,
-        name: map['name'] as String,
-        createdAt: map['created_at'] as String,
-        properties: List.from(
-          (map['properties'] as List),
-        ));
+      id: map['id'] as int,
+      name: map['name'] as String,
+    );
   }
 
   String toJson() => json.encode(toMap());

@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:get/get.dart';
+
 import '../../DataAccessLayer/Models/property_has_feature.dart';
 import '../Repositories/property_has_feature_repo.dart';
 

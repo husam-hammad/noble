@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:noble/BusinessLayer/Controllers/property_controller.dart';
+import '../../BusinessLayer/Controllers/property_controller.dart';
 
 import '../../Constants/font_styles.dart';
 
@@ -54,7 +54,7 @@ class HighLightsBody extends StatelessWidget {
                 return ListTile(
                     onTap: () {},
                     title: Text(
-                      propertyController.properties[i].name,
+                      propertyController.properties[i].title,
                       style: blue15TextArabicBold,
                     ),
                     subtitle: Text(

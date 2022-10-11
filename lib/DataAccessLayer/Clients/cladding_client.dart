@@ -7,7 +7,6 @@ class CladdingClient {
   Future<List<dynamic>> getCladding() async {
     try {
       var response = await Dio().get(ApiLinks.baseUrl + ApiLinks.claddings);
-      print(response.data);
       if (response.statusCode == 200) {
         return response.data;
       } else {

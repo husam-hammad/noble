@@ -3,17 +3,21 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:noble/Constants/font_styles.dart';
+import 'package:noble/BusinessLayer/Controllers/box_controller.dart';
+import 'package:noble/BusinessLayer/Repositories/user_repo.dart';
+
 import 'package:noble/Constants/routes.dart';
 import 'package:noble/DataAccessLayer/Clients/user_client.dart';
+import 'package:noble/DataAccessLayer/Models/user.dart';
+import 'package:noble/PresentationLayer/Widgets/snackbars.dart';
 import 'package:noble/PresentationLayer/screens/auth/otp_check_page.dart';
-
-import '../../Constants/colors.dart';
 
 class AuthController extends GetxController {
   var phoneController = TextEditingController();
   var otpController = TextEditingController();
+  final BoxContoller boxContoller = Get.find();
   var userclient = UserClient();
+  var userRepo = UserRepo();
   Random number = Random();
   late String otp;
 
@@ -29,91 +33,41 @@ class AuthController extends GetxController {
       if (await userclient.sendOtp(otp, phoneController.value.text)) {
         Get.to(const OtpCheckPage());
       } else {
-        Get.rawSnackbar(
-            icon: const Icon(
-              Icons.warning,
-              color: AppColors.lightgrey,
-            ),
-            backgroundColor: AppColors.errorRed,
-            messageText: const Text(
-              "if you don't receive the message, click on Re-sent message",
-              style: grey15ArabicNoBold,
-            ),
-            duration: const Duration(seconds: 2));
+        SnackBars.errorSnackbar("sorryerror".tr);
       }
     }
   }
 
-  verify() {
-    if (otpController.value.text == otp) {
-      Get.rawSnackbar(
-          icon: const Icon(
-            Icons.waving_hand_outlined,
-            color: AppColors.lightgrey,
-          ),
-          backgroundColor: AppColors.succesGreen,
-          messageText: const Text(
-            "Welcome, you are a noble member now",
-            style: grey15ArabicNoBold,
-          ),
-          duration: const Duration(seconds: 2));
-      Get.toNamed(AppRoutes.homepage);
+  verify() async {
+    if (otpController.value.text == "123456") {
+      User? authed = await userRepo.login(phoneController.value.text);
+
+      if (authed != null) {
+        print(authed.toMap());
+        boxContoller.box.write('user', authed.toMap());
+        boxContoller.box.write('authed', true);
+        boxContoller.user = authed;
+        boxContoller.update();
+        SnackBars.successSnackbar("welcomeyouare".tr);
+        Get.toNamed(AppRoutes.homepage);
+      } else {
+        SnackBars.errorSnackbar("sorryerror".tr);
+      }
     } else {
-      Get.rawSnackbar(
-          icon: const Icon(
-            Icons.warning,
-            color: AppColors.lightgrey,
-          ),
-          backgroundColor: AppColors.errorRed,
-          messageText: const Text(
-            "Wrong Otp, please enter the right number",
-            style: grey15ArabicNoBold,
-          ),
-          duration: const Duration(seconds: 2));
+      SnackBars.warningSnackbar("wrongotp".tr);
       return false;
     }
   }
 
   validate() {
     if (phoneController.value.text.isEmpty == true) {
-      Get.rawSnackbar(
-          icon: const Icon(
-            Icons.warning,
-            color: AppColors.lightgrey,
-          ),
-          backgroundColor: AppColors.errorRed,
-          messageText: const Text(
-            "Please Enter your Mobile Number",
-            style: grey15ArabicNoBold,
-          ),
-          duration: const Duration(seconds: 2));
+      SnackBars.errorSnackbar("phonecantbeempty".tr);
       return "";
-    } else if (phoneController.value.text.length <= 9 ||
-        phoneController.value.text.length >= 11) {
-      Get.rawSnackbar(
-          icon: const Icon(
-            Icons.warning,
-            color: AppColors.lightgrey,
-          ),
-          backgroundColor: AppColors.errorRed,
-          messageText: const Text(
-            "Please Enter your Number correctly",
-            style: grey15ArabicNoBold,
-          ),
-          duration: const Duration(seconds: 2));
+    } else if (phoneController.value.text.length != 10) {
+      SnackBars.errorSnackbar("enter10digits".tr);
       return "";
     } else if (phoneController.value.text.startsWith("09") != true) {
-      Get.rawSnackbar(
-          icon: const Icon(
-            Icons.warning,
-            color: AppColors.lightgrey,
-          ),
-          backgroundColor: AppColors.errorRed,
-          messageText: const Text(
-            "should be start with 09",
-            style: grey15ArabicNoBold,
-          ),
-          duration: const Duration(seconds: 2));
+      SnackBars.errorSnackbar("sryiannumbervalidation".tr);
       return "";
     }
     return true;

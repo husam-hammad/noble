@@ -4,11 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:noble/BusinessLayer/Controllers/auth_controller.dart';
 import 'package:noble/Constants/colors.dart';
 import 'package:get/get.dart';
+import 'package:noble/Constants/routes.dart';
 import '../../../Constants/font_styles.dart';
 import '../../Widgets/login_widgets.dart';
 
 class LoginPage extends StatelessWidget {
-  final AuthController controller = Get.put(AuthController());
+  final AuthController controller = Get.find();
 
   LoginPage({
     Key? key,
@@ -98,12 +99,21 @@ class LoginPage extends StatelessWidget {
                           text1: 'send_code'.tr,
                           buttonColor: AppColors.orange,
                           textColor: Colors.white,
+                          loading: false,
+                          loadingText: "",
                         ),
                       ),
-                      Button(
-                        text1: 'skip'.tr,
-                        buttonColor: Colors.white,
-                        textColor: const Color(0XFF707070),
+                      InkWell(
+                        onTap: () {
+                          Get.toNamed(AppRoutes.homepage);
+                        },
+                        child: Button(
+                          text1: 'skip'.tr,
+                          buttonColor: AppColors.lightgrey,
+                          textColor: Colors.grey,
+                          loading: false,
+                          loadingText: "",
+                        ),
                       )
                     ]),
               ),

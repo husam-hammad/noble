@@ -4,6 +4,7 @@ class Story {
   final int id;
   final String image;
   final String title;
+
   //late final int property;
   //late final int office;
 
